@@ -1,0 +1,130 @@
+<html>
+<head>
+   <title>Dividni &amp; Canvas Import</title>
+   <meta charset="utf-8" />
+   <meta name="description"
+         content="Dividni helps to create individualized assessments. Individualization encourages students to engage in concept-oriented discussions rather than mere exchange of answers. Besides, at no additional cost, it enables an instructor to repeat an assessment activity with a different set of questions, thereby reinforcing student learning. In addition, individualization renders any blind copying in an assessment ineffective. Consequently, it is seen as an effective means of mitigating collusion and plagiarism." />
+   <meta name="keywords" content="Dividni, Individualized Assessment, Personalized Assessment, Examination, Assignment, Concept-oriented discussions, Learning, Plagiarism, Cheating Mitigation" />
+   <meta name="baidu-site-verification" content="tlj6IFdipO" />
+   <link rel="icon" type="image/svg+xml" href="https://dividni.com/images/Dividni-Logo.svg" />
+   <link rel="mask-icon" href="https://dividni.com/images/Dividni-Logo-Black.svg" color="red">
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta name="apple-mobile-web-app-capable" content="yes" />
+   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+   <link rel="apple-touch-icon-precomposed" href="https://dividni.com/logo-192x192.png" />
+   <link rel="icon" type="image/png" href="https://dividni.com/logo-192x192.png" />
+
+   <link rel="stylesheet" href="timeline.css" />
+
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+   <style>
+      li { margin: 2em 0; }
+   </style>
+</head>
+<body>
+   <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+      <img src="/images/Dividni-Logo-White.svg" alt="logo" style="width: 40px;" />
+      <a class="navbar-brand" href="https://dividni.com">&nbsp; Dividni</a>
+   </nav>
+   <div class="jumbotron text-center">
+      <h1>&nbsp;</h1>
+      <h1>Importing Questions into Canvas LMS</h1>
+      <p>Dividni &amp; Canvas LMS</p>
+   </div>
+   <div id="import_canvas" class="container">
+      <p>
+         Individualized questions can be imported into Canvas LMS using <code>QtiGen</code>.
+      </p>
+      <h2>Importing Steps</h2>
+      <ol>
+         <li>
+            First create a QTI .zip file using QtiGen. For example, the command<br />
+            <code> QtiGen -qtiVersion 1.2 -variants 10 -id qti-quiz Academic_honesty_declaration.html CSharpNumerical01.cs CSharpNumerical02.cs CSharpNumerical03.cs CSharpShortText02.cs</code>
+            <br />
+            creates a QTI .zip file named <code>qti-quiz.zip</code> which has 10 variants of each of the
+            C# questions. The option <code>qtiVersion</code> <em>must</em> be set to 1.2, for this is the QTI version
+            Canvas LMS currently supports.
+            The HTML file includes informational text. You can have as many such informational text segments as you want.
+            They will appear in the quiz in the order you specified in <code>QtiGen</code>.
+         </li>
+         <li>
+            Now, import the QTI .zip file into Canvas. To do so, you may follow the steps below (current at the time of writing).
+            <ol type="a">
+               <li>
+                  Go the <em>Settings</em> of the course.
+                  <div>
+                     <img alt="pix" src="images/Canvas-Settings.png" />
+                  </div>
+               </li>
+               <li>
+                  Find and click on "Import Course Contents".
+                  <div>
+                     <img alt="pix" src="images/Canvas-ImportCC.png" />
+                  </div>
+               </li>
+               <li>
+                  Select QTI .zip files as your source of import.
+                  <div>
+                     <img alt="pix" src="images/Canvas-ImportQTI.png" />
+                  </div>
+               </li>
+               <li>
+                  Choose the ZIP file that <code>QtiGen</code> generated, and click on <em>Import</em>.
+                  <div>
+                     <img alt="pix" src="images/Canvas-ImportQTI2QB.png" />
+                  </div>
+               </li>
+               <li>
+                  You will eventually see under <em>Quizzes</em> the questions you imported
+                  as well a shell quiz named after the name of the QTI .zip file (this is <code>qti-quiz</code>
+                  in our example here).
+                  <div>
+                     <img alt="pix" src="images/Canvas-Quizzes.png" />
+                  </div>
+               </li>
+               <li>
+                  Click of the shell quiz. This is <code>qti-quiz</code>
+                  in our example here.
+                  <div>
+                     <img alt="pix" src="images/Canvas-EditQuiz.png" />
+                  </div>
+               </li>
+               <li>
+                  This will allow you to edit the quiz. You will see the
+                  informational texts you added to the QTI .zip file (and not
+                  the C# questions).
+                  Now you need add the questions from the question banks one
+                  after the other. Click on <em>New Question Group</em>.
+                  <div>
+                     <img alt="pix" src="images/Canvas-EditQuiz2.png" />
+                  </div>
+               </li>
+               <li>
+                  Click on <em>Link to a Question Bank</em>, select your
+                  first question bank, and click on <em>Create Group</em>.
+                  <div>
+                     <img alt="pix" src="images/Canvas-AddQ1.png" />
+                  </div>
+               </li>
+               <li>
+                  Follow the process for all your questions, and you would
+                  finally see all the questions added to the shell quiz.
+                  <div>
+                     <img alt="pix" src="images/Canvas-AddQ2.png" />
+                  </div>
+               </li>
+            </ol>
+         </li>
+         <li>
+            Edit the quiz to adjust its settings as required.
+         </li>
+      </ol>
+   </div>
+   <footer id="touchbase" class="container text-center">
+      <p>dividni.com.</p>
+   </footer>
+</body>
+</html>
