@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+   <title>Dividni</title>
+   <meta charset="utf-8" />
+   <meta name="description"
+         content="Dividni helps to create individualized assessments. Individualization encourages students to engage in concept-oriented discussions rather than mere exchange of answers. Besides, at no additional cost, it enables an instructor to repeat an assessment activity with a different set of questions, thereby reinforcing student learning. In addition, individualization renders any blind copying in an assessment ineffective. Consequently, it is seen as an effective means of mitigating collusion and plagiarism." />
+   <meta name="keywords" content="Dividni, Individualized Assessment, Personalized Assessment, Examination, Assignment, Concept-oriented discussions, Learning, Plagiarism, Cheating Mitigation" />
+   <meta name="baidu-site-verification" content="tlj6IFdipO" />
+   <link rel="icon" type="image/svg+xml" href="https://dividni.com/images/Dividni-Logo.svg" />
+   <link rel="mask-icon" href="https://dividni.com/images/Dividni-Logo-Black.svg" color="red">
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta name="apple-mobile-web-app-capable" content="yes" />
+   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+   <link rel="apple-touch-icon-precomposed" href="https://dividni.com/logo-192x192.png" />
+   <link rel="icon" type="image/png" href="https://dividni.com/logo-192x192.png" />
+
+   <link rel="stylesheet" href="timeline.css" />
+
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+   <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+      <img src="https://dividni.com/images/Dividni-Logo-White.svg" alt="logo" style="width: 40px;" />
+      <a class="navbar-brand" href="https://dividni.com">&nbsp; Dividni</a>
+   </nav>
+   <div class="jumbotron text-center">
+      <h1>&nbsp;</h1>
+      <h1>Online Assessments</h1>
+      <p>Installation &amp; Setup on Windows</p>
+   </div>
+   <div id="documentation" class="container">
+      <p>
+         Online assignments currently work with Shibboleth's single sign-on to automatically
+         pick a student's ID. The ID is then used to randomize the questions in the assignment.
+      </p>
+      <p>
+         The source code for a sample individualized assignment on Arithmetic operations
+         is <a href="/samples/Assignment-Arithmetic.zip">here</a>. The assignment asks a
+         student to find the sum and product of a given set of numbers, where the numbers are individualized.
+         To get started, <code>cd</code> to the folder you have unzipped the sample assignment to, and issue the command <code>dotnet build</code>) to build it. Then <code>cd</code> to the bin folder (typically <code>bin\Debug\net</code>X.X) where you will find
+          <code>Arithmetic.dll</code> &mdash; 
+         and this DLL is the assignment plugin. You can use the command <code>Cwgen -uid 123456 Arithmetic.dll</code> to generate and review the individualized assignment for the student ID 123456. This command creates two files: <code>123456.html</code> that contains the assignment and <code>123456.txt</code> that contains a blank answer sheet.
+      </p>
+      <p>
+         The files <code>Arithmetic.dll</code>, <code>Arithmetic.Template.html</code>, and <code>Arithmetic.txt</code> can eventually be deployed to the assignment server for 
+         disseminating assignments once the assignment is finalized. 
+         The sections below provide more details on testing and deployment. 
+      </p>
+      <h3>Testing Individualized Assignments</h3>
+      <p>
+          The tool <code>CwGen</code> can be used for testing individualized assignments.
+          It can also be used for generating student-specific assignment sheets and answer sheets.
+          This can be of value when helping students offline.
+          Help is available using <code>CwGen -help</code>.
+      </p>
+      <p>
+          The command <code>CwGen -uid 123456 Arithmetic</code> will generate the 
+          assignment and answer sheets for our
+          sample assignment on Arithmetic operations for student ID 123456.
+          Similarly, the command <code>CwGen -uid 123456 -admin Arithmetic</code> will generate the 
+          assignment and answer sheets with expected answers.
+      </p>
+      <h3>Deploying Assignments Locally</h3>
+      <p>
+         The app <code>CwSvcHost</code> is the self-hosted assignment server which we can use to deploy
+         the assignment locally to test.
+         Place your assignment plugin files (Arithmetic.Template.html, Arithmetic.dll, and Arithmetic.txt) 
+         within the plugin root folder (by default <code>C:/WebRoot/Assignments/</code>)
+         inside a folder named after the plugin's name. For instance, if your plugin root is
+         <code>C:/WebRoot/Assignments/</code> then the plugin Arithmetic.dll will need to be placed under the folder
+         <code>C:/WebRoot/Assignments/Arithmetic/</code>. If you want to change the location of the plugin root folder,
+         open the file <code>appsettings.json</code> and change the default entry in the line:
+      </p>
+      <p style="border: 1px solid black; border-radius: 5px; text-align: center;">
+         <code>"PluginFolder": "C:/WebRoot/Assignments/"</code>
+      </p>
+      <p>
+         Run <code>CwSvcHost.exe</code>. Here 8881 is the port number that the service will listen on.
+         The URL <a href="http://localhost:5000/swagger/" target="_blank">http://localhost:5000/swagger/</a> will show the
+         endpoints the service supports, while
+         <a href="http://localhost:5000/Core/Coursework?cid=Arithmetic" target="_blank">http://localhost:5000/Core/Coursework?cid=Arithmetic</a>
+         will show you the Arithmetic assignment.
+      </p>
+      <p>
+         The coursework service passes to each plugin the ID of the logged-in user from the SSO.
+         In a test environment, you won't get any user logins. However, you can simulate the behavior
+         by setting up the environment variable <code>UOAid</code> with its value set to any positive
+         integer value representing an ID. The plugin will then receive this ID you set up rather
+         than receiving a default 0.
+      </p>
+      <p>
+         To see the assignment in an admin mode, place in <code>C:/WebRoot/Coursework/Arithmetic/</code>
+         a file named <code>Arithmetic.txt</code> which contains IDs of the admin users &ndash; each ID
+         must be on a new line. The admin mode allows the user to see answers in the assignment, as well as
+         allowing the user to download answer sheets containing the expected answer. The admin endpoint
+         is <code>/Core/CourseworkAA</code>, and the URL
+         <a href="http://localhost:5000/Core/CourseworkAA?cid=Arithmetic&id=123456" target="_blank">http://localhost:5000/Core/CourseworkAA?cid=Arithmetic&id=123456</a>
+         will show assignment sheet for user ID 123456 along with the expected answers,
+         provided that <code>Arithmetic.txt</code> is correctly setup.
+      </p>
+      <h3>Marking Individualized Assignments</h3>
+      <p>
+         The tool <code>CwGrader</code> is used for marking individualized assignments.
+         Help is available using <code>CwGrader -help</code>.
+         The following is a quick-start step-by-step guide to marking
+         solutions to our sample assignment on Arithmetic.
+      </p>
+      <ol>
+         <li>
+            Create a folder called <code>Answers</code>
+         </li>
+         <li>
+            Create a sub-folder called <code>Arithmetic</code>
+         </li>
+         <li>
+            Copy <code>Arithmetic.dll</code> and its HTML template to the <code>Arithmetic</code> folder
+         </li>
+         <li>
+            Create a sub-folder called <code>Sub</code> in the <code>Answers</code> folder
+         </li>
+         <li>
+            Copy the student answer sheets to the folder <code>Sub</code>
+         </li>
+         <li>
+            Open Windows PowerShell
+         </li>
+         <li>
+            Go to the folder <code>Answers</code>
+         </li>
+         <li>
+            The command one would run to show the marks on the console is
+            <code>CwGrader -coursework Arithmetic -submissions Sub -mark -csv</code>.
+            This creates a text file for each student that can be emailed.
+            The option <code>-answer</code> provides the expected answer in the text file.
+         </li>
+         <li>
+            The command <code>Mailman</code> can be used to email the results files to
+            the students.
+            <code>Mailman</code> requires a file that maps StudentIDs to their emailIDs. 
+            This file should contain a tab-separated sequence
+            of tuples of the form <code>StudentID</code> <code>emailID</code>
+            where each tuple should be in its own line.
+         </li>
+      </ol>
+      <hr />
+   </div>
+   <footer id="touchbase" class="container text-center">
+      <p>dividni.com.</p>
+   </footer>
+   <!-- <div style="height: 25px; background-image:url('/images/Kiwi.svg'); background-repeat:repeat-x;"></div> -->
+
+</body>
+</html>
