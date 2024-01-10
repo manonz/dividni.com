@@ -1,0 +1,1021 @@
+<!doctype html>
+<html>
+<head>
+   <title>Dividni</title>
+   <meta charset="utf-8" />
+   <meta name="description"
+         content="Dividni helps to create individualized assessments. Individualization encourages students to engage in concept-oriented discussions rather than mere exchange of answers. It also enables an instructor to repeat an assessment activity with a different set of questions, thereby reinforcing student learning. In addition, individualization renders any blind copying in an assessment ineffective. Consequently, it is seen as a positive approach to mitigating collusion and plagiarism." />
+   <meta name="keywords" content="Dividni, Individualized Assessment, Personalized Assessment, Examination, Assignment, Concept-oriented discussions, Learning, Plagiarism, Cheating Mitigation" />
+   <link rel="icon" type="image/svg+xml" href="/images/Dividni-Logo.svg" />
+   <link rel="mask-icon" href="/images/Dividni-Logo-Black.svg" color="red">
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta name="apple-mobile-web-app-capable" content="yes" />
+   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+   <link rel="apple-touch-icon-precomposed" href="images/logo-192x192.png" />
+   <link rel="icon" type="image/png" href="images/logo-192x192.png" />
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+   <script>
+      const ToggleExample = (display, toggle) => {
+         const showText = "Show Example...";
+         const hideText = "Hide Example...";
+         const example = document.getElementById(display);
+         let toggleP = document.getElementById(toggle);
+         if (toggleP.innerText === showText) {
+            toggleP.innerText = hideText;
+            example.style.display = "block";
+         }
+         else if (toggleP.innerText === hideText) {
+            toggleP.innerText = showText;
+            example.style.display = "none";
+         }
+      }
+
+
+      /**/</script>
+   <style>
+      ol.qlist > li.q { margin: 2em 0; }
+
+      li > ol.a { list-style: upper-alpha; }
+
+      .xyz { padding-top: 1em; padding-bottom: 1em; }
+   </style>
+</head>
+<body>
+   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+         <img src="/images/Dividni-Logo-White.svg" alt="logo" style="width: 40px;" />
+         <a class="navbar-brand" href="/">&nbsp; Dividni</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+               <a class="nav-link" href="#overview">Overview</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#install">Installation</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#architecture">Architecture</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#papers">Papers</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#documentation">Documentation</a>
+            </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <div class="jumbotron text-center">
+      <h1>&nbsp;</h1>
+      <h1>&nbsp;</h1>
+      <h1>Individualized Assessments</h1>
+      <p>Enhancing learning via assessments unique to every student</p>
+   </div>
+   <div id="overview" class="container">
+      <p>
+         Dividni helps to create individualized assessments.
+         Individualization encourages students to
+         engage in concept-oriented discussions rather than mere exchange of answers.
+         It also enables an instructor to repeat an assessment
+         activity with a different set of questions, thereby reinforcing student learning.
+
+         In addition, individualization renders any blind copying in an assessment ineffective.
+         Consequently, it is seen as a positive approach to mitigating collusion and plagiarism.
+      </p>
+      <p>
+         Dividni helps us create
+      </p>
+      <ul>
+         <li>
+            Individualized online quizzes and examinations delivered via learning management systems such as Canvas and Moodle, 
+            digital assessment platforms such as Inspera, and other QTI-compatible education applications.<br/>
+         </li>
+         <li>
+            Printable individualized multiple-choice examinations.
+            <p id="toggleSw1" style="text-align: right; text-decoration: underline overline;" onclick="ToggleExample('exampleExam', 'toggleSw1')">Show Example...</p>
+            <div id="exampleExam" style="display: none;">
+               <table style="width: 100%;">
+                  <tr>
+                     <td style="background-color: lightgray; padding-left: 1ex; padding-right: 1ex;">
+                        <div id="CoverPage">
+                           <div style="text-align: center;">
+                              <h1>THE UNIVERSITY OF RIVENDELL</h1>
+                              <br />
+                              <hr style="width: 50%; border: none; background-color: black; height: 1px; margin: auto;" />
+                              <h2>SECOND SEMESTER</h2>
+                              <h3>Campus:  Hithaeglir</h3>
+                              <hr style="width: 50%; border: none; background-color: black; height: 1px; margin: auto;" />
+                              <br />
+                              <h2>DEPARTMENT OF CONTEMPORARY STUDIES</h2>
+                              <h2>Local History</h2>
+                              <h3>(Time Allowed: 40 minutes)</h3>
+                           </div>
+                           <br />
+                           <br />
+                           <div id="Notes" style="font-size: 16pt;">
+                              <p>Note:</p>
+                              <ul>
+                                 <li>
+                                    Enter your name and student ID on the Teleform sheet.
+                                    You should also enter your name and student ID on
+                                    this question/answer book in the space provided.
+                                 </li>
+                                 <li>
+                                    The version code for this question/answer book is
+                                    <span style="border: 1px solid black; border-radius: 5px; font-weight: bolder;" class="cws_code_q">00001456</span>.
+                                    You MUST ensure that this version code is correctly shown in the Teleform sheet.
+                                    If the version code is incorrect, you may not get marks
+                                    for any of the questions in this assessment.
+                                 </li>
+                                 <li>
+                                    You MUST retain this question/answer book until the marking is
+                                    complete and you have received the mark or grade for this assessment.
+                                 </li>
+                                 <li>
+                                    Each question is expected to have exactly 1 (one)
+                                    correct answer. If you believe that a question has either
+                                    NO or MULTIPLE correct answers, select the ONE
+                                    you believe is most likely to be the intended answer.
+                                 </li>
+                                 <li>
+                                    All questions carry equal marks.
+                                 </li>
+                                 <li>
+                                    This assessment counts for 20% of your final grade.
+                                 </li>
+                              </ul>
+                           </div>
+                           <br />
+                           <div id="NameId">
+                              <table style="width: 100%;">
+                                 <tr>
+                                    <td>
+                                       <b>Name</b>:
+                                    </td>
+                                    <td>......................................</td>
+                                    <td rowspan="2" style="text-align: right;">
+                                       <span class="cws_code_q" style="text-align: right;">
+                                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 162 32" width="162" height="32">
+                                             <rect x="0" y="0" width="2" height="32" />
+                                             <rect x="4" y="0" width="2" height="32" />
+                                             <rect x="8" y="0" width="2" height="32" />
+                                             <rect x="12" y="0" width="2" height="32" />
+                                             <rect x="16" y="0" width="6" height="32" />
+                                             <rect x="28" y="0" width="6" height="32" />
+                                             <rect x="40" y="0" width="2" height="32" />
+                                             <rect x="44" y="0" width="2" height="32" />
+                                             <rect x="48" y="0" width="2" height="32" />
+                                             <rect x="52" y="0" width="6" height="32" />
+                                             <rect x="64" y="0" width="6" height="32" />
+                                             <rect x="76" y="0" width="2" height="32" />
+                                             <rect x="80" y="0" width="6" height="32" />
+                                             <rect x="88" y="0" width="2" height="32" />
+                                             <rect x="92" y="0" width="2" height="32" />
+                                             <rect x="100" y="0" width="2" height="32" />
+                                             <rect x="104" y="0" width="6" height="32" />
+                                             <rect x="116" y="0" width="6" height="32" />
+                                             <rect x="124" y="0" width="2" height="32" />
+                                             <rect x="132" y="0" width="6" height="32" />
+                                             <rect x="144" y="0" width="2" height="32" />
+                                             <rect x="148" y="0" width="2" height="32" />
+                                             <rect x="152" y="0" width="6" height="32" />
+                                             <rect x="160" y="0" width="2" height="32" />
+                                          </svg>
+                                       </span>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <b>ID</b>:
+                                    </td>
+                                    <td>......................................</td>
+                                 </tr>
+                              </table>
+                           </div>
+                           <p style="page-break-after: always;" />
+                        </div>
+                        <!-- Questions go below -->
+                        <div id="Questions" style="font-size: large;">
+                           <ol class="qlist">
+                              <li class="q">
+                                 <p class="cws_code_q">
+                                    <div class="qstem">
+
+                                       Which of these following were part of Thorin's company?
+
+
+                                    </div>
+                                    <ol type="A" start="24" class="xyz">
+                                       <li class="ansStd">Kili</li>
+                                       <li class="ansStd">Balin</li>
+                                       <li class="ansStd">Fili</li>
+                                    </ol>
+
+                                    <ol type="A" class="qanswers">
+                                       <li class="ansStd">X only</li>
+                                       <li class="ansStd">Y only</li>
+                                       <li class="ansStd">Z only</li>
+                                       <li class="ansStd">None of X, Y, and Z</li>
+                                       <li class="ansStd">All, or two of X, Y, and Z</li>
+                                    </ol>
+
+                                 </p>
+                              </li>
+                              <li class="q">
+                                 <p class="cws_code_q">
+                                    <div class="qstem">
+
+                                       Who did Sam, Frodo, Pippin and Merry meet at the
+                                       Prancing Pony on their way to Rivendell carrying the ring?
+
+
+                                    </div>
+                                    <ol type="A" class="qanswers">
+                                       <li class="ansStd">Bilbao</li>
+                                       <li class="ansStd">Aragorn</li>
+                                       <li class="ansStd">Gandalf</li>
+                                       <li class="ansStd">Celebrimbor</li>
+                                       <li class="ansStd">Lúthien</li>
+                                    </ol>
+                                 </p>
+                              </li>
+                              <li class="q">
+                                 <p class="cws_code_q">
+                                    <div class="qstem">
+                                       At Prancing Pony, you can buy 4 apples and 9 oranges for 364 Castars; you can also buy 13 apples and 17 oranges for 742 Castars. What is the price of a single apple, expressed in Castars?
+
+
+                                    </div>
+                                    <ol type="A" class="qanswers">
+                                       <li class="ansStd">37</li>
+                                       <li class="ansStd">12</li>
+                                       <li class="ansStd">38</li>
+                                       <li class="ansStd">10</li>
+                                       <li class="ansStd">36</li>
+                                    </ol>
+                                 </p>
+                              </li>
+                           </ol>
+                        </div>
+                        <!-- Appendices go below -->
+                        <div id="LastLineStanding" style="text-align: center;">
+                           <p>
+                              <br />
+                           </p>
+                           <hr style="width: 30%; border: none; background-color: black; height: 1px; margin: auto;" />
+                        </div>
+                     </td>
+                     <td style="background-color: transparent; padding-left: 1ex; padding-right: 1ex;">
+                        <div id="CoverPage">
+                           <div style="text-align: center;">
+                              <h1>THE UNIVERSITY OF RIVENDELL</h1>
+                              <br />
+                              <hr style="width: 50%; border: none; background-color: black; height: 1px; margin: auto;" />
+                              <h2>SECOND SEMESTER</h2>
+                              <h3>Campus:  Hithaeglir</h3>
+                              <hr style="width: 50%; border: none; background-color: black; height: 1px; margin: auto;" />
+                              <br />
+                              <h2>DEPARTMENT OF CONTEMPORARY STUDIES</h2>
+                              <h2>Local History</h2>
+                              <h3>(Time Allowed: 40 minutes)</h3>
+                           </div>
+                           <br />
+                           <br />
+                           <div id="Notes" style="font-size: 16pt;">
+                              <p>Note:</p>
+                              <ul>
+                                 <li>
+                                    Enter your name and student ID on the Teleform sheet.
+                                    You should also enter your name and student ID on
+                                    this question/answer book in the space provided.
+                                 </li>
+                                 <li>
+                                    The version code for this question/answer book is
+                                    <span style="border: 1px solid black; border-radius: 5px; font-weight: bolder;" class="cws_code_q">00001553</span>.
+                                    You MUST ensure that this version code is correctly shown in the Teleform sheet.
+                                    If the version code is incorrect, you may not get marks
+                                    for any of the questions in this assessment.
+                                 </li>
+                                 <li>
+                                    You MUST retain this question/answer book until the marking is
+                                    complete and you have received the mark or grade for this assessment.
+                                 </li>
+                                 <li>
+                                    Each question is expected to have exactly 1 (one)
+                                    correct answer. If you believe that a question has either
+                                    NO or MULTIPLE correct answers, select the ONE
+                                    you believe is most likely to be the intended answer.
+                                 </li>
+                                 <li>
+                                    All questions carry equal marks.
+                                 </li>
+                                 <li>
+                                    This assessment counts for 20% of your final grade.
+                                 </li>
+                              </ul>
+                           </div>
+                           <br />
+                           <div id="NameId">
+                              <table style="width: 100%;">
+                                 <tr>
+                                    <td>
+                                       <b>Name</b>:
+                                    </td>
+                                    <td>......................................</td>
+                                    <td rowspan="2" style="text-align: right;">
+                                       <span class="cws_code_q" style="text-align: right;">
+                                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 162 32" width="162" height="32">
+                                             <rect x="0" y="0" width="2" height="32" />
+                                             <rect x="4" y="0" width="2" height="32" />
+                                             <rect x="8" y="0" width="2" height="32" />
+                                             <rect x="12" y="0" width="2" height="32" />
+                                             <rect x="16" y="0" width="6" height="32" />
+                                             <rect x="28" y="0" width="6" height="32" />
+                                             <rect x="40" y="0" width="2" height="32" />
+                                             <rect x="44" y="0" width="2" height="32" />
+                                             <rect x="48" y="0" width="2" height="32" />
+                                             <rect x="52" y="0" width="6" height="32" />
+                                             <rect x="64" y="0" width="6" height="32" />
+                                             <rect x="76" y="0" width="2" height="32" />
+                                             <rect x="80" y="0" width="6" height="32" />
+                                             <rect x="92" y="0" width="2" height="32" />
+                                             <rect x="96" y="0" width="2" height="32" />
+                                             <rect x="104" y="0" width="2" height="32" />
+                                             <rect x="108" y="0" width="6" height="32" />
+                                             <rect x="116" y="0" width="6" height="32" />
+                                             <rect x="128" y="0" width="2" height="32" />
+                                             <rect x="136" y="0" width="6" height="32" />
+                                             <rect x="144" y="0" width="2" height="32" />
+                                             <rect x="148" y="0" width="2" height="32" />
+                                             <rect x="152" y="0" width="6" height="32" />
+                                             <rect x="160" y="0" width="2" height="32" />
+                                          </svg>
+                                       </span>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <b>ID</b>:
+                                    </td>
+                                    <td>......................................</td>
+                                 </tr>
+                              </table>
+                           </div>
+                           <p style="page-break-after: always;" />
+                        </div>
+                        <!-- Questions go below -->
+                        <div id="Questions" style="font-size: large;">
+                           <ol class="qlist">
+                              <li class="q">
+                                 <p class="cws_code_q">
+                                    <div class="qstem">
+
+                                       Which of these following were part of Thorin's company?
+
+
+                                    </div>
+                                    <ol type="A" start="24" class="xyz">
+                                       <li class="ansStd">Dori</li>
+                                       <li class="ansStd">Gróin</li>
+                                       <li class="ansStd">Ori</li>
+                                    </ol>
+
+                                    <ol type="A" class="qanswers">
+                                       <li class="ansStd">X and Y only</li>
+                                       <li class="ansStd">X and Z only</li>
+                                       <li class="ansStd">Y and Z only</li>
+                                       <li class="ansStd">All of X, Y, and Z</li>
+                                       <li class="ansStd">None, or only one of X, Y, and Z</li>
+                                    </ol>
+
+                                 </p>
+                              </li>
+                              <li class="q">
+                                 <p class="cws_code_q">
+                                    <div class="qstem">
+
+                                       Who did Sam, Frodo, Pippin and Merry meet at the
+                                       Prancing Pony on their way to Rivendell carrying the ring?
+
+
+                                    </div>
+                                    <ol type="A" class="qanswers">
+                                       <li class="ansStd">Thorin</li>
+                                       <li class="ansStd">Narvi</li>
+                                       <li class="ansStd">Lúthien</li>
+                                       <li class="ansStd">Strider</li>
+                                       <li class="ansStd">Elu Thingol</li>
+                                    </ol>
+                                 </p>
+                              </li>
+                              <li class="q">
+                                 <p class="cws_code_q">
+                                    <div class="qstem">
+                                       At Prancing Pony, you can buy 3 apples and 9 oranges for 246 Castars; you can also buy 10 apples and 18 oranges for 556 Castars. What is the price of a single apple, expressed in Castars?
+
+
+                                    </div>
+                                    <ol type="A" class="qanswers">
+                                       <li class="ansStd">18</li>
+                                       <li class="ansStd">15</li>
+                                       <li class="ansStd">17</li>
+                                       <li class="ansStd">16</li>
+                                       <li class="ansStd">22</li>
+                                    </ol>
+                                 </p>
+                              </li>
+                           </ol>
+                        </div>
+                        <!-- Appendices go below -->
+                        <div id="LastLineStanding" style="text-align: center;">
+                           <p>
+                              <br />
+                           </p>
+                           <hr style="width: 30%; border: none; background-color: black; height: 1px; margin: auto;" />
+                        </div>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+         </li>
+         <li>
+            Printable individualized task sheets that require students to work out
+            and write-down their unique answer.
+            <br/>
+            <p id="toggleSw2" style="text-align: right; text-decoration: underline overline;" onclick="ToggleExample('exampleTasksheet', 'toggleSw2')">Show Example...</p>
+            <div id="exampleTasksheet" style="display: none;">
+               <table style="width: 100%;">
+                  <tr>
+                     <td style="background-color: lightgray; padding-left: 1ex; padding-right: 1ex;">
+                        <h1 style="text-align: center;">
+                           Secret Communications
+                        </h1>
+                        <h2 style="text-align: center;">
+                           Task 2
+                        </h2>
+                        <p>
+                           This secret communication is thought to have used a
+                           zigzag cipher (sometimes known as a rail fence cipher).
+                           What is shown below is the intercepted ciphertext. What is the plain
+                           text corresponding to this?
+                        </p>
+                        <p class="cws_code_q" style="border: 1px solid black; border-radius: 5px; padding: 10px;">ETNIOEIHYEAENRULGMRTB</p>
+                        <p>
+                           <span style="font-size: large;">&#x270d;</span> This encryption is based on transposing the letters of the
+                           plaintext. The plaintext letters, ignoring spaces, are written in a
+                           zigzag fashion on horizontal rails. The letters are read out
+                           rail by rail to form the ciphertext.
+                        </p>
+                        <p>
+                           For example, <code>ALWAYS BLOW ON THE PIE</code> would be
+                           become <code>AYOTILASLWNHPEWBOE</code> after writing it out
+                           zigzag and reading it horizontally. The diagram below shows
+                           how it is done.
+                        </p>
+                        <table style="font-family: monospace; width: 100%; text-align: center; font-size: xx-large;">
+                           <tr>
+                              <td>A</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>Y</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>O</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>T</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>I</td>
+                              <td>-</td>
+                           </tr>
+                           <tr>
+                              <td>-</td>
+                              <td>L</td>
+                              <td>-</td>
+                              <td>A</td>
+                              <td>-</td>
+                              <td>S</td>
+                              <td>-</td>
+                              <td>L</td>
+                              <td>-</td>
+                              <td>W</td>
+                              <td>-</td>
+                              <td>N</td>
+                              <td>-</td>
+                              <td>H</td>
+                              <td>-</td>
+                              <td>P</td>
+                              <td>-</td>
+                              <td>E</td>
+                           </tr>
+                           <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>W</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>B</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>O</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>E</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                           </tr>
+                        </table>
+                        <p>
+                           <span style="font-size: large;">&#x270d;</span> To crack the ciphertext, you would draw empty zigzag slots
+                           in the rail, and fill the slots with the ciphertext. Once filled,
+                           you can read the text in a zigzag manner to find the plaintext.
+                           Easy, right?
+                        </p>
+                        <table style="font-family: monospace; width: 100%; text-align: center; font-size: xx-large;">
+                           <tr>
+                              <td style="background-color: white;"></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td style="background-color: white;"></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td style="background-color: white;"></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td style="background-color: white;"></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td style="background-color: white;"></td>
+                              <td>-</td>
+                           </tr>
+                           <tr>
+                              <td>-</td>
+                              <td style="background-color: white;"></td>
+                              <td>-</td>
+                              <td style="background-color: white;"></td>
+                              <td>-</td>
+                              <td style="background-color: white;"></td>
+                              <td>-</td>
+                              <td style="background-color: white;"></td>
+                              <td>-</td>
+                              <td style="background-color: white;"></td>
+                              <td>-</td>
+                              <td style="background-color: white;"></td>
+                              <td>-</td>
+                              <td style="background-color: white;"></td>
+                              <td>-</td>
+                              <td style="background-color: white;"></td>
+                              <td>-</td>
+                              <td style="background-color: white;"></td>
+                           </tr>
+                           <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td style="background-color: white;"></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td style="background-color: white;"></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td style="background-color: white;"></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td style="background-color: white;"></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                           </tr>
+                        </table>
+                        <p>
+                           You would need to know how many slots you need though, before
+                           you draw your zigzag slots. For the ciphertext given here,
+                           how many slots do you need?
+                        </p>
+                        <p style="font-weight: bold;" class="cws_code_a"></p>
+                        <p style="font-size:x-small; text-align: right;">
+                           Office use only:
+                           <span class="cws_code_q">00090017</span>
+                        </p>
+                     </td>
+                     <td style="background-color: transparent; padding-left: 1ex; padding-right: 1ex;">
+                        <h1 style="text-align: center;">
+                           Secret Communications
+                        </h1>
+                        <h2 style="text-align: center;">
+                           Task 2
+                        </h2>
+                        <p>
+                           This secret communication is thought to have used a
+                           zigzag cipher (sometimes known as a rail fence cipher).
+                           What is shown below is the intercepted ciphertext. What is the plain
+                           text corresponding to this?
+                        </p>
+                        <p class="cws_code_q" style="border: 1px solid black; border-radius: 5px; padding: 10px;">MGDELTAYURSRBDYINAAAH</p>
+                        <p>
+                           <span style="font-size: large;">&#x270d;</span> This encryption is based on transposing the letters of the
+                           plaintext. The plaintext letters, ignoring spaces, are written in a
+                           zigzag fashion on horizontal rails. The letters are read out
+                           rail by rail to form the ciphertext.
+                        </p>
+                        <p>
+                           For example, <code>ALWAYS BLOW ON THE PIE</code> would be
+                           become <code>AYOTILASLWNHPEWBOE</code> after writing it out
+                           zigzag and reading it horizontally. The diagram below shows
+                           how it is done.
+                        </p>
+                        <table style="font-family: monospace; width: 100%; text-align: center; font-size: xx-large;">
+                           <tr>
+                              <td>A</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>Y</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>O</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>T</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>I</td>
+                              <td>-</td>
+                           </tr>
+                           <tr>
+                              <td>-</td>
+                              <td>L</td>
+                              <td>-</td>
+                              <td>A</td>
+                              <td>-</td>
+                              <td>S</td>
+                              <td>-</td>
+                              <td>L</td>
+                              <td>-</td>
+                              <td>W</td>
+                              <td>-</td>
+                              <td>N</td>
+                              <td>-</td>
+                              <td>H</td>
+                              <td>-</td>
+                              <td>P</td>
+                              <td>-</td>
+                              <td>E</td>
+                           </tr>
+                           <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>W</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>B</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>O</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>E</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                           </tr>
+                        </table>
+                        <p>
+                           <span style="font-size: large;">&#x270d;</span> To crack the ciphertext, you would draw empty zigzag slots
+                           in the rail, and fill the slots with the ciphertext. Once filled,
+                           you can read the text in a zigzag manner to find the plaintext.
+                           Easy, right?
+                        </p>
+                        <table style="font-family: monospace; width: 100%; text-align: center; font-size: xx-large;">
+                           <tr>
+                              <td style="background-color: lightgray;"></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td style="background-color: lightgray;"></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td style="background-color: lightgray;"></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td style="background-color: lightgray;"></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td style="background-color: lightgray;"></td>
+                              <td>-</td>
+                           </tr>
+                           <tr>
+                              <td>-</td>
+                              <td style="background-color: lightgray;"></td>
+                              <td>-</td>
+                              <td style="background-color: lightgray;"></td>
+                              <td>-</td>
+                              <td style="background-color: lightgray;"></td>
+                              <td>-</td>
+                              <td style="background-color: lightgray;"></td>
+                              <td>-</td>
+                              <td style="background-color: lightgray;"></td>
+                              <td>-</td>
+                              <td style="background-color: lightgray;"></td>
+                              <td>-</td>
+                              <td style="background-color: lightgray;"></td>
+                              <td>-</td>
+                              <td style="background-color: lightgray;"></td>
+                              <td>-</td>
+                              <td style="background-color: lightgray;"></td>
+                           </tr>
+                           <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td style="background-color: lightgray;"></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td style="background-color: lightgray;"></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td style="background-color: lightgray;"></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td style="background-color: lightgray;"></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                           </tr>
+                        </table>
+                        <p>
+                           You would need to know how many slots you need though, before
+                           you draw your zigzag slots. For the ciphertext given here,
+                           how many slots do you need?
+                        </p>
+                        <p style="font-weight: bold;" class="cws_code_a"></p>
+                        <p style="font-size:x-small; text-align: right;">
+                           Office use only:
+                           <span class="cws_code_q">00090114</span>
+                        </p>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+         </li>
+         <li>
+            Individualized online assignments.
+         </li>
+      </ul>
+      <p style="text-align: right; font-size: small;">
+         Trivia: Dividni is individ(ual) spelt backwards.
+      </p>
+      <hr />
+   </div>
+
+
+   <div id="install" class="container">
+      <h1>Installation</h1>
+      <p>
+         Dividni can be installed on almost all platforms. The prerequisite is .NET core which is multi-platform.         
+         Download and extract Dividni from this zip archive:
+         <a href="framework/Dividni-v23.08.21.zip">Dividni-v23.08.21.zip</a>. 
+         The archive contains a set of commandline tools to create various individualized assessment types 
+         (quizzes, printable multiple-choice examinations, tasksheets, and online assignments) as well as tools
+         to mark student submissions.
+      </p>
+      <p style="font-size: small">
+         If you are after a version Dividni for .NET framework 4.8, please use <a href="framework/DividniSetup-v21.07.15.msi">DividniSetup-v21.07.15.msi</a>. This lacks a number of features the current Dividni has.
+      </p>
+      <h6>Installation-Free Dividni</h1>
+      <p>
+         Individualized online quizzes can be created installation-free using our online application:
+         <a href="https://dividni.online">dividni.online</a>.
+      </p>
+      <h6>Teleform Maker</h6>
+      <p>
+         Ulrich's Teleform Maker software creates versioned Teleform sheets for use with multiple choice examinations.
+         Download of this software is restricted to authenticated users. It can be downloaded from
+         <a href="https://staff.cs.auckland.ac.nz/software/TeleformMakerSetup-v19.05.19.msi">here</a>
+         upon authentication.
+      </p>
+      <h6>Sample Scripts for Automation</h6>
+      <p>
+         Sample <code>bash</code> and <code>Windows PowerShell</code> scripts are
+         available <a href="scripts/">here</a> to help with automation.
+      </p>
+      <h6>Additional Software</h6>
+      <p>
+         To convert HTML to PDF and to merge all PDFs into a single one, you may use
+         <code>wkhtmltopdf</code> and <code>pdftk</code>. Both are freely available.
+         Useful tips on the installation and/or use of the other software is available <a href="othernotes/">here</a>.
+      </p>
+      <hr />
+   </div>
+
+   <div id="architecture" class="container">
+      <h1>Architecture</h1>
+      <p>
+         There are two supported architectural styles. The first one is based on
+         writing an HTML template and a number of associated macros. This style is
+         useful for printed examinations and printed task sheets.
+         The macros are functions that an instructor
+         will have to define. The framework has a macro processor that takes as
+         its input an HTML template and a library consisting of the
+         instructor-defined  macros, and outputs HTML assessment scripts where
+         the macros have been substituted by the result of executing the macros.
+      </p>
+      <div style="width: 90%; display: block; margin: auto; text-align: center;">
+         <img style="width: 90%;" alt="Architecture" src="/images/HtmlMacroProcessor.svg" />
+      </div>
+      <p>
+         Use of HTML for the template allows the instructor to develop bulk
+         of the assessment such as cover page, appendices, and possibly parts
+         of question stems and/or answer options in HTML and supplement it
+         with the code in the macros. It also allows a limited preview,
+         without any macro substitution, of the template through any browser.
+         HTML assessment scripts will permit digital delivery if applicable,
+         or the scripts can be printed out for traditional paper-based assessment.
+      </p>
+      <p>
+         The second architectural style is to form questions as a C# class adhering to a
+         given contract. These questions can then be exported to LMS (such as Canvas
+         and Moodle) or online examination platforms (such as Inspera).
+         The framework supports QTI (for Canvas and Inspera) and XML (for Moodle).
+      </p>
+   </div>
+   <div id="papers" class="container">
+      <h1>Papers</h1>
+      <p>
+         There are some academic papers on the use and value of the framework.
+      </p>
+      <ol>
+         <li>
+            <em>Personalized assessment as a means to mitigate plagiarism</em> &mdash; available at
+            <a href="https://ieeexplore.ieee.org/document/7577807">
+               IEEE Transactions on Education.
+            </a>
+            An authors' version of this paper is available to download
+               <a href="papers/TE2604210_Author_Version.pdf">here</a>.
+         </li>
+         <li>
+            <em>Cheat-resistant multiple-choice examinations using personalization</em> &mdash; available at
+            <a href="https://www.sciencedirect.com/science/article/pii/S036013151830304X">
+               Computers &amp; Education.
+            </a>
+         </li>
+         <li>
+            <em>Contract Cheating in Computer Science: A Case Study</em> &mdash; available at
+            <a href="https://ieeexplore.ieee.org/document/9368454">
+               IEEE Xplore</a>. An authors' version of this paper is available to download
+               <a href="papers/TALE2020-PaperPDF.pdf">here</a>.
+         </li>
+         <li>
+            <em>Repeat individualized assessment using isomorphic questions: a novel approach to increase peer discussion and learning</em> &mdash; available at
+            <a href="https://link.springer.com/article/10.1186/s41239-021-00257-y">
+               International Journal of Educational Technology in Higher Education.
+            </a>
+         </li>
+      </ol>
+      <hr />
+   </div>
+
+   <div id="documentation" class="container">
+      <h1>Creating Assessments</h1>
+      <p>
+         The source code for a sample individualized examination is <a href="samples/QHelper-MCQ-Sample.zip">here</a>.
+         First build <code>QHelperMcqSample.dll</code>, and then run the following command to generate
+         a sample (proof version of) examination.
+         <br />
+         <code>TestGen -lib QHelperMcqSample.dll -start 42 -paper 1 -proof Exam.template.html</code>
+      </p>
+      <p>
+         The source code for a sample individualized task sheet is
+         <a href="samples/QHelper-Arithmetic-Task.zip">here</a>.
+         Once you have built <code>QHelperArithmeticTask.dll</code>, you'd run
+         <code>TestGen</code> as above on the task sheet template.
+         Help is available using <code>TestGen -help</code>.
+      </p>
+      <h2>LMS Integration</h2>
+      <p>
+         Dividni can create question banks with individualized question variants for
+         importing to learning management systems (LMS) such as Canvas LMS.
+         Questions designed for use with <code>TestGen</code> can be turned into
+         question banks containing individualized question variants.
+         The command-line tool <code>QtiGen</code> generates a QTI ZIP file containing these
+         question banks. The ZIP file can then be imported into LMS.
+         For example, the following command generates a QTI ZIP file called <code>myQti.zip</code>
+         containing two question banks, each with 200 variants of the questions specified
+         in the two supplied C# files.
+         <br />
+         <code>QtiGen -variants 200 -id myQti -qtiVersion 2.1 CsharpTemplate03.cs CsharpTemplate02.cs</code>
+      </p>
+      <p>
+         <code>QtiGen</code> can also be used to create short answer and numerical questions.
+         These questions are automatically marked by LMS systems, just like the multiple-choice questions.
+         However, these questions do not have any answers to show. 
+         This means that the instructor only needs to supply the 
+         correct answers, and does not design any distractors.
+      </p>
+      <p>
+         <code>QtiGen</code> supports QTI versions 1.2 and 2.1.
+      </p>
+      <p>
+         Moodle LMS does not support QTI. To create individualized questions for Moodle,
+         Dividni has a tool called <code>MoodleGen</code>. This creates question banks
+         in the <em>Moodle XML format</em> which can be readily imported to Moodle and
+         Moodle-based platforms such as <em>CodeRunner</em>. For example, the following
+         command generates two Moodle question banks containing 200 variants of the questions
+         in the two C# files <code>CsharpTemplate03.cs</code> and 
+         <code>CsharpTemplate02.cs</code>:
+         <br />
+         <code>MoodleGen -variants 200 -bank myBank CsharpTemplate03.cs CsharpTemplate02.cs</code>
+      </p>
+      <p>
+         Both <code>QtiGen</code> and <code>MoodleGen</code> accept HTML files as parameters
+         in addition to C# files. The content of HTML files are converted to informative descriptions
+         in a separate question bank. Cover pages, academic integrity statements, and appendices
+         are examples of where such descriptive text might find use.
+      </p>
+      <p>
+         While multiple-choice questions work best for printed exam scripts, short answer
+         questions work best for online quizzes, as these are well-supported by LMS
+         and are auto-marked.
+      </p>
+      <p>
+         Short-answer questions offer two main advantages:
+      </p>
+      <ol>
+         <li>
+            An instructor does not provide distractors (i.e., incorrect answer choices)
+            as in the multiple-choice questions. This saves time.
+         </li>
+         <li>
+            A student not familiar with the topic has far less probability to score in
+            a short-answer question than in a multiple-choice question.
+         </li>
+      </ol>
+      <p>
+         There are two common types of short-answer questions used by LMS.
+      </p>
+      <ol>
+         <li>
+            <b>Numerical Questions</b>. Here the answer is numerical. The instructor
+            is expected to provide a range within which the student-supplied answer
+            is deemed correct. The upper and lower bounds of the range could be the same.
+         </li>
+         <li>
+            <b>Short-text Questions</b>. Here the answer is a short text.
+            The instructor is expected to provide at least one correct answer,
+            but could provide multiple. For instance, a question asking the first
+            name of Bond might provide the answers: James, Jimmy, Jimmie, and Jim.
+            Note that not all LMS are case-sensitive when it comes to marking
+            short-text questions. So please design questions taking this into
+            account.
+         </li>
+      </ol>
+      <p>
+          A step-by-step guide for importing quizzes into Canvas LMS is <a href="canvasimport">here</a>. 
+      </p>
+      <h2>Online Assessments</h2>
+      <p>
+         Online assignments currently work with Shibboleth's single sign-on to automatically
+         pick a student's ID. The ID is then used to randomize the questions in the assignment.
+      </p>
+      <p>
+         Documentation on online assessment is <a href="online/">here</a>.
+      </p>
+
+      <hr />
+   </div>
+   <footer id="touchbase" class="container text-center"></footer>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
