@@ -12,7 +12,7 @@
 
    <h1>Creating a paper-based assessment</h1>
    <p style="border: 2px solid blue; margin: 10px; padding: 10px; font-style: italic;">
-      The workshop's focus is on creating paper-based individualized examinations with isomorphic questions.
+      The tutorial's focus is on creating paper-based individualized examinations with isomorphic questions.
       Digital examinations are inherently insecure, whereas paper-based examinations offer a significantly higher level of security.
       The questions we author can still be exported to learning management systems or digital assessment platforms.
       For take-home assessments and practice exams, these digital formats can be convenient.
@@ -20,9 +20,6 @@
    <p>
       Here is a set of steps to guide you through creating paper-based assessments.
       While there are a number of steps, most involve one-off preparation (such as installation) and creating examples.
-   </p>
-   <p>
-      If you encounter an error or issue at any step, please stop and ask for help before moving on to the next step.
    </p>
    <hr />
 
@@ -95,7 +92,7 @@
          Navigate to the directory where the samples are: for example, <code>cd C:\Users\John\samples</code>
       </li>
       <li id="mcqTestGen">
-         Issue the command: <code>McqTestGen.exe -cover SampleCover.html -paperCount 2 ApplesAndOrangesQ.cs</code>
+         Issue the command: <code>McqTestGen.exe -cover SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs</code>
          The option <code>-cover</code> sets the cover page to the given page description in <code>SampleCover.html</code>, and
          the option <code>-paperCount</code> specifies that we are after two instances of the exam paper.
          A successful execution of the command will produce two files: <code>000000.html</code> and <code>000001.html</code> containing
@@ -111,7 +108,7 @@
       </li>
       <li>
          Use the following command to generate exam scripts with marked answers for proofing:
-         <code>McqTestGen.exe -proof -cover SampleCover.html -paperCount 2 ApplesAndOrangesQ.cs</code> where we have
+         <code>McqTestGen.exe -proof -cover SampleCover.html -paperCount 2ApplesAndOrangesMCQ.cs</code> where we have
          added an extra option <code>-proof</code>. The correct answers will be marked with a *** prefix.
       </li>
       <li>
@@ -126,7 +123,7 @@
       </li>
       <li>
          Lastly, issue the following command to generate exam scripts with <em>three</em> questions:
-         <code>McqTestGen.exe -cover SampleCover.html -paperCount 2 ApplesAndOrangesQ.cs PrancingPonyLocation.cs QuadraticAnswerQ.cs</code> 
+         <code>McqTestGen.exe -cover SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs QuadraticEqMCQ.cs</code> 
          where we have added two additional questions.
          View the generated exam scripts on a browser.
       </li>
