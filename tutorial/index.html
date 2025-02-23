@@ -122,10 +122,22 @@
          These <code>.txt</code> files are used during the grading process.
       </li>
       <li>
-         Lastly, issue the following command to generate exam scripts with <em>three</em> questions:
-         <code>McqTestGen.exe -cover SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs QuadraticEqMCQ.cs</code> 
+         Issue the following command to generate exam scripts with <em>three</em> questions:
+         <code>McqTestGen.exe -cover SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs QuadraticEqMCQ.cs</code>
          where we have added two additional questions.
          View the generated exam scripts on a browser.
+      </li>
+      <li>
+         Try a print preview of one of the exam papers you created in the previous step.
+         You will notice that each question appears on a separate page, which is not space-efficient.
+         To prevent automatic page breaks at the end of each question, use the <tt>-noPagebreak</tt> option as follows:
+         <code>McqTestGen.exe -noPagebreak -cover SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs QuadraticEqMCQ.cs</code>
+         However, using this option may result in page breaks occurring in the middle of some questions.
+         To control page breaks manually, you can insert <tt>.xx</tt> markers, as shown in the example below:
+         <code>McqTestGen.exe -noPagebreak -cover SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs .xx QuadraticEqMCQ.cs</code>
+         In this example, a page break is inserted after the first two questions.
+         You can add as many page break markers as needed.
+         Note that there is always an implied page break after the cover page.
       </li>
    </ol>
    <hr />
