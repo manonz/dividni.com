@@ -130,11 +130,11 @@
       <li>
          Try a print preview of one of the exam papers you created in the previous step.
          You will notice that each question appears on a separate page, which is not space-efficient.
-         To prevent automatic page breaks at the end of each question, use the <tt>-noPagebreak</tt> option as follows:
+         To prevent automatic page breaks at the end of each question, use the <code>-noPagebreak</code> option as follows:
          <code>McqTestGen.exe -noPagebreak -cover SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs QuadraticEqMCQ.cs</code>
          However, using this option may result in page breaks occurring in the middle of some questions.
-         To control page breaks manually, you can insert <tt>.xx</tt> markers, as shown in the example below:
-         <code>McqTestGen.exe -noPagebreak -cover SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs .xx QuadraticEqMCQ.cs</code>
+         To control page breaks manually, you can insert <code>.xx</code> markers, as shown in the example below:
+         <code>McqTestGen.exe -noPagebreak -cover SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs .xx QuadraticEqMCQ.cs</code>.
          In this example, a page break is inserted after the first two questions.
          You can add as many page break markers as needed.
          Note that there is always an implied page break after the cover page.
@@ -208,14 +208,21 @@
    <hr />
    <h1>Conducting exams</h1>
    <p>
-      To conduct exams, we need to print the HTML exam papers. We have scripts that can automatically convert 
+      To conduct exams, we need to print the HTML exam papers. We have scripts that can automatically convert
       these HTML exam papers to PDF and merge them into a single PDF file for easy distribution and printing.
    </p>
    <p>
-      Marking exams by hand, especially for a large class, is time-consuming and prone to errors. 
-      Therefore, it is advisable to have students fill in their answers on OMR sheets, which can then be 
-      graded automatically using <code>McqGrader</code>. The tool <code>OmrMaker</code> simplifies this process 
+      Marking exams by hand, especially for a large class, is time-consuming and prone to errors.
+      Therefore, it is advisable to have students fill in their answers on OMR sheets, which can then be
+      graded automatically using <code>McqGrader</code>. The tool <code>OmrMaker</code> simplifies this process
       by generating OMR sheets pre-filled with version numbers.
+   </p>
+   <p>
+      Suppose you created 200 versions of the exam paper using:
+      <code>McqTestGen.exe -startId 42 -paperCount 200 -noPagebreak -cover SampleCover.html ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs .xx QuadraticEqMCQ.cs</code>
+      You would then use
+      <code>OmrMaker.exe -startId 42 -paperCount 200</code>
+      to create 200 OMR answer sheets pre-filled with version IDs.
    </p>
 
 </body>
