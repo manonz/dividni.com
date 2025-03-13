@@ -92,8 +92,8 @@
          Navigate to the directory where the samples are: for example, <code>cd C:\Users\John\samples</code>
       </li>
       <li id="mcqTestGen">
-         Issue the command: <code>McqTestGen.exe -cover SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs</code>
-         The option <code>-cover</code> sets the cover page to the given page description in <code>SampleCover.html</code>, and
+         Issue the command: <code>McqTestGen.exe -prologue SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs</code>
+         The option <code>-prologue</code> sets the cover page to the given page description in <code>SampleCover.html</code>, and
          the option <code>-paperCount</code> specifies that we are after two instances of the exam paper.
          A successful execution of the command will produce two files: <code>000000.html</code> and <code>000001.html</code> containing
          two exam scripts. Double-click these two files to open them in a browser, and examine the generated exam scripts.
@@ -108,7 +108,7 @@
       </li>
       <li>
          Use the following command to generate exam scripts with marked answers for proofing:
-         <code>McqTestGen.exe -proof -cover SampleCover.html -paperCount 2ApplesAndOrangesMCQ.cs</code> where we have
+         <code>McqTestGen.exe -proof -prologue SampleCover.html -paperCount 2ApplesAndOrangesMCQ.cs</code> where we have
          added an extra option <code>-proof</code>. The correct answers will be marked with a *** prefix.
       </li>
       <li>
@@ -123,7 +123,7 @@
       </li>
       <li>
          Issue the following command to generate exam scripts with <em>three</em> questions:
-         <code>McqTestGen.exe -cover SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs QuadraticEqMCQ.cs</code>
+         <code>McqTestGen.exe -prologue SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs QuadraticEqMCQ.cs</code>
          where we have added two additional questions.
          View the generated exam scripts on a browser.
       </li>
@@ -131,18 +131,18 @@
          Try a print preview of one of the exam papers you created in the previous step.
          You will notice that each question appears on a separate page, which is not space-efficient.
          To prevent automatic page breaks at the end of each question, use the <code>-noPagebreak</code> option as follows:
-         <code>McqTestGen.exe -noPagebreak -cover SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs QuadraticEqMCQ.cs</code>
+         <code>McqTestGen.exe -noPagebreak -prologue SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs QuadraticEqMCQ.cs</code>
          However, using this option may result in page breaks occurring in the middle of some questions.
          To control page breaks manually, you can insert <code>.xx</code> markers, as shown in the example below:
-         <code>McqTestGen.exe -noPagebreak -cover SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs .xx QuadraticEqMCQ.cs</code>.
+         <code>McqTestGen.exe -noPagebreak -prologue SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs .xx QuadraticEqMCQ.cs</code>.
          In this example, a page break is inserted after the first two questions.
          You can add as many page break markers as needed.
       </li>
    </ol>
    <hr />
-   <h1>Creating a cover page</h1>
+   <h1>Creating a prologue page/section</h1>
    <p>
-      The cover page is authored in HTML. It uses start and end tags to format text and other content.
+      The prologue page/section is authored in HTML. It uses start and end tags to format text and other content.
       The start and end tags should match, and are case-sensitive.
       The first level heading is called <code>h1</code> and the start and end tags for this are &lt;h1&gt; and &lt;/h1&gt; respectively.
       Therefore, we would specify a first level heading in HTML as <span>&lt;h1&gt;My First Level Heading&lt;/h1&gt;</span>.
@@ -150,7 +150,7 @@
       A &lt;div&gt; groups several HTML elements (such as &lt;h1&gt; and &lt;p&gt;) together.
    </p>
    <p>
-      The cover page contains a single &lt;div&gt; which in turn can contain other arbitray HTML elements. Examine the
+      The prologue page/section contains a single &lt;div&gt; which in turn can contain other arbitray HTML elements. Examine the
       sample cover page <code>SampleCover.html</code> to see if that makes sense. You can try making content changes to
       this sample cover page. For instance, you may want change the university name to reflect your own university/institution,
       and also the course name to reflect something you teach.
@@ -162,7 +162,7 @@
       Please keep these rules in mind as you make minor adjustments to the cover page.
    </p>
    <p>
-      Major designs for exam cover pages are typically done one-off at the institution level, and proficient HTML coders can
+      Major designs for exam prologue page/section is typically done one-off at the institution level, and proficient HTML coders can
       do this for us.
    </p>
    <hr />
@@ -213,15 +213,15 @@
    <p>
       Marking exams by hand, especially for a large class, is time-consuming and prone to errors.
       Therefore, it is advisable to have students fill in their answers on OMR sheets, which can then be
-      graded automatically using <code>McqGrader</code>. The tool <code>OmrMaker</code> simplifies this process
-      by generating OMR sheets pre-filled with version numbers.
+      graded automatically using <code>McqGrader</code>. <code>McqTestGen.exe</code> can generate 
+      OMR sheets pre-filled with version numbers.
    </p>
    <p>
       Suppose you created 200 versions of the exam paper using:
-      <code>McqTestGen.exe -startId 42 -paperCount 200 -noPagebreak -cover SampleCover.html ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs .xx QuadraticEqMCQ.cs</code>.
-      You would then use
-      <code>OmrMaker.exe -startId 42 -paperCount 200</code>
-      to create 200 OMR answer sheets pre-filled with version IDs.
+      <code>McqTestGen.exe -startId 42 -paperCount 200 -noPagebreak -prologue SampleCover.html ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs .xx QuadraticEqMCQ.cs</code>.
+      You can use
+      <code>McqTestGen.exe -startId 42 -paperCount 200 -noPagebreak -prologue SampleCover.html -omr OmrTemplateSouthernHem.svg ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs .xx QuadraticEqMCQ.cs</code>
+      instead that appends OMR answer sheets pre-filled with version IDs to the exam papers.
    </p>
 
 </body>
