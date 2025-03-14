@@ -216,11 +216,10 @@
       graded automatically using <code>McqGrader</code>. 
    </p>
    <p>
-      <code>McqTestGen</code> can generate OMR sheets pre-filled with version numbers. Suppose you created 200 versions of the exam paper using:
-      <code>McqTestGen.exe -startId 42 -paperCount 200 -noPagebreak -prologue SampleCover.html ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs .xx QuadraticEqMCQ.cs</code>.
-      You can use
+      <code>McqTestGen</code> can generate OMR sheets pre-filled with version numbers. 
+      The command
       <code>McqTestGen.exe -startId 42 -paperCount 200 -noPagebreak -prologue SampleCover.html -omr OmrTemplateSouthernHem.svg ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs .xx QuadraticEqMCQ.cs</code>
-      instead that appends OMR answer sheets pre-filled with version IDs to the exam papers.
+      generates 200 exam scripts, each script containing OMR answer sheets pre-filled with version IDs.
       If you want to customize the OMR sheet, for instance, including your institution's logo, you can do so online at 
       <a href="https://dividni.online/OmrEditor/">https://dividni.online/OmrEditor/</a>.
    </p>
