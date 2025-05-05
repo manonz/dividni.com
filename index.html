@@ -805,7 +805,7 @@
       <p>
          Dividni can be installed on almost all platforms. The prerequisite is .NET core which is multi-platform.         
          Download and extract Dividni from this zip archive:
-         <a href="https://dividni.com/framework/Dividni-v25.05.02.zip">Dividni-v25.05.02.zip</a>. 
+         <a href="https://dividni.com/framework/Dividni-v25.05.06.zip">Dividni-v25.05.06.zip</a>. 
          The archive contains a set of commandline tools to create various individualized assessment types 
          (quizzes, printable multiple-choice examinations, tasksheets, and online assignments) as well as tools
          to mark student submissions.
@@ -830,7 +830,15 @@
    <div id="architecture" class="container">
       <h1>Architecture</h1>
       <p>
-         There are two supported architectural styles. The first one is based on
+         The primary architectural style is to form questions as a C# class adhering to a
+         given contract. These questions can then be exported to LMS (such as Canvas
+         and Moodle) or online examination platforms (such as Inspera).
+         The framework supports QTI (for Canvas, Sakai, and Inspera) and XML (for Moodle).
+         Additionally, if the questions are of MCQ type, they can be printed out as
+         a printed examination.
+      </p>
+      <p>
+         The second style is based on
          writing an HTML template and a number of associated macros. This style is
          useful for printed task sheets (as well as printed examinations that need certain
          advanced features).
@@ -840,26 +848,9 @@
          instructor-defined  macros, and outputs HTML assessment scripts where
          the macros have been substituted by the result of executing the macros.
       </p>
-      <div style="width: 90%; display: block; margin: auto; text-align: center;">
+      <div style="width: 80%; display: block; margin: auto; text-align: center;">
          <img style="width: 90%;" alt="Architecture" src="https://dividni.com//images/HtmlMacroProcessor.svg" />
       </div>
-      <p>
-         Use of HTML for the template allows the instructor to develop bulk
-         of the assessment such as cover page, appendices, and possibly parts
-         of question stems and/or answer options in HTML and supplement it
-         with the code in the macros. It also allows a limited preview,
-         without any macro substitution, of the template through any browser.
-         HTML assessment scripts will permit digital delivery if applicable,
-         or the scripts can be printed out for traditional paper-based assessment.
-      </p>
-      <p>
-         The second architectural style is to form questions as a C# class adhering to a
-         given contract. These questions can then be exported to LMS (such as Canvas
-         and Moodle) or online examination platforms (such as Inspera).
-         The framework supports QTI (for Canvas, Sakai, and Inspera) and XML (for Moodle).
-         Additionally, if the questions are of MCQ type, they can be printed out as
-         a printed examination.
-      </p>
    </div>
    <div id="papers" class="container">
       <h1>Papers</h1>
