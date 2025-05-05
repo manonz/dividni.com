@@ -811,7 +811,7 @@
          to mark student submissions.
       </p>
       <p style="font-size: small">
-         If you are after a version Dividni for .NET framework 4.8, please use <a href="https://dividni.com/framework/DividniSetup-v21.07.15.msi">DividniSetup-v21.07.15.msi</a>. This lacks a number of features the current Dividni has.
+         If you are after a version of Dividni for .NET framework 4.8, please use <a href="https://dividni.com/framework/DividniSetup-v21.07.15.msi">DividniSetup-v21.07.15.msi</a>. This lacks a number of features the current Dividni has.
       <h6>Installation-Free Dividni</h1>
       <p>
          Individualized online quizzes can be created installation-free using our online application:
@@ -946,7 +946,16 @@
          <code>MoodleGen -variants 200 -bank myBank CsharpTemplate03.cs CsharpTemplate02.cs</code>
       </p>
       <p>
-         Both <code>QtiGen</code> and <code>MoodleGen</code> accept HTML files as parameters
+         Sakai LMS supports QTI with some quirks. To generate Sakai-compatible question banks,
+         one will need to use a tool called <code>SakaiQtiGen</code>. For example, the following
+         command generates two Sakai question banks containing 200 variants of the questions
+         in the two C# files <code>CsharpTemplate03.cs</code> and 
+         <code>CsharpTemplate02.cs</code>:
+         <br />
+         <code>SakaiQtiGen -variants 200 -bank myBank CsharpTemplate03.cs CsharpTemplate02.cs</code>
+      </p>
+      <p>
+         The tools <code>QtiGen</code> and <code>MoodleGen</code> accept HTML files as parameters
          in addition to C# files. The content of HTML files are converted to informative descriptions
          in a separate question bank. Cover pages, academic integrity statements, and appendices
          are examples of where such descriptive text might find use.
