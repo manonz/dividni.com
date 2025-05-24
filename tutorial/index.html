@@ -213,6 +213,13 @@
          <code>ApplesAndOrangesMCQx2.cs</code>. Try replacing <code>ApplesAndOrangesMCQ.cs</code> with 
          <code>ApplesAndOrangesMCQx2.cs</code> in step 10 above, and view the generated exam paper.
       </li>
+      <li>
+         Styling the exam papers. This is possible via an external stylesheet. For example, try the following
+         command that changes the font used in the exam paper:
+         <code>McqTestGen.exe -startId 42 -paperCount 1 -prologue SampleCover.html -omr OmrTemplateSouthernHem.svg 
+            -css exam.css PrancingPonyLocationMCQ.cs ApplesAndOrangesMCQ.cs .xx QuadraticEqMCQ.cs .\NationalCapitalsMCQ.cs</code>
+         Here we use the option <code>-css</code> to point to the external stylesheet <code>exam.css</code>.
+      </li>
    </ol>
    <hr />
    <h1>Conducting exams</h1>
