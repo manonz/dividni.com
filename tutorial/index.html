@@ -122,15 +122,15 @@
       </li>
       <li>
          Issue the following command to generate exam scripts with <em>three</em> questions:
-         <code>McqTestGen.exe -prologue SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs QuadraticEqMCQ.cs</code>
+         <code>McqTestGen.exe -prologue SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs</code>
          where we have added two additional questions.
          View the generated exam scripts on a browser.
       </li>
       <li>
          Try a print preview of one of the exam papers you created in the previous step.
          You can insert <code>.xx</code> markers, as shown in the example below to add page breaks where you want:
-         <code>McqTestGen.exe -prologue SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs .xx QuadraticEqMCQ.cs</code>.
-         In this example, a page break is inserted after the first two questions.
+         <code>McqTestGen.exe -prologue SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs .xx PrancingPonyLocationMCQ.cs</code>.
+         In this example, a page break is inserted after the first question.
          You can add as many page break markers as needed.
       </li>
       <li>
@@ -139,7 +139,7 @@
          graded automatically using <code>McqGrader</code>. 
          <code>McqTestGen</code> can generate OMR sheets pre-filled with version numbers. 
          Try the command:
-         <code>McqTestGen.exe -startId 42 -paperCount 200 -prologue SampleCover.html -omr OmrTemplateSouthernHem.svg ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs .xx QuadraticEqMCQ.cs</code>
+         <code>McqTestGen.exe -startId 42 -paperCount 200 -prologue SampleCover.html -omr OmrTemplateSouthernHem.svg ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs</code>
          This generates 200 exam scripts, each script containing OMR answer sheets pre-filled with version IDs.
          <br/>
          We can customize the OMR sheet, for instance, including our own institution's logo. We can do this online at 
@@ -216,6 +216,12 @@
          use of these if we don't have our own.
       </li>
       <li>
+         Including math. This is done by using either KaTeX or MathJax in the HTML, both of which
+         allow us to insert and use standard LaTeX in HTML. To enable the use of one of these two
+         math engines use the option <code>-math katex</code> or the option <code>-math mathjax</code>.
+         For example,try the following: <code>McqTestGen.exe -startId 42 -paperCount 2 -prologue SampleCover.html -omr OmrTemplateSouthernHem.svg -css exam.css -math katex PrancingPonyLocationMCQ.cs ApplesAndOrangesMCQ.cs QuadraticEqMCQ.cs NationalCapitalsMCQ.cs .xx ApplesAndOrangesMCQx2.cs</code>
+      </li>
+      <li>
          Including a common instruction for a group of questions is possible, and an example is provided in 
          <code>ApplesAndOrangesMCQx2.cs</code>. Try replacing <code>ApplesAndOrangesMCQ.cs</code> with 
          <code>ApplesAndOrangesMCQx2.cs</code> in step 10 above, and view the generated exam paper.
@@ -224,7 +230,7 @@
          Styling the exam papers. This is possible via an external stylesheet. For example, try the following
          command that changes the font used in the exam paper:
          <code>McqTestGen.exe -startId 42 -paperCount 1 -prologue SampleCover.html -omr OmrTemplateSouthernHem.svg 
-            -css exam.css PrancingPonyLocationMCQ.cs ApplesAndOrangesMCQ.cs .xx QuadraticEqMCQ.cs .\NationalCapitalsMCQ.cs</code>
+            -css exam.css PrancingPonyLocationMCQ.cs ApplesAndOrangesMCQ.cs .xx NationalCapitalsMCQ.cs</code>
          Here we use the option <code>-css</code> to point to the external stylesheet <code>exam.css</code>.
       </li>
    </ol>
