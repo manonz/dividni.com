@@ -30,15 +30,28 @@
             example.style.display = "none";
          }
       }
-
-
-      /**/</script>
+   </script>
    <style>
-      ol.qlist > li.q { margin: 2em 0; }
+      ol.qlist > li.q {
+         page-break-inside: avoid;
+         break-inside: avoid;
+         margin-left: 1em;
+         margin-right: 1em;
+         padding-top: 1em;
+      }
 
-      li > ol.a { list-style: upper-alpha; }
+         ol.qlist > li.q > ol.xyz {
+            list-style-type: upper-alpha;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            padding-left: 2.5em;
+         }
 
-      .xyz { padding-top: 1em; padding-bottom: 1em; }
+         ol.qlist > li.q > ol.qanswers {
+            list-style-type: upper-alpha;
+            margin-top: 1em;
+            padding-left: 2.5em;
+         }
    </style>
 </head>
 <body>
