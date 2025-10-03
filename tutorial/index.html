@@ -2,25 +2,39 @@
 <head>
    <title>Creating a paper-based assessment</title>
    <style>
-      body { font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
-      h1, h2 { color: black; }
-      hr { width: 50%; text-align: center; }
-      code { font-size: larger; }
+      body {
+         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+
+      h1, h2 {
+         color: black;
+      }
+
+      hr {
+         width: 50%;
+         text-align: center;
+      }
+
+      code {
+         font-size: larger;
+      }
    </style>
 </head>
 <body>
 
    <h1>Creating a paper-based assessment</h1>
    <p style="border: 2px solid black; margin: 10px; padding: 10px; font-style: italic;">
-      The tutorial's focus is on creating paper-based individualized examinations with isomorphic questions.
-      Digital examinations are inherently insecure, whereas paper-based examinations offer a significantly higher level of security.
-      The questions we author can still be exported to learning management systems or digital assessment platforms.
-      For take-home assessments and practice exams, these digital formats can be convenient.
+      This tutorial explains how to create paper-based individualized examinations with isomorphic questions.
+      Digital examinations are inherently insecure, whereas paper-based assessments offer a significantly higher level of security.
+      The same authored questions can still be exported to learning management systems or digital platforms for practice or take-home use,
+      but for high-stakes assessments, paper is preferable.
    </p>
+
    <p>
-      Here is a set of steps to guide you through creating paper-based assessments.
-      While there are a number of steps, most involve one-off preparation (such as installation) and creating examples.
+      The steps below guide you through setup and exam creation.
+      While there are several steps, most involve one-off preparation (such as installation and sample downloads).
    </p>
+
    <hr />
 
    <h1>One-off preparation</h1>
@@ -28,213 +42,188 @@
 
    <ol>
       <li>
-         Download .NET SDK from Microsoft: <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">https://dotnet.microsoft.com/en-us/download/dotnet/8.0</a>.
-         We will use version 8 (LTS: long-term support). Please pick the installer that supports your operating system and platform.
+         Download and install the .NET SDK from Microsoft:
+         <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">https://dotnet.microsoft.com/en-us/download/dotnet/8.0</a>.
+         We will use version 8 (LTS: long-term support). Choose the installer for your operating system (Windows, MacOS, or Linux).
       </li>
       <li>
-         Open a console window (PowerShell on Windows, Terminal on MacOS, or bash on Linux), and type in the command: <code>dotnet --version</code>.
-         If the .NET installation was successful, you will get a response such as <code>8.0.404</code> in the command line.
+         Open a console window:
+         <ul>
+            <li>Windows: PowerShell</li>
+            <li>MacOS: Terminal</li>
+            <li>Linux: your shell (e.g., bash or zsh)</li>
+         </ul>
+         Then type: <code>dotnet --version</code>.
+         If the installation succeeded, you will see a version number such as <code>8.0.404</code>.
       </li>
    </ol>
+
    <h2>Installing the Dividni framework</h2>
-   <p>
-      The instructions below are for Windows. A similar process can be followed for MacOS and Linux.
-   </p>
    <ol>
+      <li>Download the latest <a href="https://dividni.com/latest">Dividni</a> framework.</li>
       <li>
-         Download the current <a href="https://dividni.com/latest">Dividni</a> framework.
+         Unzip the contents into a convenient location:
+         <ul>
+            <li>Windows: for example <code>C:\Dividni</code></li>
+            <li>MacOS/Linux: for example <code>~/Dividni</code></li>
+         </ul>
       </li>
       <li>
-         Unzip the content into <code>C:\Dividni</code>.
+         Add the Dividni folder to your PATH:
+         <ul>
+            <li>
+               Windows:
+               Search for <em>Advanced system settings</em> → "View Advanced system settings" → "Environment Variables..." → edit "Path" → click "New" → enter <code>C:\Dividni</code>.
+               Confirm with <code>OK</code> until all windows are closed.
+            </li>
+            <li>
+               MacOS/Linux:
+               Edit your shell profile (<code>~/.zshrc</code> or <code>~/.bashrc</code>) and add:
+               <code>export PATH="$HOME/Dividni:$PATH"</code>
+               Then reload with <code>source ~/.zshrc</code> (or <code>source ~/.bashrc</code>).
+            </li>
+         </ul>
       </li>
       <li>
-         Add to your PATH the location where you unzipped Dividni. On Windows, this can be achieved by
-         typing <span style="font-style: italic;">Advanced system settings</span> in the
-         Windows search bar, clicking on "View Advanced system settings",
-         clicking on "Environment Variables...", double-clicking on "Path", clicking "New", and typing in <code>C:\Dividni</code>.
-         Click a series of <code>Ok</code> to exit
-         all windows.
-      </li>
-      <li>
-         Open a console window (PowerShell on Windows, Terminal on MacOS, or bash on Linux), and type in the
-         command: <code>dotnet C:\Dividni\McqTestGen.dll -version</code>. The command can be simplified to
-         <code>McqTestGen.exe -version</code> on Windows.
-         If the installation was successful, you will get a response such as <code>McqTestGen version 24.11.12</code>
-         in the command line.
+         Verify the installation: open a console and run
+         <code>dotnet ~/Dividni/McqTestGen.dll -version</code> (MacOS/Linux) or
+         <code>dotnet C:\Dividni\McqTestGen.dll -version</code> (Windows).
+         On Windows, you may instead run <code>McqTestGen.exe -version</code> once PATH is set.
+         A successful installation prints something like <code>McqTestGen version 24.11.12</code>.
       </li>
    </ol>
+
    <hr />
-   <h1>Creating our first exam paper</h1>
+   <h1>Creating your first exam paper</h1>
+
    <p>
-      An exam paper requires two components: (1) a cover page (or prologue) containing details of the exam as well as instructions for students, and (2) questions.
+      An exam paper has two parts: (1) a cover page (prologue) with exam details and instructions, and (2) the questions.
+      Sample files are provided so you can try the workflow before creating your own.
+      Download them here: <a href="https://dividni.com/tutorial/samples.zip">https://dividni.com/tutorial/samples.zip</a>
+      and extract to a folder such as:
    </p>
+   <ul>
+      <li>Windows: <code>C:\Users\John\samples</code></li>
+      <li>MacOS/Linux: <code>~/samples</code></li>
+   </ul>
+
    <p>
-      We have provided a sample cover page and sample questions to get started before creating your own. Please download these
-      from <a href="https://dividni.com/tutorial/samples.zip">https://dividni.com/tutorial/samples.zip</a>, and extract them to a suitable
-      folder such as <code>C:\Users\John\samples</code>.
+      The <code>McqTestGen</code> tool (part of Dividni) generates multiple versions of an exam paper.
+      Each student receives a unique but isomorphic script.
    </p>
-   <p>
-      Recall that we programmatically create several instances of the exam paper - in fact, as many instances as there are students.
-      The cover page is an HTML document while each question is a C# document (C# program, that is). We don't need to worry about the
-      details at this point.
-   </p>
-   <p>
-      The tool <code>McqTestGen</code> (part of the Dividni framework) is used to generate multiple instances of an exam paper.
-   </p>
-   <p>
-      The instructions below are for Windows. A similar process can be followed for MacOS and Linux.
-   </p>
+
    <ol>
+      <li>Open a console window.</li>
       <li>
-         Open a console window (PowerShell on Windows, Terminal on MacOS, or bash on Linux).
-      </li>
-      <li>
-         Navigate to the directory where the samples are: for example, <code>cd C:\Users\John\samples</code>
+         Navigate to the samples folder:
+         <code>cd C:\Users\John\samples</code> (Windows)
+         or <code>cd ~/samples</code> (MacOS/Linux).
       </li>
       <li id="mcqTestGen">
-         Issue the command: <code>McqTestGen.exe -prologue SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs</code>
-         The option <code>-prologue</code> sets the cover page to the given page description in <code>SampleCover.html</code>, and
-         the option <code>-paperCount</code> specifies that we are after two instances of the exam paper.
-         A successful execution of the command will produce two files: <code>000000.html</code> and <code>000001.html</code> containing
-         two exam scripts. Double-click these two files to open them in a browser, and examine the generated exam scripts.
-         Note the differences between the questions in the two exam scripts and the version number included in each scripts. The last two digits in the version number are checksum digits,
-         while the rest of the digits contain the actual version.
+         Run the command:
+         <code>McqTestGen.exe -prologue SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs</code> (Windows)
+         or
+         <code>dotnet ~/Dividni/McqTestGen.dll -prologue SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs</code> (MacOS/Linux).
+         <br />
+         This produces two exam scripts: <code>0000000000.html</code> and <code>0000000001.html</code>.
+         Open them in a browser and notice that questions differ slightly between versions.
+         The version number (with checksum digits) is shown at the top of each script.
+      </li>
+      <li>Increase <code>-paperCount</code> (e.g., to 4) and check the additional scripts.</li>
+      <li>Add <code>-startID</code> to set the starting script ID, e.g. <code>-startID 42</code>.</li>
+      <li>
+         To generate proof copies with answers marked:
+         <code>McqTestGen.exe -proof -prologue SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs</code> (Windows)
+         or
+         <code>dotnet ~/Dividni/McqTestGen.dll -proof -prologue SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs</code> (MacOS/Linux).
       </li>
       <li>
-         Increase the <code>-paperCount</code> value (e.g., to 4) and examine the additional exam scripts generated.
+         Alongside <code>.html</code> scripts, <code>.txt</code> answer files are generated.
+         Open <code>0000000000.txt</code> or <code>0000000001.txt</code> to see the tab-separated format:
+         question number, answer code, and mark.
+         (Answer codes: 1=A, 2=B, 4=C, 8=D, 16=E).
       </li>
       <li>
-         You can try adding the option <code>-startID</code> with a value, such as 42, to specify the starting version of the script.
+         Add more questions:
+         <code>... NationalCapitalsMCQ.cs PrancingPonyLocationMCQ.cs</code>
       </li>
       <li>
-         Use the following command to generate exam scripts with marked answers for proofing:
-         <code>McqTestGen.exe -proof -prologue SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs</code> where we have
-         added an extra option <code>-proof</code>. The correct answers will be marked with a *** prefix.
+         Insert page breaks by adding <code>.xx</code> between questions:
+         <code>... NationalCapitalsMCQ.cs .xx PrancingPonyLocationMCQ.cs</code>.
       </li>
       <li>
-         In addition to the <code>.html</code> files, <code>McqTestGen</code>
-         generates <code>.txt</code> files that contain the answer codes (which can later be used to auto-grade student responses).
-         Open the answer files <code>000000.txt</code> and <code>000001.txt</code> to examine their content.
-         The answer files
-         have three tab-separated columns: the first value is the question number, the second is the answer code, and third is the
-         mark associated with the question.
-         The answer code works as follows: 1 is option A, 2 is option B, 4 is option C, 8 is option D, and 16 is option E.
-         These <code>.txt</code> files are used during the grading process.
-      </li>
-      <li>
-         Issue the following command to generate exam scripts with <em>three</em> questions:
-         <code>McqTestGen.exe -prologue SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs</code>
-         where we have added two additional questions.
-         View the generated exam scripts on a browser.
-      </li>
-      <li>
-         Try a print preview of one of the exam papers you created in the previous step.
-         You can insert <code>.xx</code> markers, as shown in the example below to add page breaks where you want:
-         <code>McqTestGen.exe -prologue SampleCover.html -paperCount 2 ApplesAndOrangesMCQ.cs .xx PrancingPonyLocationMCQ.cs</code>.
-         In this example, a page break is inserted after the first question.
-         You can add as many page break markers as needed.
-      </li>
-      <li>
-         Marking exams by hand, especially for a large class, is time-consuming and prone to errors.
-         Therefore, it is advisable to have students fill in their answers on OMR sheets, which can then be
-         graded automatically using <code>McqGrader</code>. 
-         <code>McqTestGen</code> can generate OMR sheets pre-filled with version numbers. 
-         Try the command:
-         <code>McqTestGen.exe -startId 42 -paperCount 200 -prologue SampleCover.html -omr OmrTemplateSouthernHem.svg ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs</code>
-         This generates 200 exam scripts, each script containing OMR answer sheets pre-filled with version IDs.
-         <br/>
-         We can customize the OMR sheet, for instance, including our own institution's logo. We can do this online at 
-         <a href="https://dividni.online/OmrEditor/">https://dividni.online/OmrEditor/</a>.
+         Generate 200 scripts with OMR sheets (pre-filled with version IDs):
+         <code>McqTestGen.exe -startId 42 -paperCount 200 -prologue SampleCover.html -omr OmrTemplateSouthernHem.svg ApplesAndOrangesMCQ.cs NationalCapitalsMCQ.cs PrancingPonyLocationMCQ.cs</code> (Windows)
+         or
+         <code>dotnet ~/Dividni/McqTestGen.dll -startId 42 -paperCount 200 -prologue SampleCover.html -omr OmrTemplateSouthernHem.svg ApplesAndOrangesMCQ.cs PrancingPonyLocationMCQ.cs</code> (MacOS/Linux).
       </li>
    </ol>
-   <hr />
-   <h1>Creating a prologue page/section</h1>
-   <p>
-      The prologue page/section is authored in HTML. It uses start and end tags to format text and other content.
-      The start and end tags should match, and are case-sensitive.
-      The first level heading is called <code>h1</code> and the start and end tags for this are &lt;h1&gt; and &lt;/h1&gt; respectively.
-      Therefore, we would specify a first level heading in HTML as <span>&lt;h1&gt;My First Level Heading&lt;/h1&gt;</span>.
-      Similarly, a paragraph is <code>p</code> and the start and end tags for this are &lt;p&gt; and &lt;/p&gt; respectively.
-      A &lt;div&gt; groups several HTML elements (such as &lt;h1&gt; and &lt;p&gt;) together.
-   </p>
-   <p>
-      The prologue page/section contains a single &lt;div&gt; which in turn can contain other arbitray HTML elements. Examine the
-      sample cover page <code>SampleCover.html</code> to see if that makes sense. You can try making content changes to
-      this sample cover page. For instance, you may want change the university name to reflect your own university/institution,
-      and also the course name to reflect something you teach.
-   </p>
-   <p>
-      You cannot have an ampersand (&amp;) character in HTML: this has to be coded as <code>&amp;amp;</code>. Similarly,
-      the less-than sign (&lt;) has to be coded as <code>&amp;lt;</code> and the greater-than sign (&gt;) has to be
-      coded as <code>&amp;gt;</code>. Recall that the start and end tags should match, and are case-sensitive.
-      Please keep these rules in mind as you make minor adjustments to the cover page.
-   </p>
-   <p>
-      Major designs for exam prologue page/section is typically done one-off at the institution level, and proficient HTML coders can
-      do this for us.
-   </p>
    <div style="background-color: lightgray; border: 2px solid black; padding: 5px 5px 5px 5px;">
       If you are at the University of Auckland, please download the UoA sample pack
       from <a href="https://dividni.com/tutorial/samplesUoA.zip">https://dividni.com/tutorial/samplesUoA.zip</a>
-      which contains a UoA-specific cover page and OMR sheet. 
+      which contains a UoA-specific cover page and OMR sheet.
       Please read the <em>_Readme.txt</em> file therein.
    </div>
    <p></p>
    <hr />
    <h1>Creating a question</h1>
    <p>
-      Proficient C# programmers can use C# to create questions. Most of us are not likely to be in this category.
-      However, we have the means to create these C# questions online without having to program.
-      <a href="https://dividni.online">Dividni.online</a> allows us to create such questions online.
+      Proficient C# programmers can write questions directly in C#.
+      However, most instructors will prefer the online editor at
+      <a href="https://dividni.online">Dividni.online</a>, which allows you to create questions without coding.
    </p>
    <ol>
       <li>
-         Static answer banks. These are the easiest to create. We need to write the question, specify a set of
-         correct answers (more the merrier), and specify a set of incorrect answers (again, more the merrier).
-         We can preview the question (and all the answer options), and once we are happy we can download a C# version
-         of the question to use with <code>McqTestGen</code>.
+         <b>Static answer banks:</b> Write the question, specify correct answers (the more the better), and add incorrect distractors.
+         You can preview the question and, once satisfied, download the C# version to use with <code>McqTestGen</code>.
       </li>
       <li>
-         Parametric variants. These are more complex and allow for dynamic variations in questions.
+         <b>Parametric variants:</b> More advanced — these allow for dynamic variations in question data.
       </li>
       <li>
-         Create a few questions that are of value in a course you teach.
+         Create a few practice questions relevant to your course.
       </li>
    </ol>
    <p>
-      Once the question you created looks satisfactory, you can copy the C# code for
-      the question to your local computer and use this with <code>McqTestGen</code> to create exam papers.
-      See <a href="#mcqTestGen">point 3</a> of section <em>Creating our first exam paper</em>.
+      Once your question looks satisfactory, copy the downloaded C# code to your local machine.
+      Use it with <code>McqTestGen</code> as shown earlier (see <a href="#mcqTestGen">point 3</a> of “Creating your first exam paper”).
    </p>
+
    <h2>Slightly advanced topics</h2>
    <ol>
       <li>
-         Including images. We can use the &lt;img&gt; tag in HTML to do this, for instance: <code>&lt;img src='hello.png' style='width: 75%;' alt='pix'/&gt;</code>
+         <b>Including images:</b> Use the HTML <code>&lt;img&gt;</code> tag.
+         Example: <code>&lt;img src='hello.png' style='width: 75%;' alt='pix'/&gt;</code>
       </li>
       <li>
-         Including math. This is done by using either KaTeX or MathJax in the HTML, both of which
-         allow us to insert and use standard LaTeX in HTML. To enable the use of one of these two
-         math engines use the option <code>-math katex</code> or the option <code>-math mathjax</code>.
-         For example, try the following: <code>McqTestGen.exe -startId 42 -paperCount 2 -prologue SampleCover.html -omr OmrTemplateSouthernHem.svg -css exam.css -math katex PrancingPonyLocationMCQ.cs ApplesAndOrangesMCQ.cs QuadraticEqMCQ.cs NationalCapitalsMCQ.cs .xx ApplesAndOrangesMCQx2.cs</code>
+         <b>Including math:</b> Enable KaTeX or MathJax to write LaTeX in HTML.
+         Use <code>-math katex</code> or <code>-math mathjax</code>.
+         Example (Windows):
+         <code>McqTestGen.exe -math katex -paperCount 2 -prologue SampleCover.html ApplesAndOrangesMCQ.cs QuadraticEqMCQ.cs</code>
+         Example (MacOS/Linux):
+         <code>dotnet ~/Dividni/McqTestGen.dll -math katex -paperCount 2 -prologue SampleCover.html ApplesAndOrangesMCQ.cs QuadraticEqMCQ.cs</code>
       </li>
       <li>
-         Including a common instruction for a group of questions is possible, and an example is provided in 
-         <code>ApplesAndOrangesMCQx2.cs</code>. Try replacing <code>ApplesAndOrangesMCQ.cs</code> with 
-         <code>ApplesAndOrangesMCQx2.cs</code> in step 10 above, and view the generated exam paper.
+         <b>Common instructions for a group of questions:</b> See <code>ApplesAndOrangesMCQx2.cs</code>.
+         Replace <code>ApplesAndOrangesMCQ.cs</code> with <code>ApplesAndOrangesMCQx2.cs</code> to try it.
       </li>
       <li>
-         Styling the exam papers. This is possible via an external stylesheet. For example, try the following
-         command that changes the font used in the exam paper:
-         <code>McqTestGen.exe -startId 42 -paperCount 1 -prologue SampleCover.html -omr OmrTemplateSouthernHem.svg 
-            -css exam.css PrancingPonyLocationMCQ.cs ApplesAndOrangesMCQ.cs .xx NationalCapitalsMCQ.cs</code>
-         Here we use the option <code>-css</code> to point to the external stylesheet <code>exam.css</code>.
+         <b>Styling exam papers:</b> Use a stylesheet with <code>-css exam.css</code>.
+         Example:
+         <code>McqTestGen.exe -css exam.css ...</code> (Windows)
+         <code>dotnet ~/Dividni/McqTestGen.dll -css exam.css ...</code> (MacOS/Linux)
       </li>
    </ol>
+
    <hr />
    <h1>Conducting exams</h1>
    <p>
-      To conduct exams, we need to print the HTML exam papers. We have scripts that can automatically convert
-      these HTML exam papers to PDF and merge them into a single PDF file for easy distribution and printing.
+      To conduct exams, print the generated HTML exam papers.
+      Optionally, you can convert them to PDF and merge into a single file for
+      easy distribution to printers.
+      You can use tools
+      such as <a href="https://github.com/Sicos1977/ChromiumHtmlToPdf">ChromiumHtmlToPdf</a>
+      to batch-convert HTML to PDF.
    </p>
 
 </body>
