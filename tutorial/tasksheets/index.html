@@ -1,0 +1,152 @@
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>
+      Creating tasksheets
+   </title>
+   <style>
+      body {
+         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+
+      h1, h2 {
+         color: black;
+      }
+
+      hr {
+         width: 50%;
+         text-align: center;
+      }
+
+      code {
+         font-size: larger;
+      }
+   </style>
+</head>
+<body>
+
+   <h1>Creating tasksheets</h1>
+   <p style="border: 2px solid black; margin: 10px; padding: 10px; font-style: italic;">
+      This tutorial explains how to create paper-based tasksheets with isomorphic questions.
+      Paper-based assessments offer better spatial thinking opportunities and reduce digital distractions:
+      Writing, sketching, crossing out, circling—paper supports messy thinking. For problem-solving, that
+      physical layout helps memory and understanding.
+      Paper also makes effort visible: when peers are writing, we feel nudged to write too.
+   </p>
+
+   <p>
+      The steps below guide you through setup and creation of paper-based tasksheets.
+      While there are several steps, most involve one-off preparation (such as installation and sample downloads).
+   </p>
+
+   <hr>
+
+   <h1>One-off preparation</h1>
+   <h2>Installing the .NET SDK</h2>
+
+   <ol>
+      <li>
+         Download and install the .NET SDK from Microsoft:
+         <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">https://dotnet.microsoft.com/en-us/download/dotnet/8.0</a>.
+         We will use version 8 (LTS: long-term support). Choose the installer for your operating system (Windows, MacOS, or Linux).
+      </li>
+      <li>
+         Open a console window:
+         <ul>
+            <li>Windows: PowerShell</li>
+            <li>macOS: Terminal</li>
+            <li>Linux: your shell (e.g., bash or zsh)</li>
+         </ul>
+         Then type: <code>dotnet --version</code>.
+         If the installation succeeded, you will see a version number such as <code>8.0.404</code>.
+      </li>
+   </ol>
+
+   <h2>Installing the Dividni framework</h2>
+   <ol>
+      <li>Download the latest <a href="https://dividni.com/latest">Dividni</a> framework.</li>
+      <li>
+         Unzip the contents into a convenient location:
+         <ul>
+            <li>Windows: for example <code>C:\Dividni</code></li>
+            <li>macOS/Linux: for example <code>~/Dividni</code></li>
+         </ul>
+      </li>
+      <li>
+         (Windows only) Add the Dividni folder to your PATH:
+         <ul>
+            <li>
+               Windows:
+               Search for <em>Advanced system settings</em> → "View Advanced system settings" → "Environment Variables..." → edit "Path" → click "New" → enter <code>C:\Dividni</code>.
+               Confirm with <code>OK</code> until all windows are closed.
+            </li>
+         </ul>
+      </li>
+      <li>
+         Verify the installation: open a console and run
+         <code>dotnet ~/Dividni/McqTestGen.dll -version</code> (MacOS/Linux) or
+         <code>dotnet C:\Dividni\McqTestGen.dll -version</code> (Windows).
+         On Windows, you may instead run <code>McqTestGen.exe -version</code> once PATH is set.
+         A successful installation prints something like <code>McqTestGen version 26.01.12</code>.
+      </li>
+   </ol>
+
+   <hr>
+   <h1>Creating your sample tasksheet</h1>
+   <p>
+      Download the sample project files contained in <a href="QHelperArithmeticTask.zip">QHelperArithmeticTask.zip</a>,
+      unzip them into a convenient folder, and build the project using the command <code>dotnet build</code> in this folder
+      from a terminal or PowerShell window.
+      On Windows, you may also open the solution file <code>QHelperArithmeticTask.sln</code> in Visual Studio and build it there.
+   </p>
+   <section>
+      <h2>Navigate to the Build Output Directory</h2>
+      <p>
+         Open a terminal (macOS / Linux) or PowerShell (Windows), then change into the
+         build output directory.
+      </p>
+
+      <h4>Windows (PowerShell)</h4>
+      <pre><code>cd bin\Debug\net8.0</code></pre>
+
+      <h4>macOS / Linux</h4>
+      <pre><code>cd bin/Debug/net8.0</code></pre>
+
+      <p>
+         If you are using a release build, replace <code>Debug</code> with
+         <code>Release</code>.
+      </p>
+
+      <h2>Generate the Tasksheets (Without Answers)</h2>
+      <p>
+         Run the following command to generate 20 paper-based tasksheets:
+      </p>
+
+      <h4>Windows</h4>
+      <pre><code>TestGen.exe -paperCount 20 -library QHelperArithmeticTask.dll Arithmetic.Task.html</code></pre>
+
+      <h4>macOS / Linux</h4>
+      <pre><code>dotnet TestGen.dll -paperCount 20 -library QHelperArithmeticTask.dll Arithmetic.Task.html</code></pre>
+
+      <h2>Generate Tasksheets with Answers (Proof Mode)</h2>
+      <p>
+         To generate tasksheets with answers included, use the
+         <code>-proof</code> option. This makes any code within the
+         <code>cws_code_a</code> class visible.
+      </p>
+
+      <h4>Windows</h4>
+      <pre><code>TestGen.exe -paperCount 20 -library QHelperArithmeticTask.dll -proof Arithmetic.Task.html</code></pre>
+
+      <h4>macOS / Linux</h4>
+      <pre><code>dotnet TestGen.dll -paperCount 20 -library QHelperArithmeticTask.dll -proof Arithmetic.Task.html</code></pre>
+
+      <h2>Optional: Convert HTML to PDF</h2>
+      <p>
+         If required, convert the generated HTML tasksheets to PDF using
+         <strong>ChromiumHtmlToPdf</strong> or another HTML-to-PDF conversion tool.
+      </p>
+   </section>
+
+</body>
+</html>
