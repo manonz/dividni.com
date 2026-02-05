@@ -43,8 +43,8 @@
    <ol>
       <li>
          Download and install the .NET SDK from Microsoft:
-         <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">https://dotnet.microsoft.com/en-us/download/dotnet/8.0</a>.
-         We will use version 8 (LTS: long-term support). Choose the installer for your operating system (Windows, MacOS, or Linux).
+         <a href="https://dotnet.microsoft.com/en-us/download/dotnet/10.0">https://dotnet.microsoft.com/en-us/download/dotnet/10.0</a>.
+         We will use version 10 (LTS: long-term support). Choose the installer for your operating system (Windows, MacOS, or Linux).
       </li>
       <li>
          Open a console window:
@@ -164,24 +164,13 @@
    <h1>Creating a question</h1>
    <p>
       Proficient C# programmers can write questions directly in C#.
-      However, most instructors will prefer the online editor at
-      <a href="https://dividni.online">Dividni.online</a>, which allows you to create questions without coding.
+      However, most instructors will prefer using an AI tool to create questions without coding.
+      We have a mega prompt <a href="Dividni_MegaPrompt.txt">Dividni_MegaPrompt.txt</a> you can use to this end. Once you have the prompt in your chat history, you can
+      simply ask for a question in your domain and topic, or upload your teaching material (such as
+      slides) and ask for questions from the teaching material.
    </p>
-   <ol>
-      <li>
-         <b>Static answer banks:</b> Write the question, specify correct answers (the more the better), and add incorrect distractors.
-         You can preview the question and, once satisfied, download the C# version to use with <code>McqTestGen</code>.
-      </li>
-      <li>
-         <b>Parametric variants:</b> More advanced — these allow for dynamic variations in question data.
-      </li>
-      <li>
-         Create a few practice questions relevant to your course.
-      </li>
-   </ol>
    <p>
-      Once your question looks satisfactory, copy the downloaded C# code to your local machine.
-      Use it with <code>McqTestGen</code> as shown earlier (see <a href="#mcqTestGen">point 3</a> of “Creating your first exam paper”).
+      Use the questions you created with <code>McqTestGen</code> as shown earlier (see <a href="#mcqTestGen">point 3</a> of “Creating your first exam paper”).
    </p>
 
    <h2>Slightly advanced topics</h2>
