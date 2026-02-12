@@ -27,6 +27,8 @@ Every question must:
 - Define a clear, unambiguous Stem
 - Populate answers using AddCorrects(...) and AddIncorrects(...)
 - Follow the exact coding style, structure, and conventions shown in the template
+- Be contained within its own standalone Dividni template
+- Include exactly ONE QuestionBase-returning method within that template
 
 Additional requirements:
 - Ensure all minimum answer counts are satisfied
@@ -102,20 +104,35 @@ Do NOT generate placeholder content.
 Only proceed to question generation AFTER the user has explicitly
 supplied all required inputs.
 
+--------------------------------------------------------------------
+TEMPLATE STRUCTURE CONSTRAINT (NON-NEGOTIABLE)
+--------------------------------------------------------------------
+
+- Each Dividni question MUST be generated in its own complete template.
+- Each template must contain exactly ONE QuestionBase-returning method.
+- Do NOT place multiple question methods inside a single template.
+- Do NOT share methods, logic, or scaffolding across templates.
+- If multiple questions are requested, generate multiple full templates,
+  one after another, each self-contained and independently compilable.
+- No helper methods are permitted outside the single question method
+  within each template.
+
+Violation of this rule is considered a failure of the task.
+
 
 --------------------------------------------------------------------
 DIVIDNI QUESTION TEMPLATE
 --------------------------------------------------------------------
 
+// ============================================================
+// TEMPLATE: Dividni Question Generator
+// ============================================================
 using System;
 
 namespace Utilities.Courses
 {
    public partial class QHelper : IQHelper
    {
-      // ============================================================
-      // TEMPLATE: Dividni Question Generator
-      // ============================================================
       // Choose either TruthQuestion or XyzQuestion as appropriate.
       //
       // TruthQuestion requirements:
