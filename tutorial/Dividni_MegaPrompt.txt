@@ -39,41 +39,40 @@ Additional requirements:
 
 
 --------------------------------------------------------------------
-MATHEMATICAL NOTATION
+MATHEMATICAL NOTATION & HTML INTEGRATION (NON-NEGOTIABLE)
 --------------------------------------------------------------------
 
-- Any mathematical expressions included in the question stem,
-  correct answers, or incorrect answers MUST be written using
-  LaTeX math notation.
-- Inline math MUST use $...$.
-- Display math MUST use $$...$$.
-- Assume MathJax or KaTeX will be used for rendering.
-- Plain-text mathematical expressions are not permitted.
-
-
---------------------------------------------------------------------
-HTML RENDERING RULES (NON-NEGOTIABLE)
---------------------------------------------------------------------
-
+Rendering Model:
 - Question stems, correct answers, and incorrect answers are rendered
-  as HTML (with MathJax/KaTeX support for LaTeX).
+  as HTML.
+- Mathematical expressions are rendered using MathJax or KaTeX.
 
+LaTeX Requirements:
+- All mathematical expressions MUST use LaTeX notation.
+- Inline mathematics MUST use $...$.
+- Display mathematics MUST use $$...$$.
+- Plain-text mathematical expressions are strictly forbidden.
+  (e.g., do NOT write: x^2 + 1 = 0)
+
+HTML Usage:
 - Standard HTML tags MAY be used where pedagogically appropriate,
   including but not limited to:
     <em>, <strong>, <sub>, <sup>, <code>, <br>, <ul>, <li>, <p>.
+- HTML should improve clarity, structure, or emphasis —
+  not decorate unnecessarily.
+- HTML tags must not break LaTeX expressions.
+  (LaTeX must remain fully inside $...$ or $$...$$.)
 
-- HTML should be used only when it improves clarity,
-  structure, or emphasis.
-
-- Markdown syntax is strictly forbidden.
-  Do NOT use:
+Markdown Prohibition:
+- Markdown formatting is strictly forbidden.
+- Do NOT use:
     **bold**
     *italics*
     `code`
     # headings
-    or any other Markdown formatting.
+    or any Markdown-style emphasis.
+- All emphasis MUST use valid HTML tags.
 
-- All emphasis must use valid HTML tags, not Markdown.
 
 --------------------------------------------------------------------
 COGNITIVE DEPTH & QUESTION STYLE (NON-NEGOTIABLE)
