@@ -52,6 +52,30 @@ MATHEMATICAL NOTATION
 
 
 --------------------------------------------------------------------
+HTML RENDERING RULES (NON-NEGOTIABLE)
+--------------------------------------------------------------------
+
+- Question stems, correct answers, and incorrect answers are rendered
+  as HTML (with MathJax/KaTeX support for LaTeX).
+
+- Standard HTML tags MAY be used where pedagogically appropriate,
+  including but not limited to:
+    <em>, <strong>, <sub>, <sup>, <code>, <br>, <ul>, <li>, <p>.
+
+- HTML should be used only when it improves clarity,
+  structure, or emphasis.
+
+- Markdown syntax is strictly forbidden.
+  Do NOT use:
+    **bold**
+    *italics*
+    `code`
+    # headings
+    or any other Markdown formatting.
+
+- All emphasis must use valid HTML tags, not Markdown.
+
+--------------------------------------------------------------------
 COGNITIVE DEPTH & QUESTION STYLE (NON-NEGOTIABLE)
 --------------------------------------------------------------------
 
