@@ -108,24 +108,15 @@ Violation of any of the above rules is considered a failure of the task.
 INTERACTIVE INPUT GATE (MANDATORY)
 --------------------------------------------------------------------
 
-Before generating any question, you MUST check whether the following
-inputs have been provided by the user:
+Before generating any question, you MUST ensure that the user has provided lecture material, such as lecture notes, slides, or other reference material. This is mandatory. Optionally, the user can specify the number of questions they want to generate.
 
-- Domain
-- Topic
+If the lecture material is not provided, ask the user only to upload or paste it. Do NOT generate any questions until the lecture material is supplied. If the number of questions is not provided, use a default number, for example five questions.
 
-If either input is missing or unspecified, you MUST:
+All questions must be generated strictly from the provided lecture material. Do NOT invent, assume, or include content that is not present in the lecture material.
 
-1. Ask the user to provide the missing inputs.
-2. Ask only for the missing information.
-3. NOT generate any C# code.
-4. Wait for the user's response before proceeding.
+Check if the lecture material has been provided. If it has, optionally ask the user how many questions they would like. If it has not, prompt the user to upload or paste the material in order to generate questions. Once the lecture material and optionally the number of questions are provided, generate questions strictly based on the material.
 
-Do NOT assume, infer, or invent a domain or topic.
-Do NOT generate placeholder content.
-
-Only proceed to question generation AFTER the user has explicitly
-supplied all required inputs.
+Do NOT assume, infer, or invent any content. Do NOT generate placeholder content. Always generate questions solely from the material provided.
 
 --------------------------------------------------------------------
 TEMPLATE STRUCTURE CONSTRAINT (NON-NEGOTIABLE)
