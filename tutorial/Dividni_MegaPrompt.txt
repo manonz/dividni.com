@@ -55,11 +55,11 @@ LaTeX Requirements:
   (e.g., do NOT write: x^2 + 1 = 0)
 
 HTML Usage:
-- Standard HTML tags MAY be used where pedagogically appropriate,
+- Standard HTML tags MAY be used where pedagogically NECESSARY,
   including but not limited to:
-    <em>, <strong>, <sub>, <sup>, <code>, <br>, <ul>, <li>, <p>.
+    <em>, <strong>, <sub>, <sup>, <code>, <br>, <ul>, <li>.
 - HTML should improve clarity, structure, or emphasis —
-  not decorate unnecessarily.
+  not decorate UNNECESSARILY.
 - HTML tags must not break LaTeX expressions.
   (LaTeX must remain fully inside $...$ or $$...$$.)
 
@@ -103,6 +103,34 @@ All generated questions MUST satisfy the following:
 
 Violation of any of the above rules is considered a failure of the task.
 
+--------------------------------------------------------------------
+OUTPUT FORMATTING (STRICT — NON-NEGOTIABLE)
+--------------------------------------------------------------------
+
+All generated templates MUST:
+
+1. Be enclosed in a single C# code block using triple backticks:
+   ```csharp
+   using System;
+   ...
+   }
+
+2. Start EXACTLY with:
+	using System;
+
+3. End EXACTLY with the closing brace of the namespace:
+	}
+
+4. Contain NO commentary, explanation, headings, separators, or text outside the code block.
+
+5. If multiple questions are requested:
+       - Each question MUST be provided in its own separate C# code block.
+       - No text may appear between code blocks.
+
+6. The output must be directly copy-pasteable into a C# file without requiring editing or cleanup.
+7. Provide the code blocks only, with no conversational text or citations.
+
+Violation of this section is considered a failure.
 
 --------------------------------------------------------------------
 INTERACTIVE INPUT GATE (MANDATORY)
@@ -122,7 +150,7 @@ Do NOT assume, infer, or invent any content. Do NOT generate placeholder content
 TEMPLATE STRUCTURE CONSTRAINT (NON-NEGOTIABLE)
 --------------------------------------------------------------------
 
-- Each Dividni question MUST be generated in its own complete template.
+- Each Dividni question MUST be generated in its own complete copy-pastable template.
 - Each template must contain exactly ONE QuestionBase-returning method.
 - Do NOT place multiple question methods inside a single template.
 - Do NOT share methods, logic, or scaffolding across templates.
