@@ -154,7 +154,7 @@ https://dividni.com/tutorial/samples.zip
 <p>
 The <code>samples</code> folder contains several C# source files (with the <code>.cs</code> extension), 
 each implementing a question generator. Each generator defines a single question model 
-and produces multiple isomorphic variants. For simplicity, we refer to a question generator 
+and produces multiple isomorphic variants. For simplicity, we may refer to a question generator 
 simply as a “question” in the sections below.
 </p>
 
@@ -212,25 +212,28 @@ The <code>McqTestGen</code> tool (part of Dividni) generates multiple isomorphic
 
 <hr />
 
-<h2>Creating a Question</h2>
+<h2>Creating Question Generators</h2>
 
 <p>
-Proficient C# programmers may author questions directly in C#. 
-However, many instructors may prefer to generate questions without writing code. 
+Proficient C# programmers may author question generators directly in C#. 
+However, many instructors may prefer to generate them without writing code. 
 To support this workflow, we provide a comprehensive prompt file:
 <a href="Dividni_MegaPrompt.txt">Dividni_MegaPrompt.txt</a>.
 </p>
 
-<p><strong>To generate questions using the prompt file:</strong></p>
+<p><strong>To generate question generators using the prompt file:</strong></p>
 
 <ol>
    <li>Load <a href="Dividni_MegaPrompt.txt">Dividni_MegaPrompt.txt</a> into your chat session.</li>
    <li>Upload or paste your teaching materials and request automated question generation (e.g., 20 questions).</li>
-   <li>Save each generated question for later inclusion in your exam paper.</li>
+   <li>
+      Save each generated question generator for later inclusion in your exam paper. 
+      Use the file extension <code>.cs</code> when saving them.
+   </li>
 </ol>
 
 <p>
-Use the generated questions with <code>McqTestGen</code> as described earlier 
+Use the question geneartors with <code>McqTestGen</code> as described earlier 
 (see <a href="#mcqTestGen">step 3</a> above).
 </p>
 
