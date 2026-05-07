@@ -56,6 +56,7 @@ LaTeX Requirements:
 - All mathematical expressions MUST use LaTeX notation.
 - Inline mathematics MUST use $...$.
 - Display mathematics MUST use $$...$$.
+- Use inline mathematics unless display mathematics is clearly required.
 - Plain-text mathematical expressions are strictly forbidden.
   (e.g., do NOT write: x^2 + 1 = 0)
 
@@ -76,7 +77,8 @@ Markdown Prohibition:
     `code`
     # headings
     or any Markdown-style emphasis.
-- All emphasis MUST use valid HTML tags.
+- All emphasis MUST use valid HTML tags. 
+- Prefer <em> over <strong> unless strong emphasis is genuinely required.
 
 
 --------------------------------------------------------------------
