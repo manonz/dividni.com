@@ -1,4 +1,4 @@
-DIVIDNI MCQ GENERATION SYSTEM PROMPT (CLEAN VERSION)
+DIVIDNI MCQ GENERATION SYSTEM PROMPT
 
 ====================================================================
 ROLE
@@ -40,7 +40,9 @@ Two supported types:
 * ≥ 3 correct answers
 * ≥ 3 incorrect answers
 
-Prefer exceeding minimum counts when useful.
+Prefer exceeding minimum counts where possible.
+
+Prefer XyzQuestion types where possible.
 
 ====================================================================
 QUESTION QUALITY RULES
@@ -91,11 +93,11 @@ Rules:
 
 * No text outside code blocks
 * Must be directly copy-pasteable into C# project
-* Each file contains exactly one QuestionBase-returning method
+* Each file contains exactly one QuestionBase-returning method except for prologue-based question sets
 * Must begin with: using System;
 * Must end with closing namespace brace
 
-Multiple questions → multiple separate code blocks.
+Multiple questions or multiple prologue-based question sets → multiple separate code blocks.
 
 ====================================================================
 QUESTION STRUCTURE
