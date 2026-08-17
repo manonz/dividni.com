@@ -178,59 +178,58 @@ DIVIDNI QUESTION TEMPLATE
 // ============================================================
 using System;
 
-namespace Utilities.Courses
+namespace Utilities.Courses;
+
+public partial class QHelper_TODO : IQHelper
 {
-   public partial class QHelper : IQHelper
+   // Choose either TruthQuestion or XyzQuestion as appropriate.
+   //
+   // TruthQuestion requirements:
+   //   - At least 1 correct answer (one will be chosen at runtime) – prefer to have more
+   //   - At least 4 incorrect answers - prefer to have more
+   //
+   // XyzQuestion requirements:
+   //   - At least 3 correct answers - prefer to have more
+   //   - At least 3 incorrect answers - prefer to have more
+   // ============================================================
+
+   public static QuestionBase TODO_MethodName(Random random, bool isProof)
    {
-      // Choose either TruthQuestion or XyzQuestion as appropriate.
-      //
-      // TruthQuestion requirements:
-      //   - At least 1 correct answer (one will be chosen at runtime) – prefer to have more
-      //   - At least 4 incorrect answers - prefer to have more
-      //
-      // XyzQuestion requirements:
-      //   - At least 3 correct answers - prefer to have more
-      //   - At least 3 incorrect answers - prefer to have more
-      // ============================================================
+      // Choose question type:
+      // var q = new TruthQuestion(random, isProof);
+      // OR
+      // var q = new XyzQuestion(random, isProof);
 
-      public static QuestionBase TODO_MethodName(Random random, bool isProof)
-      {
-         // Choose question type:
-         // var q = new TruthQuestion(random, isProof);
-         // OR
-         // var q = new XyzQuestion(random, isProof);
+      var q = new TruthQuestion(random, isProof); // change if needed
 
-         var q = new TruthQuestion(random, isProof); // change if needed
+      // Set a meaningful, unique Id
+      q.Id = "TODO_UniqueQuestionId";
 
-         // Set a meaningful, unique Id
-         q.Id = "TODO_UniqueQuestionId";
+      q.Marks = 1;
 
-         q.Marks = 1;
+      // Define any randomized values here
+      // int value = random.Next(...);
 
-         // Define any randomized values here
-         // int value = random.Next(...);
+      // Write the question stem
+      q.Stem = "TODO: Write the question stem here.";
 
-         // Write the question stem
-         q.Stem = "TODO: Write the question stem here.";
+      // Add correct answers
+      // NOTE: For TruthQuestion, Dividni will randomly select ONE
+      // of the correct answers at runtime.
+      q.AddCorrects(
+          "TODO_CorrectAnswer1"
+      // Add more as desired
+      );
 
-         // Add correct answers
-         // NOTE: For TruthQuestion, Dividni will randomly select ONE
-         // of the correct answers at runtime.
-         q.AddCorrects(
-             "TODO_CorrectAnswer1"
-             // Add more as desired
-         );
+      // Add incorrect answers (distractors)
+      q.AddIncorrects(
+          "TODO_Incorrect1",
+          "TODO_Incorrect2",
+          "TODO_Incorrect3",
+          "TODO_Incorrect4"
+      // Add more as desired
+      );
 
-         // Add incorrect answers (distractors)
-         q.AddIncorrects(
-             "TODO_Incorrect1",
-             "TODO_Incorrect2",
-             "TODO_Incorrect3",
-             "TODO_Incorrect4"
-             // Add more as desired
-         );
-
-         return q;
-      }
+      return q;
    }
 }
