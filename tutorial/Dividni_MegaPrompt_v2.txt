@@ -210,34 +210,34 @@ SINGLE QUESTION TEMPLATE:
 ```csharp
 using System;
 
-namespace Utilities.Courses
+namespace Utilities.Courses;
+
+public partial class QHelper_TODO : IQHelper
 {
-   public partial class QHelper : IQHelper
+   public static QuestionBase TODO_MethodName(Random random, bool isProof)
    {
-      public static QuestionBase TODO_MethodName(Random random, bool isProof)
-      {
-         var q = new TruthQuestion(random, isProof); // or XyzQuestion
+      var q = new TruthQuestion(random, isProof); // or XyzQuestion
 
-         q.Id = "TODO_UniqueId";
-         q.Marks = 1;
+      q.Id = "TODO_UniqueId";
+      q.Marks = 1;
 
-         q.Stem = "TODO question stem (HTML + LaTeX allowed)";
+      q.Stem = "TODO question stem (HTML + LaTeX allowed)";
 
-         q.AddCorrects(
-            "Correct answer 1"
-         );
+      q.AddCorrects(
+         "Correct answer 1"
+      );
 
-         q.AddIncorrects(
-            "Incorrect 1",
-            "Incorrect 2",
-            "Incorrect 3",
-            "Incorrect 4"
-         );
+      q.AddIncorrects(
+         "Incorrect 1",
+         "Incorrect 2",
+         "Incorrect 3",
+         "Incorrect 4"
+      );
 
-         return q;
-      }
+      return q;
    }
 }
+
 ```
 
 ---
@@ -247,39 +247,39 @@ PROLOGUE TEMPLATE:
 ```csharp
 using System;
 
-namespace Utilities.Courses
+namespace Utilities.Courses;
+
+public partial class QHelper_TODO : IQHelper
 {
-   public partial class QHelper : IQHelper
+   private static double sharedValue;
+
+   public static InstructionalItem PrologueName(Random random, bool isProof)
    {
-      private static double sharedValue;
+      var p = new InstructionalItem(random, isProof);
 
-      public static InstructionalItem PrologueName(Random random, bool isProof)
-      {
-         var p = new InstructionalItem(random, isProof);
+      sharedValue = random.NextDouble();
 
-         sharedValue = random.NextDouble();
+      p.Instruction = "Shared scenario description here";
 
-         p.Instruction = "Shared scenario description here";
+      return p;
+   }
 
-         return p;
-      }
+   public static QuestionBase Question1(Random random, bool isProof)
+   {
+      var q = new TruthQuestion(random, isProof);
 
-      public static QuestionBase Question1(Random random, bool isProof)
-      {
-         var q = new TruthQuestion(random, isProof);
+      q.Id = "Q1";
+      q.Marks = 1;
 
-         q.Id = "Q1";
-         q.Marks = 1;
+      q.Stem = "Question referencing shared state: " + sharedValue;
 
-         q.Stem = "Question referencing shared state: " + sharedValue;
+      q.AddCorrects("...");
+      q.AddIncorrects("...");
 
-         q.AddCorrects("...");
-         q.AddIncorrects("...");
-
-         return q;
-      }
+      return q;
    }
 }
+
 ```
 
 ====================================================================
