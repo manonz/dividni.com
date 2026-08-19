@@ -298,8 +298,23 @@ Foreach-Object {
    $pdf = $_.BaseName + '.pdf'
    $log = $_.BaseName + '.log'
    $ver = $_.BaseName
+   
+   $arguments = @(
+      '--display-headerfooter'
+      '--header-left', 'Version [doctitle]'
+      '--header-right', $Course
+      '--footer-center', 'Page [page] of [topage]'
+      '--browser', 'edge'
+      '--margin-top', '0.6'
+      '--margin-bottom', '0.6'
+      '--paper-format', 'A4'
+      '--input', $html
+      '--output', $pdf
+      '--logfile', $log
+   )
+
    Write-Output "Generating $pdf"
-   &"C:\ChromiumHtmlToPdf\ChromiumHtmlToPdfConsole.exe"  --display-headerfooter --header-left "Version [doctitle]"  --header-right $Course --footer-center "Page [page] of [topage]" --browser edge --margin-top 0.6 --margin-bottom 0.6 --paper-format A4 --input $html --output $pdf --logfile $log
+   &"C:\ChromiumHtmlToPdf\ChromiumHtmlToPdfConsole.exe"  @arguments
 }
       </pre>
    </div>
