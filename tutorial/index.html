@@ -276,14 +276,33 @@
    <hr />
 
    <h2>Conducting Exams</h2>
-
+   
    <p>
-      To administer examinations, the generated HTML exam scripts must be printed.
-      Tools such as
-      <a href="https://github.com/Sicos1977/ChromiumHtmlToPdf">ChromiumHtmlToPdf</a>
-      can batch-convert HTML files into PDF format, thereby automating and streamlining
-      large-scale printing workflows.
+      To administer exams, the generated HTML exam scripts must be printed. 
+      Tools such as <a href="https://github.com/Sicos1977/ChromiumHtmlToPdf">ChromiumHtmlToPdf</a> 
+      can batch-convert HTML files to PDF format, automating and streamlining large-scale printing workflows.
    </p>
+   
+   <p>
+      Below is a sample PowerShell script for batch-converting HTML exam scripts.
+   </p>
+   <div class="info-box" style="display: block;">
+      <pre>
+param(
+   [string]$Course
+)
+
+Get-ChildItem -Path . -Filter "*.html" | Where-Object { $_.Name -match '^[0-9]' } |
+Foreach-Object {
+   $html = $_.BaseName + '.html'
+   $pdf = $_.BaseName + '.pdf'
+   $log = $_.BaseName + '.log'
+   $ver = $_.BaseName
+   Write-Output "Generating $pdf"
+   &"C:\ChromiumHtmlToPdf\ChromiumHtmlToPdfConsole.exe"  --display-headerfooter --header-left "Version [doctitle]"  --header-right $Course --footer-center "Page [page] of [topage]" --browser edge --margin-top 0.6 --margin-bottom 0.6 --paper-format A4 --input $html --output $pdf --logfile $log
+}
+      </pre>
+   </div>
 
    <h2>Grading</h2>
 
