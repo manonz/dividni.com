@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <title>Assessment Design with Question Generators</title>
+   <link rel="stylesheet" href="style.css" />
+   <script src="pressie.js" defer="defer"></script>
+</head>
+
+<body>
+
+   <div class="presentation">
+
+      <div class="progress" id="progress"></div>
+
+      <!-- ========================================================= -->
+      <!-- OPENING SLIDE -->
+      <!-- ========================================================= -->
+
+      <section class="slide title-slide active">
+
+         <div class="accent"></div>
+
+         <div class="title-layout">
+            <div class="title-main">
+               <h1>
+                  Assessment Design<br>
+                  with Question Generators
+               </h1>
+
+               <img src="Dividni-Full-Logo.svg"
+                    alt="Dividni"
+                    class="dividni-logo">
+            </div>
+
+            <div class="title-agenda">
+               <div class="agenda-label">What we'll cover</div>
+               <ul>
+                  <li>What are question generators?</li>
+                  <li>Why use question generators?</li>
+                  <li>What makes generated questions different?</li>
+                  <li>How can they support higher-order assessment?</li>
+                  <li>How do we grade the assessment?</li>
+                  <li>What are the longer-term benefits?</li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="author">
+            <!--Mano Manoharan<br>
+            Mano.Manoharan@Auckland.ac.NZ-->
+         </div>
+
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- SLIDE 2 -->
+      <!-- ========================================================= -->
+
+      <section class="slide">
+
+         <div class="content">
+
+            <div class="section-label">The problem</div>
+
+            <h2>Assessment Challenges</h2>
+
+            <ul class="big-list">
+               <li>Free-format answers are <strong>time-consuming to mark</strong></li>
+               <li>Large classes make marking difficult to scale</li>
+               <li>Handwritten responses raise <strong>legibility issues</strong></li>
+               <li>Fewer questions lead to <strong>limited topic coverage</strong></li>
+            </ul>
+
+            <div class="statement">
+               The challenge is not simply marking faster.
+               <strong>
+                  It is designing assessments that scale without
+                  sacrificing quality.
+               </strong>
+            </div>
+
+         </div>
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- SLIDE 3 -->
+      <!-- ========================================================= -->
+
+      <section class="slide">
+
+         <div class="content">
+
+            <div class="section-label">One possible approach</div>
+
+            <h2>Advantages of Multiple-Choice Exams</h2>
+
+            <div class="two-column">
+
+               <div class="card">
+                  <h3>Efficiency</h3>
+
+                  <ul class="big-list">
+                     <li>Quick and efficient marking</li>
+                     <li>Scales well to large classes</li>
+                     <li>Allows many questions per exam</li>
+                  </ul>
+               </div>
+
+               <div class="card">
+                  <h3>Assessment Quality</h3>
+
+                  <ul class="big-list">
+                     <li>Broader topic coverage</li>
+                     <li>More consistent marking</li>
+                     <li>Improved reliability and fairness</li>
+                  </ul>
+               </div>
+
+            </div>
+
+            <div class="statement">
+               <span class="highlight">
+                  Multiple-choice does not have to mean
+                  low-level assessment.
+               </span>
+            </div>
+
+         </div>
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- SLIDE 4 -->
+      <!-- ========================================================= -->
+
+      <section class="slide">
+
+         <div class="content">
+
+            <div class="section-label">The core idea</div>
+
+            <h2>Question Generators</h2>
+
+            <p class="lead">
+               A question generator is an abstract template from which
+               questions are produced algorithmically.
+            </p>
+
+            <div class="two-column">
+
+               <div class="card">
+                  <h3>How?</h3>
+
+                  <ul class="big-list">
+                     <li>Questions are algorithmically specified</li>
+                     <li>Defined using a programming language</li>
+                     <li>Generated automatically</li>
+                  </ul>
+               </div>
+
+               <div class="card">
+                  <h3>Programming is only getting easier…</h3>
+
+                  <ul class="big-list">
+                     <li>AI tools can help write the generators</li>
+                     <li>We can actually author generators without a <em>single</em> line of code</li>
+                  </ul>
+               </div>
+
+            </div>
+
+         </div>
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- SLIDE 5 -->
+      <!-- ========================================================= -->
+
+      <section class="slide">
+
+         <div class="content">
+
+            <div class="section-label">The key property</div>
+
+            <h2>Different Questions.<br>Same Learning Outcome.</h2>
+
+            <div class="comparison">
+
+               <div class="comparison-box">
+                  <h3>Student A</h3>
+
+                  <p>
+                     Receives one instantiation of the question.
+                  </p>
+
+                  <span class="tag">Different numbers</span>
+                  <span class="tag">Different text data</span>
+                  <hr />
+                  <span class="tag">Different surface details</span>
+                  <span class="tag">Same difficulty</span>
+                  <span class="tag">Same concept</span>
+                  <span class="tag">Same learning outcome</span>
+               </div>
+
+               <!--<div class="versus">≠</div>-->
+
+               <div class="comparison-box">
+                  <h3>Student B</h3>
+
+                  <p>
+                     Receives another instantiation of the same
+                     underlying question.
+                  </p>
+
+                  <span class="tag">Different numbers</span>
+                  <span class="tag">Different text data</span>
+                  <hr />
+                  <span class="tag">Different surface details</span>
+                  <span class="tag">Same difficulty</span>
+                  <span class="tag">Same concept</span>
+                  <span class="tag">Same learning outcome</span>
+               </div>
+
+            </div>
+
+            <div class="statement">
+               The questions are <strong>isomorphic</strong>:
+               systematically different, but equivalent by design.
+            </div>
+
+         </div>
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- SLIDE 6 -->
+      <!-- ========================================================= -->
+
+      <section class="slide">
+
+         <div class="content">
+
+            <div class="section-label">Example 1</div>
+
+            <h2>Simultaneous Equations</h2>
+
+            <div class="example-grid">
+
+               <div class="question">
+
+                  <div class="variant">Variant A</div>
+
+                  <p>
+                     At Prancing Pony, you can buy <strong>4 apples</strong>
+                     and <strong>9 oranges</strong> for
+                     <strong>364 Castars</strong>; you can also buy
+                     <strong>13 apples</strong> and <strong>17 oranges</strong>
+                     for <strong>742 Castars</strong>.
+                  </p>
+
+                  <p>
+                     What is the price of a single apple?
+                  </p>
+
+                  <div class="options">
+                     <div>A) 37</div>
+                     <div>B) 12</div>
+                     <div>C) 38</div>
+                     <div>D) 10</div>
+                     <div>E) 36</div>
+                  </div>
+
+               </div>
+
+
+               <div class="question">
+
+                  <div class="variant">Variant B</div>
+
+                  <p>
+                     At Prancing Pony, you can buy <strong>3 apples</strong>
+                     and <strong>9 oranges</strong> for
+                     <strong>246 Castars</strong>; you can also buy
+                     <strong>10 apples</strong> and <strong>18 oranges</strong>
+                     for <strong>556 Castars</strong>.
+                  </p>
+
+                  <p>
+                     What is the price of a single apple?
+                  </p>
+
+                  <div class="options">
+                     <div>A) 18</div>
+                     <div>B) 15</div>
+                     <div>C) 17</div>
+                     <div>D) 16</div>
+                     <div>E) 22</div>
+                  </div>
+
+               </div>
+
+            </div>
+
+            <div class="statement">
+               Same mathematical task.
+               <strong>Different numbers, different answer.</strong>
+            </div>
+
+         </div>
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- SLIDE 7 -->
+      <!-- ========================================================= -->
+
+      <section class="slide">
+
+         <div class="content">
+
+            <div class="section-label">Example 2</div>
+
+            <h2>Transposition Cipher</h2>
+
+            <div class="example-grid">
+
+               <div class="question">
+
+                  <div class="variant">Variant A</div>
+
+                  <p>
+                     The following ciphertext is encrypted using a
+                     columnar transposition cipher:
+                  </p>
+
+                  <div class="question-code">
+                     NPMOCZEOETPZAUEOIZBSSSSY
+                  </div>
+
+                  <p>
+                     What is the third word of the corresponding plaintext?
+                  </p>
+
+                  <div class="options">
+                     <div>A) SEEMS</div>
+                     <div>B) NUT</div>
+                     <div>C) EAST</div>
+                     <div>D) SENSE</div>
+                     <div>E) INPUT</div>
+                  </div>
+
+               </div>
+
+
+               <div class="question">
+
+                  <div class="variant">Variant B</div>
+
+                  <p>
+                     The following ciphertext is encrypted using a
+                     columnar transposition cipher:
+                  </p>
+
+                  <div class="question-code">
+                     WVEITZCEOTRSNNVEAZAILHCZ
+                  </div>
+
+                  <p>
+                     What is the third word of the corresponding plaintext?
+                  </p>
+
+                  <div class="options">
+                     <div>A) HERE</div>
+                     <div>B) INVOLVE</div>
+                     <div>C) SCORE</div>
+                     <div>D) TIE</div>
+                     <div>E) SNOW</div>
+                  </div>
+
+               </div>
+
+            </div>
+
+         </div>
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- SLIDE: MULTIPLE QUESTIONS, COMMON MATERIAL -->
+      <!-- ========================================================= -->
+
+      <section class="slide">
+
+         <div class="content">
+
+            <div class="section-label">Example 3</div>
+
+            <h2>Simultaneous Equations &mdash; Take 2</h2>
+
+            <div class="two-column">
+
+               <!-- VERSION 1 -->
+               <div class="card">
+
+                  <div class="tag">Version 1</div>
+
+                  <p>
+                     At <strong>Prancing Pony</strong>, you can buy
+                     <strong>5 apples</strong> and <strong>10 oranges</strong>
+                     for <strong>320 Castars</strong>; you can also buy
+                     <strong>18 apples</strong> and <strong>15 oranges</strong>
+                     for <strong>564 Castars</strong>.
+                  </p>
+
+                  <p><strong>The following TWO questions relate to this.</strong></p>
+
+                  <div class="question">
+                     <strong>1.</strong>
+                     What is the price of a single apple,
+                     expressed in Castars?
+
+                     <div class="exam-options">
+                        <div>A) 8</div>
+                        <div>B) 10</div>
+                        <div>C) 6</div>
+                        <div>D) 28</div>
+                        <div>E) 7</div>
+                     </div>
+                  </div>
+
+                  <div class="question">
+                     <strong>2.</strong>
+                     What is the price of a single orange,
+                     expressed in Castars?
+
+                     <div class="exam-options">
+                        <div>A) 28</div>
+                        <div>B) 27</div>
+                        <div>C) 7</div>
+                        <div>D) 8</div>
+                        <div>E) 30</div>
+                     </div>
+                  </div>
+
+               </div>
+
+
+               <!-- VERSION 2 -->
+               <div class="card">
+
+                  <div class="tag">Version 2</div>
+
+                  <p>
+                     At <strong>Prancing Pony</strong>, you can buy
+                     <strong>2 apples</strong> and <strong>9 oranges</strong>
+                     for <strong>244 Castars</strong>; you can also buy
+                     <strong>19 apples</strong> and <strong>13 oranges</strong>
+                     for <strong>578 Castars</strong>.
+                  </p>
+
+                  <p><strong>The following TWO questions relate to this.</strong></p>
+
+                  <div class="question">
+                     <strong>1.</strong>
+                     What is the price of a single apple,
+                     expressed in Castars?
+
+                     <div class="exam-options">
+                        <div>A) 12</div>
+                        <div>B) 22</div>
+                        <div>C) 16</div>
+                        <div>D) 14</div>
+                        <div>E) 25</div>
+                     </div>
+                  </div>
+
+                  <div class="question">
+                     <strong>2.</strong>
+                     What is the price of a single orange,
+                     expressed in Castars?
+
+                     <div class="exam-options">
+                        <div>A) 15</div>
+                        <div>B) 16</div>
+                        <div>C) 24</div>
+                        <div>D) 25</div>
+                        <div>E) 13</div>
+                     </div>
+                  </div>
+
+               </div>
+
+            </div>
+
+
+            <div class="statement">
+               <strong>Multiple Questions, Common Material:</strong>
+               A single generated scenario can support
+               <strong>multiple related questions</strong>,
+               each with its own automatically generated answer.
+            </div>
+
+         </div>
+
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- SLIDE 8 -->
+      <!-- ========================================================= -->
+
+      <section class="slide">
+
+         <div class="content">
+
+            <div class="section-label">A common misconception</div>
+
+            <h2>Question Generators<br>vs Question Banks</h2>
+
+            <div class="comparison">
+
+               <div class="comparison-box">
+
+                  <h3>Traditional Question Bank</h3>
+
+                  <ul class="big-list">
+                     <li>Static questions</li>
+                     <li>Typically generated manually</li>
+                     <li>Finite collection</li>
+                     <li>Equivalence must be curated</li>
+                  </ul>
+
+               </div>
+
+               <div class="comparison-box">
+
+                  <h3>Question Generator</h3>
+
+                  <ul class="big-list">
+                     <li>Dynamic questions</li>
+                     <li>Generated automatically</li>
+                     <li>Effectively unlimited variants</li>
+                     <li>Isomorphism enforced by design</li>
+                  </ul>
+
+               </div>
+
+            </div>
+
+         </div>
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- SLIDE 9 -->
+      <!-- ========================================================= -->
+
+      <section class="slide">
+
+         <div class="content">
+
+            <div class="section-label">Why it matters</div>
+
+            <h2>Benefits of Isomorphic<br>Question Generation</h2>
+
+            <ul class="big-list">
+
+               <li><strong>Effectively unlimited</strong> question variants</li>
+
+               <li>Generate practice questions easily</li>
+
+               <li>Reuse questions without losing assessment integrity</li>
+
+               <li>Students need not see the same instantiation</li>
+
+               <li>Repeat entire exams safely</li>
+
+            </ul>
+
+            <div class="statement">
+               Isomorphism is <strong>
+                  systematic and guaranteed by the
+                  generator
+               </strong>, rather than relying on manual curation.
+            </div>
+
+         </div>
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- SLIDE 10 -->
+      <!-- ========================================================= -->
+
+      <section class="slide">
+
+         <div class="content">
+
+            <div class="section-label">A less obvious benefit</div>
+
+            <h2>Operational Advantages</h2>
+
+            <div class="two-column">
+
+               <div class="card">
+
+                  <h3>Exam Logistics</h3>
+
+                  <ul class="big-list">
+                     <li>Easy arrangement of special exams</li>
+                     <li>Different versions can be generated automatically</li>
+                     <li>Students can be seated closer together</li>
+                  </ul>
+
+               </div>
+
+               <div class="card">
+
+                  <h3>At Scale</h3>
+
+                  <ul class="big-list">
+                     <li>Reduced space requirements</li>
+                     <li>Lower supervision overhead</li>
+                     <li>Particularly useful for large classes</li>
+                     <li>Useful for centrally scheduled examinations as well as mid-semester tests</li>
+                  </ul>
+
+               </div>
+
+            </div>
+
+            <div class="statement">
+               Operational advantages <strong>matter greatly at scale.</strong>
+            </div>
+
+         </div>
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- SLIDE: REDUCED SPACE REQUIREMENTS -->
+      <!-- ========================================================= -->
+
+      <section class="slide">
+
+         <div class="content">
+
+            <div class="section-label">Key Operational Advantage</div>
+
+            <h2>Reduced Space Requirements</h2>
+
+            <div class="two-column">
+
+               <div class="card">
+                  <p class="lead">
+                     Students can sit <strong>closer together</strong>
+                     because each student receives a different
+                     but equivalent question.
+                  </p>
+
+                  <div class="statement">
+                     Less separation between students can mean
+                     <strong>less examination space required</strong>.
+                  </div>
+
+               </div>
+
+
+               <div class="card image-card">
+
+                  <img src="exam-crowded.jpg"
+                       alt="Students sitting closely together during an examination"
+                       class="cover-image">
+
+               </div>
+
+            </div>
+
+
+            <div class="statement">
+               <strong>Especially useful for large classes.</strong>
+               Individualised questions can make in-class tests
+               practical while maintaining academic integrity.
+            </div>
+
+         </div>
+
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- SLIDE 11 -->
+      <!-- ========================================================= -->
+
+      <section class="slide">
+
+         <div class="content">
+
+            <div class="section-label">The important distinction</div>
+
+            <h2>Question Format ≠ Question Quality</h2>
+
+            <div class="two-column">
+
+               <div class="card">
+
+                  <h3>Multiple-choice can test…</h3>
+
+                  <ul class="big-list">
+                     <li>Understanding</li>
+                     <li>Analysis</li>
+                     <li>Application</li>
+                     <li>Evaluation</li>
+                     <li>Problem solving</li>
+                  </ul>
+
+               </div>
+
+               <div class="card">
+
+                  <h3>But we want to avoid by design…</h3>
+
+                  <ul class="big-list">
+                     <li>Pure recall</li>
+                     <li>Rote memorisation</li>
+                     <li>Mechanical formula substitution</li>
+                     <li>Questions with obvious distractors</li>
+                  </ul>
+
+               </div>
+
+            </div>
+
+            <div class="statement">
+               The quality of the assessment depends on <strong>the thinking the question requires</strong>, not whether the answer is selected from a list.
+            </div>
+
+         </div>
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- SLIDE 12 -->
+      <!-- ========================================================= -->
+
+      <section class="slide">
+
+         <div class="content">
+
+            <div class="section-label">The instructor perspective</div>
+
+            <h2>Good Questions Are Hard</h2>
+
+            <ul class="big-list">
+
+               <li>Designing good questions takes time and effort</li>
+
+               <li>Good assessment requires higher-order thinking by instructors</li>
+
+            </ul>
+
+            <div class="statement">
+               <p>
+                  <strong>Question generator design amplifies instructor effort</strong>
+                  — but once designed, a generator
+                  can be reused almost indefinitely.
+               </p>
+               <p>
+                  BUT ... AI tools can now help with some of the heavy lifting.
+               </p>
+            </div>
+
+         </div>
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- SLIDE 13 -->
+      <!-- ========================================================= -->
+
+      <section class="slide">
+
+         <div class="content">
+
+            <div class="section-label">From generator to examination</div>
+
+            <h2>The Question Generation Pipeline</h2>
+
+            <div class="workflow">
+
+               <div class="workflow-step">
+                  <div class="number">1</div>
+                  <strong>Design</strong>
+                  <span>Learning outcome<br>and question template</span>
+               </div>
+
+               <div class="arrow">→</div>
+
+               <div class="workflow-step">
+                  <div class="number">2</div>
+                  <strong>Generate</strong>
+                  <span>Randomised<br>parameters</span>
+               </div>
+
+               <div class="arrow">→</div>
+
+               <div class="workflow-step">
+                  <div class="number">3</div>
+                  <strong>Validate</strong>
+                  <span>Correct answer<br>and distractors</span>
+               </div>
+
+               <div class="arrow">→</div>
+
+               <div class="workflow-step">
+                  <div class="number">4</div>
+                  <strong>Assemble</strong>
+                  <span>Exam versions<br>and answer sheets</span>
+               </div>
+
+            </div>
+
+            <div class="statement">
+               One carefully designed generator can support
+               <strong>teaching, practice, assessment and reassessment.</strong>
+            </div>
+
+         </div>
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- SLIDE 14 -->
+      <!-- ========================================================= -->
+
+      <section class="slide">
+
+         <div class="content">
+
+            <div class="section-label">Example in practice</div>
+
+            <h2>Two Students.<br>Two Exam Versions.</h2>
+
+            <div class="comparison">
+
+               <div class="comparison-box">
+
+                  <h3>Version 00059268</h3>
+
+                  <p>
+                     <strong>Question 1</strong>
+                  </p>
+
+                  <p>
+                     NPMOCZEOETPZAUEOIZBSSSSY
+                  </p>
+
+                  <p>
+                     Find the third word of the plaintext.
+                  </p>
+
+                  <span class="tag">Variant A</span>
+
+               </div>
+
+               <div class="comparison-box">
+
+                  <h3>Version 00059656</h3>
+
+                  <p>
+                     <strong>Question 1</strong>
+                  </p>
+
+                  <p>
+                     WVEITZCEOTRSNNVEAZAILHCZ
+                  </p>
+
+                  <p>
+                     Find the third word of the plaintext.
+                  </p>
+
+                  <span class="tag">Variant B</span>
+
+               </div>
+
+            </div>
+
+            <div class="statement">
+               <strong>Same question structure.</strong>
+               Different instantiation. Different answer.
+            </div>
+
+         </div>
+      </section>
+
+
+      <section class="slide exam-slide">
+
+         <div class="content">
+
+            <div class="section-label">Real examination example</div>
+
+            <h2>What the Students Actually See</h2>
+
+            <div class="exam-papers">
+
+               <!-- ===================================================== -->
+               <!-- VERSION A -->
+               <!-- ===================================================== -->
+
+               <div class="exam-paper">
+
+                  <div class="exam-header">
+                     <span>THE UNIVERSITY OF AUCKLAND</span><br />
+                     <br />
+                     <hr class="exam-rule" />
+                     <span>SEMESTER TWO, 2026</span><br />
+                     <span>Campus: City</span><br />
+                     <hr class="exam-rule" />
+                     <br />
+                     <strong>COMPUTER SCIENCE</strong><br />
+                     Data Communications and Security<br />
+                     (Time Allowed: 40 minutes)
+                  </div>
+
+                  <div class="exam-note">
+
+                     <strong>Note:</strong>
+
+                     <ul>
+                        <li>Enter your name and student ID on the answer sheet.</li>
+
+                        <li>
+                           The version code for this question/answer book is
+                           <strong class="version-code">00059268</strong>.
+                        </li>
+
+                        <li>
+                           Each question is expected to have exactly 1 (one)
+                           correct answer. If you believe that a question has either
+                           NO or MULTIPLE correct answers, select the ONE
+                           you believe is most likely to be the intended answer.
+                        </li>
+
+                        <li>
+                           All questions carry equal marks.
+                           There are neither partial marks nor penalties for incorrect
+                           answers.
+                        </li>
+                     </ul>
+
+                     Name: ______________________
+                     &nbsp;&nbsp;
+                     ID: ______________________
+
+                  </div>
+
+                  <div class="exam-question">
+
+                     <strong>1.</strong>
+                     The following ciphertext is encrypted using a columnar
+                     transposition cipher:
+
+                     <code>NPMOCZEOETPZAUEOIZBSSSSY</code>.
+
+                     What is the third word of the corresponding plaintext?
+
+                     <div class="exam-options">
+                        <div>A. SEEMS</div>
+                        <div>B. NUT</div>
+                        <div>C. EAST</div>
+                        <div>D. SENSE</div>
+                        <div>E. INPUT</div>
+                     </div>
+
+                  </div>
+
+               </div>
+
+
+               <!-- ===================================================== -->
+               <!-- VERSION B -->
+               <!-- ===================================================== -->
+
+               <div class="exam-paper">
+
+                  <div class="exam-header">
+                     <span>THE UNIVERSITY OF AUCKLAND</span><br />
+                     <br />
+                     <hr class="exam-rule" />
+                     <span>SEMESTER TWO, 2026</span><br />
+                     <span>Campus: City</span><br />
+                     <hr class="exam-rule" />
+                     <br />
+                     <strong>COMPUTER SCIENCE</strong><br />
+                     Data Communications and Security<br />
+                     (Time Allowed: 40 minutes)
+                  </div>
+
+                  <div class="exam-note">
+
+                     <strong>Note:</strong>
+
+                     <ul>
+                        <li>Enter your name and student ID on the answer sheet.</li>
+
+                        <li>
+                           The version code for this question/answer book is
+                           <strong class="version-code">00059656</strong>.
+                        </li>
+
+                        <li>
+                           Each question is expected to have exactly 1 (one)
+                           correct answer. If you believe that a question has either
+                           NO or MULTIPLE correct answers, select the ONE
+                           you believe is most likely to be the intended answer.
+                        </li>
+
+                        <li>
+                           All questions carry equal marks.
+                           There are neither partial marks nor penalties for incorrect
+                           answers.
+                        </li>
+                     </ul>
+
+                     Name: ______________________
+                     &nbsp;&nbsp;
+                     ID: ______________________
+
+                  </div>
+
+                  <div class="exam-question">
+
+                     <strong>1.</strong>
+                     The following ciphertext is encrypted using a columnar
+                     transposition cipher:
+
+                     <code>WVEITZCEOTRSNNVEAZAILHCZ</code>.
+
+                     What is the third word of the corresponding plaintext?
+
+                     <div class="exam-options">
+                        <div>A. HERE</div>
+                        <div>B. INVOLVE</div>
+                        <div>C. SCORE</div>
+                        <div>D. TIE</div>
+                        <div>E. SNOW</div>
+                     </div>
+
+                  </div>
+
+               </div>
+
+            </div>
+
+         </div>
+
+      </section>
+
+
+
+
+
+      <!-- ========================================================= -->
+      <!-- SLIDE: DESIGNING HIGHER-LEVEL MCQs -->
+      <!-- ========================================================= -->
+
+      <section class="slide">
+
+         <div class="content">
+
+            <div class="section-label">Question design</div>
+
+            <h2>Designing Higher-Order MCQs</h2>
+
+            <div class="workflow">
+
+               <div class="workflow-step">
+                  <div class="number">1</div>
+                  <strong>Scenario</strong>
+                  <span>
+                     Present a realistic situation
+                     or problem
+                  </span>
+               </div>
+
+               <div class="arrow">→</div>
+
+               <div class="workflow-step">
+                  <div class="number">2</div>
+                  <strong>Reflective Question</strong>
+                  <span>
+                     Ask students to reason
+                     about the implications
+                  </span>
+               </div>
+
+               <div class="arrow">→</div>
+
+               <div class="workflow-step">
+                  <div class="number">3</div>
+                  <strong>Implications</strong>
+                  <span>
+                     Identify true and false
+                     implications
+                  </span>
+               </div>
+
+               <div class="arrow">→</div>
+
+               <div class="workflow-step">
+                  <div class="number">4</div>
+                  <strong>MCQ</strong>
+                  <span>
+                     Construct a question from
+                     the implication pools
+                  </span>
+               </div>
+
+            </div>
+
+
+            <div class="two-column spaced-top">
+
+               <div class="card">
+
+                  <h3>True implications</h3>
+
+                  <p class="lead">
+                     A pool of <strong>true statements</strong>
+                     that can form correct answers.
+                  </p>
+
+               </div>
+
+
+               <div class="card">
+
+                  <h3>False implications</h3>
+
+                  <p class="lead">
+                     A pool of <strong>plausible but false statements</strong>
+                     that can form distractors.
+                  </p>
+
+               </div>
+
+            </div>
+
+
+            <div class="statement">
+
+               <strong>Result:</strong>
+               a question that targets higher-order thinking in Bloom’s taxonomy — rather than simple recall.
+
+            </div>
+
+         </div>
+
+      </section>
+
+      <section class="slide exam-slide">
+
+         <div class="content">
+
+            <div class="section-label">A higher-order example</div>
+
+            <h2>Generated Security Questions</h2>
+
+            <div class="exam-papers">
+
+               <!-- ===================================================== -->
+               <!-- VERSION A -->
+               <!-- ===================================================== -->
+
+               <div class="card">
+
+                  <h3>Simplified TLS</h3>
+
+                  <p>
+                     TLS normally establishes separate encryption and MAC keys
+                     for the two communication directions.
+                  </p>
+
+                  <p>
+                     Suppose a simplified TLS establishes a single encryption
+                     key and a single MAC key for both directions.
+                  </p>
+
+                  <p>
+                     <strong>What vulnerability does this simplified TLS create?</strong>
+                  </p>
+
+                  <p>
+                     X. An intermediary can potentially re-send a client-to-server
+                     message to a client posed as a server-originated message.
+                  </p>
+
+                  <p>
+                     Y. An intermediary can potentially mount a reflection attack.
+                  </p>
+
+                  <p>
+                     Z. An intermediary can potentially re-send a server-to-client
+                     message to a server posed as a client-originated message.
+                  </p>
+
+                  <div class="options">
+                     <div>A) X and Y only</div>
+                     <div>B) X and Z only</div>
+                     <div>C) Y and Z only</div>
+                     <div>D) All of X, Y and Z</div>
+                     <div>E) None, or only one of X, Y and Z</div>
+                  </div>
+
+               </div>
+
+
+               <!-- ===================================================== -->
+               <!-- VERSION B -->
+               <!-- ===================================================== -->
+
+               <div class="card">
+
+                  <h3>Simplified TLS</h3>
+
+                  <p>
+                     TLS normally establishes separate encryption and MAC keys
+                     for the two communication directions.
+                  </p>
+
+                  <p>
+                     Suppose a simplified TLS establishes a single encryption
+                     key and a single MAC key for both directions.
+                  </p>
+
+                  <p>
+                     <strong>What vulnerability does this simplified TLS create?</strong>
+                  </p>
+
+                  <p>
+                     X. An intermediary can potentially mount a reflection attack.
+                  </p>
+
+                  <p>
+                     Y. A client may pose as the server given that the client knows the server keys.
+                  </p>
+
+                  <p>
+                     Z. An intermediary can decipher messages the client sends to the server.
+                     <br />&nbsp;<br />
+                  </p>
+
+                  <div class="options">
+                     <div>A) X only</div>
+                     <div>B) Y only</div>
+                     <div>C) Z only</div>
+                     <div>D) None of X, Y, and Z</div>
+                     <div>E) All, or two of X, Y, and Z</div>
+                  </div>
+
+               </div>
+
+
+
+            </div>
+
+            <div class="statement">
+               The generator randomly selects from true and false implications to create different question variants.
+            </div>
+
+         </div>
+
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- SLIDE: GRADING INDIVIDUALISED MCQS -->
+      <!-- ========================================================= -->
+
+      <section class="slide">
+
+         <div class="content">
+
+            <div class="section-label">Operational advantages</div>
+
+            <h2>Grading Individualised MCQs</h2>
+
+            <div class="two-column">
+
+               <!-- OMR SHEET -->
+               <div class="card">
+
+                  <div class="omr-image-container">
+                     <img src="SampleOMR.svg"
+                          alt="Example OMR answer sheet"
+                          class="omr-image">
+                  </div>
+
+                  <p>
+                     Students bubble in their answers on an OMR sheet,
+                     including a <strong>pre-bubbled version number</strong>.
+                  </p>
+               </div>
+
+
+               <!-- GRADING -->
+               <div class="card">
+
+                  <h3>Automated grading</h3>
+
+                  <div class="grading-workflow">
+
+                     <div class="workflow-step">
+                        <div class="number">1</div>
+                        <strong>Scan the OMR sheets</strong>
+                        <span>
+                           Scanned sheets are collected as PDFs.
+                        </span>
+                     </div>
+
+                     <div class="arrow">↓</div>
+
+                     <div class="workflow-step">
+                        <div class="number">2</div>
+                        <strong>OMR Processor</strong>
+                        <span>
+                           Extracts the student's responses
+                           and version number.
+                        </span>
+                     </div>
+
+                     <div class="arrow">↓</div>
+
+                     <div class="workflow-step">
+                        <div class="number">3</div>
+                        <strong>MCQ Grader</strong>
+                        <span>
+                           Applies the appropriate generated
+                           answer key and assigns the marks.
+                        </span>
+                     </div>
+
+                  </div>
+
+               </div>
+
+            </div>
+
+
+            <div class="statement">
+
+               <strong>Individualised questions <u>without</u> individualised marking.</strong>
+
+            </div>
+
+         </div>
+
+      </section>
+
+
+
+      <!-- ========================================================= -->
+      <!-- SLIDE 19 -->
+      <!-- ========================================================= -->
+
+      <section class="slide">
+
+         <div class="content">
+
+            <div class="section-label">The long-term view</div>
+
+            <h2>Question Generators:<br>Long-Term Payoff</h2>
+
+            <div class="two-column">
+
+               <div class="card">
+
+                  <h3>Short Term</h3>
+
+                  <ul class="big-list">
+                     <li>Higher initial investment</li>
+                     <li>More design effort</li>
+                     <li>More validation required</li>
+                  </ul>
+
+               </div>
+
+               <div class="card">
+
+                  <h3>Long Term</h3>
+
+                  <ul class="big-list">
+                     <li>Reuse across semesters</li>
+                     <li>Unlimited practice material</li>
+                     <li>Multiple examination versions</li>
+                     <li>Reduced maintenance of question banks</li>
+                     <li>Scalable assessment</li>
+                     <li>Auto-grading</li>
+                     <li>Highly reduced physical space requirements for the examination</li>
+                  </ul>
+
+               </div>
+
+            </div>
+
+            <div class="statement">
+               <strong>Initial cost → reusable assessment infrastructure and operational efficiency.</strong>
+            </div>
+
+         </div>
+      </section>
+
+
+      <!-- ========================================================= -->
+      <!-- SLIDE: FAQ -->
+      <!-- ========================================================= -->
+
+      <section class="slide">
+
+         <div class="content">
+
+            <div class="section-label">Frequently asked questions</div>
+
+            <h2>Can I do that?</h2>
+
+            <div class="faq-grid">
+
+               <!-- MATHS -->
+               <div class="card faq-card">
+
+                  <h3>Can I put maths in a question?</h3>
+
+                  <div class="faq-answer math-answer">
+                     y∑s²
+                  </div>
+
+               </div>
+
+
+               <!-- PICTURE -->
+               <div class="card faq-card">
+
+                  <h3>Can I include a picture in a question?</h3>
+
+                  <div class="faq-answer">
+
+                     <img src="Y-Es.svg"
+                          alt="Yes"
+                          class="yes-svg">
+
+                  </div>
+
+               </div>
+
+
+               <!-- X -->
+               <div class="card faq-card">
+
+                  <h3>Can I do X?</h3>
+
+                  <div class="faq-answer probably">
+                     <i>P</i>(YES)≈1
+                  </div>
+
+               </div>
+
+            </div>
+
+         </div>
+
+      </section>
+
+      <section class="slide ">
+         <div class="dancing-baby-container">
+            <img src="DancingBaby.svg" alt="A dancing baby" class="dancing-baby">
+
+            <div class="dancing-baby-caption">
+               Someone wanted a dancing baby.
+               <span>And yes, we can generate one.</span>
+            </div>
+         </div>
+      </section>
+
+      <section class="slide">
+         <div class="content">
+
+            <div class="section-label">Beyond Papers and Multiple Choice</div>
+
+            <h2>Question Generators + Digital Assessment</h2>
+
+            <div class="three-column">
+               <div class="card">
+                  <p class="lead">MCQs</p>
+                  <p> Use generated MCQs as they are. </p>
+                  <span class="tag">Individualised</span>
+                  <span class="tag">Auto-marked</span>
+                  <span class="tag">Reusable</span>
+               </div>
+               <div class="card">
+                  <p class="lead">Numerical Answers</p> 
+                  <p> Ask directly: <em>How much is $a + $b?</em> </p>
+                  <span class="tag">No distractors</span>
+                  <span class="tag">Individualised</span>
+                  <span class="tag">Auto-marked</span>
+                  <span class="tag">Reusable</span>
+               </div>
+               <div class="card">
+                  <p class="lead">Short-Text Answers</p>
+                  <p> Ask directly: <em>What is the decryption of $text?</em> </p>
+                  <span class="tag">No distractors</span>
+                  <span class="tag">Individualised</span>
+                  <span class="tag">Auto-marked</span>
+                  <span class="tag">Reusable</span>
+               </div>
+            </div>
+            <div class="statement">
+               <strong>MCQs can directly be delivered digitally.</strong>
+               For digital-only assessments, numerical and short-text answers provide a simpler path requiring no distractors.
+            </div>
+
+         </div>
+      </section>
+
+
+
+      <!-- ========================================================= -->
+      <!-- The End -->
+      <!-- ========================================================= -->
+
+      <section class="slide final-slide">
+         <div class="accent centered"></div>
+         <h2>Question Generators</h2>
+
+         <p>
+            Invest effort once in designing a good question.
+            Build a generator, and reuse that design again and again.
+         </p>
+         <p class="final-summary">
+            Scalable &nbsp;·&nbsp;
+            Reusable &nbsp;·&nbsp;
+            Isomorphic &nbsp;·&nbsp;
+            Auto-graded
+         </p>
+         <div class="qr-code">
+            <img src="QR-code.svg" alt="QR code" class="qr-image">
+         </div>
+      </section>
+
+   </div>
+
+
+   <!-- ============================================================= -->
+   <!-- CONTROLS -->
+   <!-- ============================================================= -->
+
+   <div class="controls">
+
+      <button onclick="previousSlide()" title="Previous slide">
+         &#8592;
+      </button>
+
+      <button onclick="toggleFullscreen()" title="Fullscreen">
+         &#x26F6;
+      </button>
+
+      <button onclick="nextSlide()" title="Next slide">
+         &#8594;
+      </button>
+
+   </div>
+
+
+</body>
+</html>
