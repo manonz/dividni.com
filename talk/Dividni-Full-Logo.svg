@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMin" viewBox="0 0 530 160">
+   <!--<rect width="530" height="160" fill="lightgray"/>-->
+   <symbol id="dividni_d" viewBox="0 0 160 160">
+      <defs>
+         <clipPath id="dee-cut">
+            <polyline points="70 60 70 105 80 105 80 60 90 60 90 16 118 16 118 120 100 140 75 148 50 140 33 120 33 80 70 60" fill="none" stroke-width="0.1" stroke="black" />
+         </clipPath>
+      </defs>
+      <g id="dee" clip-path="url(#dee-cut)" stroke-width="20" >
+         <line x1="105" y1="105" x2="105" y2="20" />
+         <circle cx="75" cy="105" r="30" fill="none" />
+      </g>
+      <circle id="dot" cx="75" cy="40" r="10" />
+   </symbol>
+   <symbol id="dividni_i" viewBox="0 0 160 160">
+      <line stroke-width="20" x1="75" y1="145" x2="75" y2="65" />
+      <circle id="dot" cx="75" cy="40" r="10" />
+   </symbol>
+   <symbol id="dividni_v" viewBox="0 0 160 160">
+      <polyline stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round" points="55,75 80,135 105,75" />
+   </symbol>
+   <symbol id="dividni_n" viewBox="0 0 160 160">
+      <path d="M55,100 a 1,1 0 0,1 50,0" stroke-width="20" fill="none" />
+      <line stroke-width="20" x1="55" y1="145" x2="55" y2="99" />
+      <line stroke-width="20" x1="105" y1="145" x2="105" y2="99" />
+   </symbol>
+   <g stroke="white" fill="white" >
+      <use href="#dividni_d" width="160" height="160"/>
+      <use href="#dividni_i" x="70" width="160" height="160"/>
+      <use href="#dividni_v" x="125" width="160" height="160"/>
+      <use href="#dividni_i" x="190" width="160" height="160"/>
+      <use href="#dividni_d" x="255" width="160" height="160"/>
+      <use href="#dividni_n" x="335" width="160" height="160"/>
+      <use href="#dividni_i" x="400" width="160" height="160"/>
+   </g>
+</svg>

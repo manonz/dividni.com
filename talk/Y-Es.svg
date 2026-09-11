@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 140">
+	<path stroke="#111" stroke-width="4" d="M135 70h90"/>
+	<circle cx="100" cy="70" r="35" fill="#fff" stroke="#111" stroke-width="4"/>
+	<text x="100" y="70" fill="#111" dominant-baseline="central" font-family="Georgia, 'Times New Roman', serif" font-size="32" text-anchor="middle">Y</text>
+	<circle cx="260" cy="70" r="35" fill="#fff" stroke="#111" stroke-width="4"/>
+	<text x="260" y="70" fill="#111" dominant-baseline="central" font-family="Georgia, 'Times New Roman', serif" font-size="28" text-anchor="middle">Es</text>
+</svg>
