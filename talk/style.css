@@ -34,6 +34,23 @@ html, body {
       flex-direction: column;
    }
 
+/* ---------- SLIDE NUMBERS ---------- */
+
+.slide-number {
+   position: absolute;
+   right: 3vw;
+   bottom: 3vh;
+   font-size: .75rem;
+   color: #888;
+   font-weight: 600;
+   z-index: 100;
+}
+
+.title-slide .slide-number,
+.final-slide .slide-number {
+   color: rgba(255,255,255,.65);
+}
+
 /* ---------- TITLE SLIDE ---------- */
 
 .dividni-logo {
@@ -48,6 +65,7 @@ html, body {
    color: white;
    justify-content: center;
    padding-left: 11vw;
+   overflow: hidden;
 }
 
    .title-slide::after {
@@ -681,22 +699,6 @@ code {
    transition: width .25s ease;
 }
 
-/* ---------- SLIDE NUMBERS ---------- */
-
-.slide-number {
-   position: absolute;
-   right: 2vw;
-   bottom: 1.5vh;
-   font-size: .85rem;
-   color: #7a899c;
-   font-weight: 600;
-   z-index: 10;
-}
-
-.title-slide .slide-number,
-.final-slide .slide-number {
-   color: rgba(255,255,255,.65);
-}
 
 /* ---------- RESPONSIVE ---------- */
 

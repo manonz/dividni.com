@@ -10,6 +10,13 @@
 </head>
 
 <body>
+   <script>
+      if ('serviceWorker' in navigator) {
+         window.addEventListener('load', () => {
+            navigator.serviceWorker.register('sw.js');
+         });
+      }
+   </script>
 
    <div class="presentation">
 
@@ -50,14 +57,14 @@
 
          <div class="author">
             <!--Mano Manoharan<br>
-            Mano.Manoharan@Auckland.ac.NZ-->
+         Mano.Manoharan@Auckland.ac.NZ-->
          </div>
 
       </section>
 
 
       <!-- ========================================================= -->
-      <!-- SLIDE 2 -->
+      <!-- SLIDE Assessment Challenges -->
       <!-- ========================================================= -->
 
       <section class="slide">
@@ -88,7 +95,7 @@
 
 
       <!-- ========================================================= -->
-      <!-- SLIDE 3 -->
+      <!-- SLIDE Advantages of Multiple-Choice Exams -->
       <!-- ========================================================= -->
 
       <section class="slide">
@@ -135,7 +142,7 @@
 
 
       <!-- ========================================================= -->
-      <!-- SLIDE 4 -->
+      <!-- SLIDE Question Generators -->
       <!-- ========================================================= -->
 
       <section class="slide">
@@ -179,7 +186,7 @@
 
 
       <!-- ========================================================= -->
-      <!-- SLIDE 5 -->
+      <!-- SLIDE Isomorphic Questions -->
       <!-- ========================================================= -->
 
       <section class="slide">
@@ -239,7 +246,7 @@
 
 
       <!-- ========================================================= -->
-      <!-- SLIDE 6 -->
+      <!-- SLIDE Example 1 -->
       <!-- ========================================================= -->
 
       <section class="slide">
@@ -317,7 +324,7 @@
 
 
       <!-- ========================================================= -->
-      <!-- SLIDE 7 -->
+      <!-- SLIDE Example 2 -->
       <!-- ========================================================= -->
 
       <section class="slide">
@@ -392,7 +399,7 @@
 
 
       <!-- ========================================================= -->
-      <!-- SLIDE: MULTIPLE QUESTIONS, COMMON MATERIAL -->
+      <!-- SLIDE: Example 3 -->
       <!-- ========================================================= -->
 
       <section class="slide">
@@ -511,7 +518,7 @@
       </section>
 
       <!-- ========================================================= -->
-      <!-- SLIDE 8 -->
+      <!-- SLIDE Question Generators vs Question Banks -->
       <!-- ========================================================= -->
 
       <section class="slide">
@@ -557,7 +564,7 @@
 
 
       <!-- ========================================================= -->
-      <!-- SLIDE 9 -->
+      <!-- SLIDE 9 Benefits of Isomorphic Question Generation -->
       <!-- ========================================================= -->
 
       <section class="slide">
@@ -594,7 +601,7 @@
 
 
       <!-- ========================================================= -->
-      <!-- SLIDE 10 -->
+      <!-- SLIDE Operational Advantages -->
       <!-- ========================================================= -->
 
       <section class="slide">
@@ -693,7 +700,7 @@
       </section>
 
       <!-- ========================================================= -->
-      <!-- SLIDE 11 -->
+      <!-- SLIDE Quality is not determined by format -->
       <!-- ========================================================= -->
 
       <section class="slide">
@@ -744,7 +751,7 @@
 
 
       <!-- ========================================================= -->
-      <!-- SLIDE 12 -->
+      <!-- SLIDE Good Questions Are Hard -->
       <!-- ========================================================= -->
 
       <section class="slide">
@@ -779,7 +786,7 @@
 
 
       <!-- ========================================================= -->
-      <!-- SLIDE 13 -->
+      <!-- SLIDE Question Generation Pipeline -->
       <!-- ========================================================= -->
 
       <section class="slide">
@@ -828,7 +835,7 @@
 
 
       <!-- ========================================================= -->
-      <!-- SLIDE 14 -->
+      <!-- SLIDE Exam on the go -->
       <!-- ========================================================= -->
 
       <section class="slide">
@@ -1353,7 +1360,7 @@
 
 
       <!-- ========================================================= -->
-      <!-- SLIDE 19 -->
+      <!-- SLIDE Question Generators: Long-Term View -->
       <!-- ========================================================= -->
 
       <section class="slide">
@@ -1490,7 +1497,7 @@
                   <span class="tag">Reusable</span>
                </div>
                <div class="card">
-                  <p class="lead">Numerical Answers</p> 
+                  <p class="lead">Numerical Answers</p>
                   <p> Ask directly: <em>How much is $a + $b?</em> </p>
                   <span class="tag">No distractors</span>
                   <span class="tag">Individualised</span>
