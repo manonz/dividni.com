@@ -663,13 +663,12 @@ code {
 
 .controls {
    position: fixed;
-   left: 50%;
-   bottom: 1.5vh;
-   transform: translateX(-50%);
+   right: 2vw;
+   top: 2vh;
    z-index: 100;
    display: flex;
    gap: .5rem;
-   background: rgba(16,24,39,.9);
+   background: rgba(16,24,39,.3);
    padding: .45rem;
    border-radius: 30px;
 }
