@@ -4,7 +4,14 @@ const CACHE_NAME = 'dividni-talk-cache-v1';
 const ASSETS_TO_CACHE = [
    'index.html',
    'manifest.json',
-   'Logo.svg'
+   'Logo.svg',
+   'Dividni-Full-Logo.svg',
+   'exam-crowded.jpg',
+   'QR-code.svg',
+   'SampleOMR.svg',
+   'Y-Es.svg',
+   'style.css',
+   'pressie.js'
 ];
 
 // 1. Install Event: Create the cache and inject the app shell files
