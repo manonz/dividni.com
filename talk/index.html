@@ -3,10 +3,11 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-   <title>Assessment Design with Question Generators</title>
-   <link rel="stylesheet" href="style.css" />
-   <script src="pressie.js" defer="defer"></script>
+   <title>Things That Don't Exist — Claims, References and Trust</title>
+   <link rel="manifest" href="manifest.json" />
+   <link rel="icon" type="image/svg+xml" href="Logo.svg" />
+   <link type="text/css" rel="stylesheet" href="things.css" />
+   <script src="things.js" defer="defer"></script>
 </head>
 
 <body>
@@ -18,1557 +19,707 @@
       }
    </script>
 
-   <div class="presentation">
+   <div class="deck">
 
-      <div class="progress" id="progress"></div>
+      <section class="slide active center">
+         <div class="eyebrow">A conversation about research integrity</div>
+         <h1>Things That<br><span class="accent">Don't Exist</span></h1>
+         <div class="subtitle">
+            Claims, references and trust in the scholarly record
+         </div>
+         <p class="small" style="margin-top:5vh;">
+            An informal discussion about how trust gets propagated through the scholarly record —
+            and what happens when nobody checks
+         </p>
+      </section>
 
-      <!-- ========================================================= -->
-      <!-- OPENING SLIDE -->
-      <!-- ========================================================= -->
 
-      <section class="slide title-slide active">
+      <section class="slide">
+         <div class="eyebrow">Start with a claim</div>
 
-         <div class="accent"></div>
+         <div class="claim">
+            “This technology was developed by us.”
+         </div>
 
-         <div class="title-layout">
-            <div class="title-main">
-               <h1>
-                  Assessment Design<br>
-                  with Question Generators
-               </h1>
+         <p style="margin-top:5vh;">
+            A claim can sound perfectly plausible.
+         </p>
 
-               <img src="Dividni-Full-Logo.svg"
-                    alt="Dividni"
-                    class="dividni-logo">
+         <div class="question" style="font-size:clamp(2.5rem,5vw,5rem);">
+            But how do we know?
+         </div>
+
+      </section>
+
+      <section class="slide">
+         <div class="eyebrow">Start with a claim</div>
+
+         <div class="claim">
+            “This technology was developed by us.”
+         </div>
+
+         <p style="margin-top:5vh;">
+            A claim can sound perfectly plausible.
+         </p>
+
+         <div class="question" style="font-size:clamp(2.5rem,5vw,5rem);">
+            But how do we know?
+         </div>
+
+         <img src="Unitree-Go2.png" alt="Unitree Go2 Robot Dog" style="width: 40%; height: auto; margin-top: 0.1vh; float: right;">
+
+      </section>
+
+      <section class="slide">
+         <div class="eyebrow">Start with a claim</div>
+
+         <div class="claim">
+            “This technology was developed by us.”
+         </div>
+
+         <p style="margin-top:5vh;">
+            A claim can sound perfectly plausible.
+         </p>
+
+         <div class="question" style="font-size:clamp(2.5rem,5vw,5rem);">
+            But how do we know?
+         </div>
+
+         <img src="Galgotias-Dog-Pee2N.png" alt="Unitree Go2 Robot Dog" style="width: 40%; height: auto; margin-top: 0.5vh; float: right;">
+
+      </section>
+
+
+      <section class="slide">
+         <div class="eyebrow">The problem predates generative AI</div>
+         <h2>False claims can enter<br>the scholarly record.</h2>
+
+         <div class="three">
+            <div class="card">
+               <div class="number">01</div>
+               <h3>Fabricated evidence</h3>
+               <p>Data or samples can be invented, substituted or manipulated.</p>
             </div>
 
-            <div class="title-agenda">
-               <div class="agenda-label">What we'll cover</div>
-               <ul>
-                  <li>What are question generators?</li>
-                  <li>Why use question generators?</li>
-                  <li>What makes generated questions different?</li>
-                  <li>How can they support higher-order assessment?</li>
-                  <li>How do we grade the assessment?</li>
-                  <li>What are the longer-term benefits?</li>
-               </ul>
+            <div class="card">
+               <div class="number">02</div>
+               <h3>SCIgen</h3>
+               <p>Plausible-looking scientific papers can be generated without meaningful science underneath.</p>
+            </div>
+
+            <div class="card">
+               <div class="number">03</div>
+               <h3>Misleading citations</h3>
+               <p>References can be real but inaccurate, distorted or used to support claims they do not support.</p>
             </div>
          </div>
 
-         <div class="author">
-            <!--Mano Manoharan<br>
-         Mano.Manoharan@Auckland.ac.NZ-->
+         <p class="small" style="margin-top:4vh;">
+            AI did not invent unreliable scholarship. It changes the speed and cost
+            at which plausible-looking claims can be produced.
+         </p>
+
+      </section>
+
+
+      <section class="slide center dark">
+         <div class="eyebrow">A useful distinction</div>
+
+         <div class="spectrum">
+            <div>
+               <strong>True</strong>
+               <span>The available evidence supports the claim.</span>
+            </div>
+            <div>
+               <strong>False</strong>
+               <span>The available evidence contradicts the claim.</span>
+            </div>
+            <div>
+               <strong>Unverifiable</strong>
+               <span>The available evidence is insufficient to establish whether the claim is true or false.</span>
+            </div>
+         </div>
+
+         <div class="large-quote">
+            “We tend to think about integrity as distinguishing
+            <span class="accent">true</span> from <span class="accent">false</span>.
+            But there is a third category.”
          </div>
 
       </section>
 
 
-      <!-- ========================================================= -->
-      <!-- SLIDE Assessment Challenges -->
-      <!-- ========================================================= -->
-
       <section class="slide">
+         <div class="eyebrow">Unverifiable references</div>
+         <h2>Does this paper exist?</h2>
 
-         <div class="content">
+         <div class="claim" style="font-family:Georgia,serif;font-size:clamp(1.3rem,2.3vw,2.2rem);">
+            Smith, J., &amp; Kumar, R. (2024).<br>
+            <em>
+               Artificial intelligence and educational transformation:
+               A systematic review.
+            </em><br>
+            Journal of Educational Technology, 18(3), 214–229.<br>
+            doi:10.2916.WP/562679
+         </div>
 
-            <div class="section-label">The problem</div>
+         <p style="margin-top:4vh;">
+            It looks like a scholarly object.
+         </p>
 
-            <h2>Assessment Challenges</h2>
-
-            <ul class="big-list">
-               <li>Free-format answers are <strong>time-consuming to mark</strong></li>
-               <li>Large classes make marking difficult to scale</li>
-               <li>Handwritten responses raise <strong>legibility issues</strong></li>
-               <li>Fewer questions lead to <strong>limited topic coverage</strong></li>
-            </ul>
-
-            <div class="statement">
-               The challenge is not simply marking faster.
-               <strong>
-                  It is designing assessments that scale without
-                  sacrificing quality.
-               </strong>
-            </div>
-
+         <div class="question" style="font-size:clamp(2.3rem,4.5vw,4.5rem);">
+            Except that it may not exist.
          </div>
       </section>
 
 
-      <!-- ========================================================= -->
-      <!-- SLIDE Advantages of Multiple-Choice Exams -->
-      <!-- ========================================================= -->
-
       <section class="slide">
+         <div class="eyebrow">Our small question</div>
 
-         <div class="content">
-
-            <div class="section-label">One possible approach</div>
-
-            <h2>Advantages of Multiple-Choice Exams</h2>
-
-            <div class="two-column">
-
-               <div class="card">
-                  <h3>Efficiency</h3>
-
-                  <ul class="big-list">
-                     <li>Quick and efficient marking</li>
-                     <li>Scales well to large classes</li>
-                     <li>Allows many questions per exam</li>
-                  </ul>
-               </div>
-
-               <div class="card">
-                  <h3>Assessment Quality</h3>
-
-                  <ul class="big-list">
-                     <li>Broader topic coverage</li>
-                     <li>More consistent marking</li>
-                     <li>Improved reliability and fairness</li>
-                  </ul>
-               </div>
-
-            </div>
-
-            <div class="statement">
-               <span class="highlight">
-                  Multiple-choice does not have to mean
-                  low-level assessment.
-               </span>
-            </div>
-
+         <div class="question">
+            Have unverifiable references<br>
+            actually entered the<br>
+            published literature?
          </div>
+
+         <div class="flow">
+            <div class="box">3,201 papers</div>
+            <div class="arrow">→</div>
+            <div class="box">AI + education</div>
+            <div class="arrow">→</div>
+            <div class="box">2023–2025</div>
+            <div class="arrow">→</div>
+            <div class="box">Reference verification</div>
+         </div>
+
       </section>
 
 
-      <!-- ========================================================= -->
-      <!-- SLIDE Question Generators -->
-      <!-- ========================================================= -->
+      <section class="slide center dark">
+         <div class="eyebrow">What we found</div>
+
+         <div class="big-number">2.16%</div>
+
+         <div class="label">
+            69 of 3,201 papers contained at least one reference
+            that remained unverifiable.
+         </div>
+
+         <p class="small" style="color:#aaa;margin-top:4vh;">
+            Not “69 fraudulent papers.” Not necessarily “hallucinated references.”
+            Unverifiable after automated checks and manual review.
+         </p>
+
+      </section>
+
 
       <section class="slide">
+         <img src="https://claricite.com/images/Logo.svg" width="100" alt="Claricite Logo" />
+         <h2>Can we automate<br>some of the checking?</h2>
 
-         <div class="content">
+         <div class="pipeline">
+            <div class="step">
+               <strong>PDF</strong>
+               <span>Extract the reference list.</span>
+            </div>
+            <div class="step">
+               <strong>Identifiers</strong>
+               <span>Check DOI / URL where available.</span>
+            </div>
+            <div class="step">
+               <strong>Databases</strong>
+               <span>Cross-check bibliographic records.</span>
+            </div>
+            <div class="step">
+               <strong>Matching</strong>
+               <span>Compare title, authors and year.</span>
+            </div>
+            <div class="step final">
+               <strong>Review</strong>
+               <span>Manually inspect what remains unresolved.</span>
+            </div>
+         </div>
 
-            <div class="section-label">The core idea</div>
-
-            <h2>Question Generators</h2>
-
-            <p class="lead">
-               A question generator is an abstract template from which
-               questions are produced algorithmically.
+         <div class="redline" style="margin-top:5vh;">
+            <p style="margin:0;">
+               <strong>The goal is not to declare “fake”.</strong><br>
+               It is to find things that need checking.
             </p>
-
-            <div class="two-column">
-
-               <div class="card">
-                  <h3>How?</h3>
-
-                  <ul class="big-list">
-                     <li>Questions are algorithmically specified</li>
-                     <li>Defined using a programming language</li>
-                     <li>Generated automatically</li>
-                  </ul>
-               </div>
-
-               <div class="card">
-                  <h3>Programming is only getting easier…</h3>
-
-                  <ul class="big-list">
-                     <li>AI tools can help write the generators</li>
-                     <li>We can actually author generators without a <em>single</em> line of code</li>
-                  </ul>
-               </div>
-
-            </div>
-
-         </div>
-      </section>
-
-
-      <!-- ========================================================= -->
-      <!-- SLIDE Isomorphic Questions -->
-      <!-- ========================================================= -->
-
-      <section class="slide">
-
-         <div class="content">
-
-            <div class="section-label">The key property</div>
-
-            <h2>Different Questions.<br>Same Learning Outcome.</h2>
-
-            <div class="comparison">
-
-               <div class="comparison-box">
-                  <h3>Student A</h3>
-
-                  <p>
-                     Receives one instantiation of the question.
-                  </p>
-
-                  <span class="tag">Different numbers</span>
-                  <span class="tag">Different text data</span>
-                  <hr />
-                  <span class="tag">Different surface details</span>
-                  <span class="tag">Same difficulty</span>
-                  <span class="tag">Same concept</span>
-                  <span class="tag">Same learning outcome</span>
-               </div>
-
-               <!--<div class="versus">≠</div>-->
-
-               <div class="comparison-box">
-                  <h3>Student B</h3>
-
-                  <p>
-                     Receives another instantiation of the same
-                     underlying question.
-                  </p>
-
-                  <span class="tag">Different numbers</span>
-                  <span class="tag">Different text data</span>
-                  <hr />
-                  <span class="tag">Different surface details</span>
-                  <span class="tag">Same difficulty</span>
-                  <span class="tag">Same concept</span>
-                  <span class="tag">Same learning outcome</span>
-               </div>
-
-            </div>
-
-            <div class="statement">
-               The questions are <strong>isomorphic</strong>:
-               systematically different, but equivalent by design.
-            </div>
-
-         </div>
-      </section>
-
-
-      <!-- ========================================================= -->
-      <!-- SLIDE Example 1 -->
-      <!-- ========================================================= -->
-
-      <section class="slide">
-
-         <div class="content">
-
-            <div class="section-label">Example 1</div>
-
-            <h2>Simultaneous Equations</h2>
-
-            <div class="example-grid">
-
-               <div class="question">
-
-                  <div class="variant">Variant A</div>
-
-                  <p>
-                     At Prancing Pony, you can buy <strong>4 apples</strong>
-                     and <strong>9 oranges</strong> for
-                     <strong>364 Castars</strong>; you can also buy
-                     <strong>13 apples</strong> and <strong>17 oranges</strong>
-                     for <strong>742 Castars</strong>.
-                  </p>
-
-                  <p>
-                     What is the price of a single apple?
-                  </p>
-
-                  <div class="options">
-                     <div>A) 37</div>
-                     <div>B) 12</div>
-                     <div>C) 38</div>
-                     <div>D) 10</div>
-                     <div>E) 36</div>
-                  </div>
-
-               </div>
-
-
-               <div class="question">
-
-                  <div class="variant">Variant B</div>
-
-                  <p>
-                     At Prancing Pony, you can buy <strong>3 apples</strong>
-                     and <strong>9 oranges</strong> for
-                     <strong>246 Castars</strong>; you can also buy
-                     <strong>10 apples</strong> and <strong>18 oranges</strong>
-                     for <strong>556 Castars</strong>.
-                  </p>
-
-                  <p>
-                     What is the price of a single apple?
-                  </p>
-
-                  <div class="options">
-                     <div>A) 18</div>
-                     <div>B) 15</div>
-                     <div>C) 17</div>
-                     <div>D) 16</div>
-                     <div>E) 22</div>
-                  </div>
-
-               </div>
-
-            </div>
-
-            <div class="statement">
-               Same mathematical task.
-               <strong>Different numbers, different answer.</strong>
-            </div>
-
-         </div>
-      </section>
-
-
-      <!-- ========================================================= -->
-      <!-- SLIDE Example 2 -->
-      <!-- ========================================================= -->
-
-      <section class="slide">
-
-         <div class="content">
-
-            <div class="section-label">Example 2</div>
-
-            <h2>Transposition Cipher</h2>
-
-            <div class="example-grid">
-
-               <div class="question">
-
-                  <div class="variant">Variant A</div>
-
-                  <p>
-                     The following ciphertext is encrypted using a
-                     columnar transposition cipher:
-                  </p>
-
-                  <div class="question-code">
-                     NPMOCZEOETPZAUEOIZBSSSSY
-                  </div>
-
-                  <p>
-                     What is the third word of the corresponding plaintext?
-                  </p>
-
-                  <div class="options">
-                     <div>A) SEEMS</div>
-                     <div>B) NUT</div>
-                     <div>C) EAST</div>
-                     <div>D) SENSE</div>
-                     <div>E) INPUT</div>
-                  </div>
-
-               </div>
-
-
-               <div class="question">
-
-                  <div class="variant">Variant B</div>
-
-                  <p>
-                     The following ciphertext is encrypted using a
-                     columnar transposition cipher:
-                  </p>
-
-                  <div class="question-code">
-                     WVEITZCEOTRSNNVEAZAILHCZ
-                  </div>
-
-                  <p>
-                     What is the third word of the corresponding plaintext?
-                  </p>
-
-                  <div class="options">
-                     <div>A) HERE</div>
-                     <div>B) INVOLVE</div>
-                     <div>C) SCORE</div>
-                     <div>D) TIE</div>
-                     <div>E) SNOW</div>
-                  </div>
-
-               </div>
-
-            </div>
-
-         </div>
-      </section>
-
-
-      <!-- ========================================================= -->
-      <!-- SLIDE: Example 3 -->
-      <!-- ========================================================= -->
-
-      <section class="slide">
-
-         <div class="content">
-
-            <div class="section-label">Example 3</div>
-
-            <h2>Simultaneous Equations &mdash; Take 2</h2>
-
-            <div class="two-column">
-
-               <!-- VERSION 1 -->
-               <div class="card">
-
-                  <div class="tag">Version 1</div>
-
-                  <p>
-                     At <strong>Prancing Pony</strong>, you can buy
-                     <strong>5 apples</strong> and <strong>10 oranges</strong>
-                     for <strong>320 Castars</strong>; you can also buy
-                     <strong>18 apples</strong> and <strong>15 oranges</strong>
-                     for <strong>564 Castars</strong>.
-                  </p>
-
-                  <p><strong>The following TWO questions relate to this.</strong></p>
-
-                  <div class="question">
-                     <strong>1.</strong>
-                     What is the price of a single apple,
-                     expressed in Castars?
-
-                     <div class="exam-options">
-                        <div>A) 8</div>
-                        <div>B) 10</div>
-                        <div>C) 6</div>
-                        <div>D) 28</div>
-                        <div>E) 7</div>
-                     </div>
-                  </div>
-
-                  <div class="question">
-                     <strong>2.</strong>
-                     What is the price of a single orange,
-                     expressed in Castars?
-
-                     <div class="exam-options">
-                        <div>A) 28</div>
-                        <div>B) 27</div>
-                        <div>C) 7</div>
-                        <div>D) 8</div>
-                        <div>E) 30</div>
-                     </div>
-                  </div>
-
-               </div>
-
-
-               <!-- VERSION 2 -->
-               <div class="card">
-
-                  <div class="tag">Version 2</div>
-
-                  <p>
-                     At <strong>Prancing Pony</strong>, you can buy
-                     <strong>2 apples</strong> and <strong>9 oranges</strong>
-                     for <strong>244 Castars</strong>; you can also buy
-                     <strong>19 apples</strong> and <strong>13 oranges</strong>
-                     for <strong>578 Castars</strong>.
-                  </p>
-
-                  <p><strong>The following TWO questions relate to this.</strong></p>
-
-                  <div class="question">
-                     <strong>1.</strong>
-                     What is the price of a single apple,
-                     expressed in Castars?
-
-                     <div class="exam-options">
-                        <div>A) 12</div>
-                        <div>B) 22</div>
-                        <div>C) 16</div>
-                        <div>D) 14</div>
-                        <div>E) 25</div>
-                     </div>
-                  </div>
-
-                  <div class="question">
-                     <strong>2.</strong>
-                     What is the price of a single orange,
-                     expressed in Castars?
-
-                     <div class="exam-options">
-                        <div>A) 15</div>
-                        <div>B) 16</div>
-                        <div>C) 24</div>
-                        <div>D) 25</div>
-                        <div>E) 13</div>
-                     </div>
-                  </div>
-
-               </div>
-
-            </div>
-
-
-            <div class="statement">
-               <strong>Multiple Questions, Common Material:</strong>
-               A single generated scenario can support
-               <strong>multiple related questions</strong>,
-               each with its own automatically generated answer.
-            </div>
-
-         </div>
-
-      </section>
-
-      <!-- ========================================================= -->
-      <!-- SLIDE Question Generators vs Question Banks -->
-      <!-- ========================================================= -->
-
-      <section class="slide">
-
-         <div class="content">
-
-            <div class="section-label">A common misconception</div>
-
-            <h2>Question Generators<br>vs Question Banks</h2>
-
-            <div class="comparison">
-
-               <div class="comparison-box">
-
-                  <h3>Traditional Question Bank</h3>
-
-                  <ul class="big-list">
-                     <li>Static questions</li>
-                     <li>Typically generated manually</li>
-                     <li>Finite collection</li>
-                     <li>Equivalence must be curated</li>
-                  </ul>
-
-               </div>
-
-               <div class="comparison-box">
-
-                  <h3>Question Generator</h3>
-
-                  <ul class="big-list">
-                     <li>Dynamic questions</li>
-                     <li>Generated automatically</li>
-                     <li>Effectively unlimited variants</li>
-                     <li>Isomorphism enforced by design</li>
-                  </ul>
-
-               </div>
-
-            </div>
-
-         </div>
-      </section>
-
-
-      <!-- ========================================================= -->
-      <!-- SLIDE 9 Benefits of Isomorphic Question Generation -->
-      <!-- ========================================================= -->
-
-      <section class="slide">
-
-         <div class="content">
-
-            <div class="section-label">Why it matters</div>
-
-            <h2>Benefits of Isomorphic<br>Question Generation</h2>
-
-            <ul class="big-list">
-
-               <li><strong>Effectively unlimited</strong> question variants</li>
-
-               <li>Generate practice questions easily</li>
-
-               <li>Reuse questions without losing assessment integrity</li>
-
-               <li>Students need not see the same instantiation</li>
-
-               <li>Repeat entire exams safely</li>
-
-            </ul>
-
-            <div class="statement">
-               Isomorphism is <strong>
-                  systematic and guaranteed by the
-                  generator
-               </strong>, rather than relying on manual curation.
-            </div>
-
-         </div>
-      </section>
-
-
-      <!-- ========================================================= -->
-      <!-- SLIDE Operational Advantages -->
-      <!-- ========================================================= -->
-
-      <section class="slide">
-
-         <div class="content">
-
-            <div class="section-label">A less obvious benefit</div>
-
-            <h2>Operational Advantages</h2>
-
-            <div class="two-column">
-
-               <div class="card">
-
-                  <h3>Exam Logistics</h3>
-
-                  <ul class="big-list">
-                     <li>Easy arrangement of special exams</li>
-                     <li>Different versions can be generated automatically</li>
-                     <li>Students can be seated closer together</li>
-                  </ul>
-
-               </div>
-
-               <div class="card">
-
-                  <h3>At Scale</h3>
-
-                  <ul class="big-list">
-                     <li>Reduced space requirements</li>
-                     <li>Lower supervision overhead</li>
-                     <li>Particularly useful for large classes</li>
-                     <li>Useful for centrally scheduled examinations as well as mid-semester tests</li>
-                  </ul>
-
-               </div>
-
-            </div>
-
-            <div class="statement">
-               Operational advantages <strong>matter greatly at scale.</strong>
-            </div>
-
-         </div>
-      </section>
-
-
-      <!-- ========================================================= -->
-      <!-- SLIDE: REDUCED SPACE REQUIREMENTS -->
-      <!-- ========================================================= -->
-
-      <section class="slide">
-
-         <div class="content">
-
-            <div class="section-label">Key Operational Advantage</div>
-
-            <h2>Reduced Space Requirements</h2>
-
-            <div class="two-column">
-
-               <div class="card">
-                  <p class="lead">
-                     Students can sit <strong>closer together</strong>
-                     because each student receives a different
-                     but equivalent question.
-                  </p>
-
-                  <div class="statement">
-                     Less separation between students can mean
-                     <strong>less examination space required</strong>.
-                  </div>
-
-               </div>
-
-
-               <div class="card image-card">
-
-                  <img src="exam-crowded.jpg"
-                       alt="Students sitting closely together during an examination"
-                       class="cover-image">
-
-               </div>
-
-            </div>
-
-
-            <div class="statement">
-               <strong>Especially useful for large classes.</strong>
-               Individualised questions can make in-class tests
-               practical while maintaining academic integrity.
-            </div>
-
-         </div>
-
-      </section>
-
-      <!-- ========================================================= -->
-      <!-- SLIDE Quality is not determined by format -->
-      <!-- ========================================================= -->
-
-      <section class="slide">
-
-         <div class="content">
-
-            <div class="section-label">The important distinction</div>
-
-            <h2>Question Format ≠ Question Quality</h2>
-
-            <div class="two-column">
-
-               <div class="card">
-
-                  <h3>Multiple-choice can test…</h3>
-
-                  <ul class="big-list">
-                     <li>Understanding</li>
-                     <li>Analysis</li>
-                     <li>Application</li>
-                     <li>Evaluation</li>
-                     <li>Problem solving</li>
-                  </ul>
-
-               </div>
-
-               <div class="card">
-
-                  <h3>But we want to avoid by design…</h3>
-
-                  <ul class="big-list">
-                     <li>Pure recall</li>
-                     <li>Rote memorisation</li>
-                     <li>Mechanical formula substitution</li>
-                     <li>Questions with obvious distractors</li>
-                  </ul>
-
-               </div>
-
-            </div>
-
-            <div class="statement">
-               The quality of the assessment depends on <strong>the thinking the question requires</strong>, not whether the answer is selected from a list.
-            </div>
-
-         </div>
-      </section>
-
-
-      <!-- ========================================================= -->
-      <!-- SLIDE Good Questions Are Hard -->
-      <!-- ========================================================= -->
-
-      <section class="slide">
-
-         <div class="content">
-
-            <div class="section-label">The instructor perspective</div>
-
-            <h2>Good Questions Are Hard</h2>
-
-            <ul class="big-list">
-
-               <li>Designing good questions takes time and effort</li>
-
-               <li>Good assessment requires higher-order thinking by instructors</li>
-
-            </ul>
-
-            <div class="statement">
-               <p>
-                  <strong>Question generator design amplifies instructor effort</strong>
-                  — but once designed, a generator
-                  can be reused almost indefinitely.
-               </p>
-               <p>
-                  BUT ... AI tools can now help with some of the heavy lifting.
-               </p>
-            </div>
-
-         </div>
-      </section>
-
-
-      <!-- ========================================================= -->
-      <!-- SLIDE Question Generation Pipeline -->
-      <!-- ========================================================= -->
-
-      <section class="slide">
-
-         <div class="content">
-
-            <div class="section-label">From generator to examination</div>
-
-            <h2>The Question Generation Pipeline</h2>
-
-            <div class="workflow">
-
-               <div class="workflow-step">
-                  <div class="number">1</div>
-                  <strong>Design</strong>
-                  <span>Learning outcome<br>and question template</span>
-               </div>
-
-               <div class="workflow-step">
-                  <div class="number">2</div>
-                  <strong>Generate</strong>
-                  <span>Randomised<br>parameters</span>
-               </div>
-
-               <div class="workflow-step">
-                  <div class="number">3</div>
-                  <strong>Validate</strong>
-                  <span>Correct answer<br>and distractors</span>
-               </div>
-
-               <div class="workflow-step">
-                  <div class="number">4</div>
-                  <strong>Assemble</strong>
-                  <span>Exam versions<br>and answer sheets</span>
-               </div>
-
-            </div>
-
-            <div class="statement">
-               One carefully designed generator can support
-               <strong>teaching, practice, assessment and reassessment.</strong>
-            </div>
-
-         </div>
-      </section>
-
-
-      <!-- ========================================================= -->
-      <!-- SLIDE Exam on the go -->
-      <!-- ========================================================= -->
-
-      <section class="slide">
-
-         <div class="content">
-
-            <div class="section-label">Example in practice</div>
-
-            <h2>Two Students.<br>Two Exam Versions.</h2>
-
-            <div class="comparison">
-
-               <div class="comparison-box">
-
-                  <h3>Version 00059268</h3>
-
-                  <p>
-                     <strong>Question 1</strong>
-                  </p>
-
-                  <p>
-                     NPMOCZEOETPZAUEOIZBSSSSY
-                  </p>
-
-                  <p>
-                     Find the third word of the plaintext.
-                  </p>
-
-                  <span class="tag">Variant A</span>
-
-               </div>
-
-               <div class="comparison-box">
-
-                  <h3>Version 00059656</h3>
-
-                  <p>
-                     <strong>Question 1</strong>
-                  </p>
-
-                  <p>
-                     WVEITZCEOTRSNNVEAZAILHCZ
-                  </p>
-
-                  <p>
-                     Find the third word of the plaintext.
-                  </p>
-
-                  <span class="tag">Variant B</span>
-
-               </div>
-
-            </div>
-
-            <div class="statement">
-               <strong>Same question structure.</strong>
-               Different instantiation. Different answer.
-            </div>
-
-         </div>
-      </section>
-
-
-      <section class="slide exam-slide">
-
-         <div class="content">
-
-            <div class="section-label">Real examination example</div>
-
-            <h2>What the Students Actually See</h2>
-
-            <div class="exam-papers">
-
-               <!-- ===================================================== -->
-               <!-- VERSION A -->
-               <!-- ===================================================== -->
-
-               <div class="exam-paper">
-
-                  <div class="exam-header">
-                     <span>THE UNIVERSITY OF AUCKLAND</span><br />
-                     <br />
-                     <hr class="exam-rule" />
-                     <span>SEMESTER TWO, 2026</span><br />
-                     <span>Campus: City</span><br />
-                     <hr class="exam-rule" />
-                     <br />
-                     <strong>COMPUTER SCIENCE</strong><br />
-                     Data Communications and Security<br />
-                     (Time Allowed: 40 minutes)
-                  </div>
-
-                  <div class="exam-note">
-
-                     <strong>Note:</strong>
-
-                     <ul>
-                        <li>Enter your name and student ID on the answer sheet.</li>
-
-                        <li>
-                           The version code for this question/answer book is
-                           <strong class="version-code">00059268</strong>.
-                        </li>
-
-                        <li>
-                           Each question is expected to have exactly 1 (one)
-                           correct answer. If you believe that a question has either
-                           NO or MULTIPLE correct answers, select the ONE
-                           you believe is most likely to be the intended answer.
-                        </li>
-
-                        <li>
-                           All questions carry equal marks.
-                           There are neither partial marks nor penalties for incorrect
-                           answers.
-                        </li>
-                     </ul>
-
-                     Name: ______________________
-                     &nbsp;&nbsp;
-                     ID: ______________________
-
-                  </div>
-
-                  <div class="exam-question">
-
-                     <strong>1.</strong>
-                     The following ciphertext is encrypted using a columnar
-                     transposition cipher:
-
-                     <code>NPMOCZEOETPZAUEOIZBSSSSY</code>.
-
-                     What is the third word of the corresponding plaintext?
-
-                     <div class="exam-options">
-                        <div>A. SEEMS</div>
-                        <div>B. NUT</div>
-                        <div>C. EAST</div>
-                        <div>D. SENSE</div>
-                        <div>E. INPUT</div>
-                     </div>
-
-                  </div>
-
-               </div>
-
-
-               <!-- ===================================================== -->
-               <!-- VERSION B -->
-               <!-- ===================================================== -->
-
-               <div class="exam-paper">
-
-                  <div class="exam-header">
-                     <span>THE UNIVERSITY OF AUCKLAND</span><br />
-                     <br />
-                     <hr class="exam-rule" />
-                     <span>SEMESTER TWO, 2026</span><br />
-                     <span>Campus: City</span><br />
-                     <hr class="exam-rule" />
-                     <br />
-                     <strong>COMPUTER SCIENCE</strong><br />
-                     Data Communications and Security<br />
-                     (Time Allowed: 40 minutes)
-                  </div>
-
-                  <div class="exam-note">
-
-                     <strong>Note:</strong>
-
-                     <ul>
-                        <li>Enter your name and student ID on the answer sheet.</li>
-
-                        <li>
-                           The version code for this question/answer book is
-                           <strong class="version-code">00059656</strong>.
-                        </li>
-
-                        <li>
-                           Each question is expected to have exactly 1 (one)
-                           correct answer. If you believe that a question has either
-                           NO or MULTIPLE correct answers, select the ONE
-                           you believe is most likely to be the intended answer.
-                        </li>
-
-                        <li>
-                           All questions carry equal marks.
-                           There are neither partial marks nor penalties for incorrect
-                           answers.
-                        </li>
-                     </ul>
-
-                     Name: ______________________
-                     &nbsp;&nbsp;
-                     ID: ______________________
-
-                  </div>
-
-                  <div class="exam-question">
-
-                     <strong>1.</strong>
-                     The following ciphertext is encrypted using a columnar
-                     transposition cipher:
-
-                     <code>WVEITZCEOTRSNNVEAZAILHCZ</code>.
-
-                     What is the third word of the corresponding plaintext?
-
-                     <div class="exam-options">
-                        <div>A. HERE</div>
-                        <div>B. INVOLVE</div>
-                        <div>C. SCORE</div>
-                        <div>D. TIE</div>
-                        <div>E. SNOW</div>
-                     </div>
-
-                  </div>
-
-               </div>
-
-            </div>
-
-         </div>
-
-      </section>
-
-
-
-
-
-      <!-- ========================================================= -->
-      <!-- SLIDE: DESIGNING HIGHER-LEVEL MCQs -->
-      <!-- ========================================================= -->
-
-      <section class="slide">
-
-         <div class="content">
-
-            <div class="section-label">Question design</div>
-
-            <h2>Designing Higher-Order MCQs</h2>
-
-            <div class="workflow">
-
-               <div class="workflow-step">
-                  <div class="number">1</div>
-                  <strong>Scenario</strong>
-                  <span>
-                     Present a realistic situation
-                     or problem
-                  </span>
-               </div>
-
-               <div class="workflow-step">
-                  <div class="number">2</div>
-                  <strong>Reflective Question</strong>
-                  <span>
-                     Ask students to reason
-                     about the implications
-                  </span>
-               </div>
-
-               <div class="workflow-step">
-                  <div class="number">3</div>
-                  <strong>Implications</strong>
-                  <span>
-                     Identify true and false
-                     implications
-                  </span>
-               </div>
-
-               <div class="workflow-step">
-                  <div class="number">4</div>
-                  <strong>MCQ</strong>
-                  <span>
-                     Construct a question from
-                     the implication pools
-                  </span>
-               </div>
-
-            </div>
-
-
-            <div class="two-column spaced-top">
-
-               <div class="card">
-
-                  <h3>True implications</h3>
-
-                  <p class="lead">
-                     A pool of <strong>true statements</strong>
-                     that can form correct answers.
-                  </p>
-
-               </div>
-
-
-               <div class="card">
-
-                  <h3>False implications</h3>
-
-                  <p class="lead">
-                     A pool of <strong>plausible but false statements</strong>
-                     that can form distractors.
-                  </p>
-
-               </div>
-
-            </div>
-
-
-            <div class="statement">
-
-               <strong>Result:</strong>
-               a question that targets higher-order thinking in Bloom’s taxonomy — rather than simple recall.
-
-            </div>
-
-         </div>
-
-      </section>
-
-      <section class="slide exam-slide">
-
-         <div class="content">
-
-            <div class="section-label">A higher-order example</div>
-
-            <h2>Generated Security Questions</h2>
-
-            <div class="exam-papers">
-
-               <!-- ===================================================== -->
-               <!-- VERSION A -->
-               <!-- ===================================================== -->
-
-               <div class="card">
-
-                  <h3>Simplified TLS</h3>
-
-                  <p>
-                     TLS normally establishes separate encryption and MAC keys
-                     for the two communication directions.
-                  </p>
-
-                  <p>
-                     Suppose a simplified TLS establishes a single encryption
-                     key and a single MAC key for both directions.
-                  </p>
-
-                  <p>
-                     <strong>What vulnerability does this simplified TLS create?</strong>
-                  </p>
-
-                  <p>
-                     X. An intermediary can potentially re-send a client-to-server
-                     message to a client posed as a server-originated message.
-                  </p>
-
-                  <p>
-                     Y. An intermediary can potentially mount a reflection attack.
-                  </p>
-
-                  <p>
-                     Z. An intermediary can potentially re-send a server-to-client
-                     message to a server posed as a client-originated message.
-                  </p>
-
-                  <div class="options">
-                     <div>A) X and Y only</div>
-                     <div>B) X and Z only</div>
-                     <div>C) Y and Z only</div>
-                     <div>D) All of X, Y and Z</div>
-                     <div>E) None, or only one of X, Y and Z</div>
-                  </div>
-
-               </div>
-
-
-               <!-- ===================================================== -->
-               <!-- VERSION B -->
-               <!-- ===================================================== -->
-
-               <div class="card">
-
-                  <h3>Simplified TLS</h3>
-
-                  <p>
-                     TLS normally establishes separate encryption and MAC keys
-                     for the two communication directions.
-                  </p>
-
-                  <p>
-                     Suppose a simplified TLS establishes a single encryption
-                     key and a single MAC key for both directions.
-                  </p>
-
-                  <p>
-                     <strong>What vulnerability does this simplified TLS create?</strong>
-                  </p>
-
-                  <p>
-                     X. An intermediary can potentially mount a reflection attack.
-                  </p>
-
-                  <p>
-                     Y. A client may pose as the server given that the client knows the server keys.
-                  </p>
-
-                  <p>
-                     Z. An intermediary can decipher messages the client sends to the server.
-                     <br />&nbsp;<br />
-                  </p>
-
-                  <div class="options">
-                     <div>A) X only</div>
-                     <div>B) Y only</div>
-                     <div>C) Z only</div>
-                     <div>D) None of X, Y, and Z</div>
-                     <div>E) All, or two of X, Y, and Z</div>
-                  </div>
-
-               </div>
-
-
-
-            </div>
-
-            <div class="statement">
-               The generator randomly selects from true and false implications to create different question variants.
-            </div>
-
-         </div>
-
-      </section>
-
-
-      <!-- ========================================================= -->
-      <!-- SLIDE: GRADING INDIVIDUALISED MCQS -->
-      <!-- ========================================================= -->
-
-      <section class="slide">
-
-         <div class="content">
-
-            <div class="section-label">Operational advantages</div>
-
-            <h2>Grading Individualised MCQs</h2>
-
-            <div class="two-column">
-
-               <!-- OMR SHEET -->
-               <div class="card">
-
-                  <div class="omr-image-container">
-                     <img src="SampleOMR.svg"
-                          alt="Example OMR answer sheet"
-                          class="omr-image">
-                  </div>
-
-                  <p>
-                     Students bubble in their answers on an OMR sheet,
-                     including a <strong>pre-bubbled version number</strong>.
-                  </p>
-               </div>
-
-
-               <!-- GRADING -->
-               <div class="card">
-
-                  <h3>Automated grading</h3>
-
-                  <div class="grading-workflow">
-
-                     <div class="workflow-step">
-                        <div class="number">1</div>
-                        <strong>Scan the OMR sheets</strong>
-                        <span>
-                           Scanned sheets are collected as PDFs.
-                        </span>
-                     </div>
-
-                     <div class="arrow">↓</div>
-
-                     <div class="workflow-step">
-                        <div class="number">2</div>
-                        <strong>OMR Processor</strong>
-                        <span>
-                           Extracts the student's responses
-                           and version number.
-                        </span>
-                     </div>
-
-                     <div class="arrow">↓</div>
-
-                     <div class="workflow-step">
-                        <div class="number">3</div>
-                        <strong>MCQ Grader</strong>
-                        <span>
-                           Applies the appropriate generated
-                           answer key and assigns the marks.
-                        </span>
-                     </div>
-
-                  </div>
-
-               </div>
-
-            </div>
-
-
-            <div class="statement">
-
-               <strong>Individualised questions <u>without</u> individualised marking.</strong>
-
-            </div>
-
-         </div>
-
-      </section>
-
-
-
-      <!-- ========================================================= -->
-      <!-- SLIDE Question Generators: Long-Term View -->
-      <!-- ========================================================= -->
-
-      <section class="slide">
-
-         <div class="content">
-
-            <div class="section-label">The long-term view</div>
-
-            <h2>Question Generators:<br>Long-Term Payoff</h2>
-
-            <div class="two-column">
-
-               <div class="card">
-
-                  <h3>Short Term</h3>
-
-                  <ul class="big-list">
-                     <li>Higher initial investment</li>
-                     <li>More design effort</li>
-                     <li>More validation required</li>
-                  </ul>
-
-               </div>
-
-               <div class="card">
-
-                  <h3>Long Term</h3>
-
-                  <ul class="big-list">
-                     <li>Reuse across semesters</li>
-                     <li>Unlimited practice material</li>
-                     <li>Multiple examination versions</li>
-                     <li>Reduced maintenance of question banks</li>
-                     <li>Scalable assessment</li>
-                     <li>Auto-grading</li>
-                     <li>Highly reduced physical space requirements for the examination</li>
-                  </ul>
-
-               </div>
-
-            </div>
-
-            <div class="statement">
-               <strong>Initial cost → reusable assessment infrastructure and operational efficiency.</strong>
-            </div>
-
-         </div>
-      </section>
-
-
-      <!-- ========================================================= -->
-      <!-- SLIDE: FAQ -->
-      <!-- ========================================================= -->
-
-      <section class="slide">
-
-         <div class="content">
-
-            <div class="section-label">Frequently asked questions</div>
-
-            <h2>Can I do that?</h2>
-
-            <div class="faq-grid">
-
-               <!-- MATHS -->
-               <div class="card faq-card">
-
-                  <h3>Can I put maths in a question?</h3>
-
-                  <div class="faq-answer math-answer">
-                     y∑s²
-                  </div>
-
-               </div>
-
-
-               <!-- PICTURE -->
-               <div class="card faq-card">
-
-                  <h3>Can I include a picture in a question?</h3>
-
-                  <div class="faq-answer">
-
-                     <img src="Y-Es.svg"
-                          alt="Yes"
-                          class="yes-svg">
-
-                  </div>
-
-               </div>
-
-
-               <!-- X -->
-               <div class="card faq-card">
-
-                  <h3>Can I do X?</h3>
-
-                  <div class="faq-answer probably">
-                     <i>P</i>(YES)≈1
-                  </div>
-
-               </div>
-
-            </div>
-
-         </div>
-
-      </section>
-
-      <section class="slide ">
-         <div class="dancing-baby-container">
-            <img src="DancingBaby.svg" alt="A dancing baby" class="dancing-baby">
-
-            <div class="dancing-baby-caption">
-               Someone wanted a dancing baby.
-               <span>And yes, we can generate one.</span>
-            </div>
          </div>
       </section>
 
       <section class="slide">
-         <div class="content">
 
-            <div class="section-label">Beyond Papers and Multiple Choice</div>
+         <div class="eyebrow">ZOOM OUT</div>
 
-            <h2>Question Generators + Digital Assessment</h2>
+         <h2>Moving beyond <span class="accent">unverifiable references</span></h2>
 
-            <div class="three-column">
-               <div class="card">
-                  <p class="lead">MCQs</p>
-                  <p> Use generated MCQs as they are. </p>
-                  <span class="tag">Individualised</span>
-                  <span class="tag">Auto-marked</span>
-                  <span class="tag">Reusable</span>
-               </div>
-               <div class="card">
-                  <p class="lead">Numerical Answers</p>
-                  <p> Ask directly: <em>How much is $a + $b?</em> </p>
-                  <span class="tag">No distractors</span>
-                  <span class="tag">Individualised</span>
-                  <span class="tag">Auto-marked</span>
-                  <span class="tag">Reusable</span>
-               </div>
-               <div class="card">
-                  <p class="lead">Short-Text Answers</p>
-                  <p> Ask directly: <em>What is the decryption of $text?</em> </p>
-                  <span class="tag">No distractors</span>
-                  <span class="tag">Individualised</span>
-                  <span class="tag">Auto-marked</span>
-                  <span class="tag">Reusable</span>
+         <p style="margin-top:4vh; font-size:1.25em;">
+            Checking whether a reference exists is important.
+            But even when <strong>everything exists</strong>, the scholarly record
+            can still contain errors that nobody has verified.
+         </p>
+
+         <div style="display:flex;justify-content:center;align-items:center;gap:1.5rem;margin-top:6vh;flex-wrap:wrap;">
+
+            <div style="padding:1.5rem 2rem;border:1px solid #ccd5df;border-radius:12px;text-align:center;min-width:190px;">
+               <div style="font-size:1.5rem; font-weight:600;">Reference</div>
+               <div style="margin-top:.5rem; color:#666;">
+                  Does it exist?
                </div>
             </div>
-            <div class="statement">
-               <strong>MCQs can directly be delivered digitally.</strong>
-               For digital-only assessments, numerical and short-text answers provide a simpler path requiring no distractors.
+
+            <div style="font-size:2rem;">→</div>
+
+            <div style="padding:1.5rem 2rem;border:1px solid #ccd5df;border-radius:12px;text-align:center;min-width:190px;">
+               <div style="font-size:1.5rem; font-weight:600;">Evidence</div>
+               <div style="margin-top:.5rem; color:#666;">
+                  Is it what it claims?
+               </div>
+            </div>
+
+            <div style="font-size:2rem;">→</div>
+
+            <div style="padding:1.5rem 2rem;border:1px solid #ccd5df;border-radius:12px;text-align:center;min-width:190px;">
+               <div style="font-size:1.5rem; font-weight:600;">Claim</div>
+               <div style="margin-top:.5rem; color:#666;">
+                  Does the evidence support it?
+               </div>
             </div>
 
          </div>
+
+         <div style="margin-top:6vh;text-align:center;font-size:1.45rem;">
+            <strong>The problem is bigger than whether a paper exists.</strong>
+         </div>
+
+         <p class="speaker">
+            We started by asking a very simple question: does this reference actually exist?
+            But that's only one layer of trust in the scholarly record. A paper and its references can exist,
+             — BUT we can still be repeating
+            a claim that nobody has actually checked.
+         </p>
+
       </section>
 
 
+      <section class="slide">
+         <div class="eyebrow">When an error gets repeated</div>
 
-      <!-- ========================================================= -->
-      <!-- The End -->
-      <!-- ========================================================= -->
+         <h2>There was a <span class="accent">mistake.</span></h2>
 
-      <section class="slide final-slide">
-         <div class="accent centered"></div>
-         <h2>Question Generators</h2>
+         <div class="flow">
+            <div class="box">
+               <h4>2008</h4>
+               <strong>One paper</strong><br />
+               <span>An incorrect equation</span>
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="box">
+               <h4>2011 &mdash; 2014</h4>
+               <strong>Three influential papers</strong><br />
+               <span>The same error</span>
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="box">
+               <strong>More papers</strong><br />
+               <span>And more.</span><br />
+               <span>And more.</span>
+            </div>
+
+         </div>
+
+         <div class="big-number">20,000+</div>
+         <div class="label">publications subsequently using the formulation</div>
 
          <p>
-            Invest effort once in designing a good question.
-            Build a generator, and reuse that design again and again.
+            There was a mistake. Three influential papers repeated it. 
+            Then more papers repeated the same error, and more followed. 
+            And nobody went back to check the original equation … until …
          </p>
-         <p class="final-summary">
-            Scalable &nbsp;·&nbsp;
-            Reusable &nbsp;·&nbsp;
-            Isomorphic &nbsp;·&nbsp;
-            Auto-graded
+         <p style="line-height:1.4; color:#687586;">
+            Anand Pal, <em>A dimensionally consistent size–strain plot method for crystallite size and microstrain estimation</em>,
+            <em>Journal of Alloys and Compounds</em> 1048 (2025), 185324. DOI: 10.1016/j.jallcom.2025.185324
          </p>
-         <div class="qr-code">
-            <img src="QR-code.svg" alt="QR code" class="qr-image">
+
+
+         <div class="bottom-line">
+            <strong>Repetition made an error look like knowledge.</strong>
          </div>
       </section>
 
+      <section class="slide">
+
+         <div class="eyebrow">WHEN A CITATION GETS REPEATED</div>
+
+         <h2>Does this paper <span class="accent">exist?</span></h2>
+
+         <div style="width: 88%;margin: 2rem auto;padding: 1.3rem 1.6rem;background: #fff;border-radius: 6px;text-align: left;color: #333;box-shadow: 0 6px 25px rgba(0,0,0,.18);">
+            <div style="font-size:.75rem; color:#666; margin-bottom:.4rem;">
+               [CITATION]
+            </div>
+
+            <div style="font-size:1.3rem;line-height:1.35;color:#1a0dab; margin-bottom:.4rem;">
+               Cloud-based blood bank management system:
+               a novel approach for donor management and information dissemination
+            </div>
+
+            <div style="font-size:.9rem; margin-bottom:.15rem;">
+               S Priya, K Geetha
+            </div>
+
+            <div style="font-size:.85rem;color:#555;font-style:italic;margin-bottom:.7rem;">
+               Journal of Advanced Research in Computing, 2014
+            </div>
+
+            <div style="font-size:.82rem; color:#1a0dab;">
+               Cited by <strong>3</strong>
+               <span style="color:#999; margin:0 .35rem;">·</span>
+               Related articles
+            </div>
+         </div>
+
+         <div style="margin-top:1rem; font-size:1.25rem; text-align:center;">
+            <span class="accent">It looks completely legitimate.</span>
+         </div>
+
+         <div style="margin-top:1rem;font-size:1.4rem;text-align:center;">
+            <strong>But the paper cannot be verified.</strong>
+         </div>
+
+         <p>
+            Searching for the reference in
+            <span>
+               <span class="g-blue">G</span><span class="o-red">o</span><span class="o-yellow">o</span><span class="g-blue">g</span><span class="l-green">l</span><span class="o-red">e</span><span class="scholar-text">Scholar</span>
+            </span>
+            gives us a title, authors,
+            a journal, a year — and even three citations. It looks real. But the paper cannot be verified.
+         </p>
+
+      </section>
+
+      <section class="slide dark">
+         <div class="eyebrow">Now the uncomfortable part</div>
+         <h2>More papers. More claims.</h2>
+
+         <div style="margin: 0 auto; width: 80%;">
+            <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+               <!-- Styles -->
+               <style>
+                  .title {
+                     font-family: system-ui, -apple-system, sans-serif;
+                     font-size: 24px;
+                     font-weight: bold;
+                     fill: #f8fafc;
+                  }
+
+                  .subtitle {
+                     font-family: system-ui, -apple-system, sans-serif;
+                     font-size: 14px;
+                     fill: #94a3b8;
+                  }
+
+                  .axis-label {
+                     font-family: system-ui, -apple-system, sans-serif;
+                     font-size: 12px;
+                     font-weight: 600;
+                     fill: #cbd5e1;
+                  }
+
+                  .tick-label {
+                     font-family: system-ui, -apple-system, sans-serif;
+                     font-size: 11px;
+                     fill: #94a3b8;
+                     text-anchor: middle;
+                  }
+
+                  .value-label {
+                     font-family: system-ui, -apple-system, sans-serif;
+                     font-size: 11px;
+                     font-weight: bold;
+                     fill: #f8fafc;
+                     text-anchor: middle;
+                  }
+
+                  .rate-label {
+                     font-family: system-ui, -apple-system, sans-serif;
+                     font-size: 11px;
+                     font-weight: bold;
+                     fill: #34d399;
+                     text-anchor: middle;
+                  }
+
+                  .grid-line {
+                     stroke: #334155;
+                     stroke-dasharray: 4,4;
+                     stroke-width: 1;
+                  }
+
+                  .legend-text {
+                     font-family: system-ui, -apple-system, sans-serif;
+                     font-size: 12px;
+                     fill: #e2e8f0;
+                  }
+               </style>
+
+               <!-- Dark Mode Canvas Background -->
+               <rect width="100%" height="100%" fill="none" />
+
+               <!-- Header -->
+               <text x="40" y="40" class="title">ICML Growth &amp; Acceptance Trends</text>
+               <text x="40" y="60" class="subtitle">Comparing submissions, accepted papers, and acceptance rates over the last decade</text>
+
+               <!-- Legend -->
+               <g transform="translate(480, 30)">
+                  <!-- Submissions Legend -->
+                  <rect x="0" y="0" width="15" height="15" fill="#3b82f6" rx="3" />
+                  <text x="20" y="12" class="legend-text">Submissions</text>
+
+                  <!-- Accepted Legend -->
+                  <rect x="100" y="0" width="15" height="15" fill="#60a5fa" rx="3" />
+                  <text x="120" y="12" class="legend-text">Accepted</text>
+
+                  <!-- Rate Legend -->
+                  <line x1="180" y1="7" x2="205" y2="7" stroke="#34d399" stroke-width="3" stroke-dasharray="2,2" />
+                  <circle cx="190" cy="7" r="4" fill="#34d399" />
+                  <text x="208" y="12" class="legend-text">Acceptance Rate (%)</text>
+               </g>
+
+               <!-- Grid Lines (Y-Axis Submissions Max 25,000) -->
+               <!-- Base Y: 430, Max Y: 100, Range H: 330 (13.2 px per 1000) -->
+               <line x1="80" y1="430" x2="720" y2="430" stroke="#475569" stroke-width="1.5" />
+               <line x1="80" y1="364" x2="720" y2="364" class="grid-line" />
+               <line x1="80" y1="298" x2="720" y2="298" class="grid-line" />
+               <line x1="80" y1="232" x2="720" y2="232" class="grid-line" />
+               <line x1="80" y1="166" x2="720" y2="166" class="grid-line" />
+               <line x1="80" y1="100" x2="720" y2="100" class="grid-line" />
+
+               <!-- Left Y-Axis Labels (Volume) -->
+               <text x="70" y="434" class="tick-label" style="text-anchor: end;">0</text>
+               <text x="70" y="368" class="tick-label" style="text-anchor: end;">5,000</text>
+               <text x="70" y="302" class="tick-label" style="text-anchor: end;">10,000</text>
+               <text x="70" y="236" class="tick-label" style="text-anchor: end;">15,000</text>
+               <text x="70" y="170" class="tick-label" style="text-anchor: end;">20,000</text>
+               <text x="70" y="104" class="tick-label" style="text-anchor: end;">25,000</text>
+               <text x="30" y="265" class="axis-label" transform="rotate(-90 30 265)" style="text-anchor: middle;">Number of Papers</text>
+
+               <!-- Right Y-Axis Labels (Percentage) -->
+               <line x1="720" y1="430" x2="720" y2="100" stroke="#475569" stroke-width="1.5" />
+               <text x="730" y="434" class="tick-label" style="text-anchor: start;">0%</text>
+               <text x="730" y="331" class="tick-label" style="text-anchor: start;">30%</text>
+               <text x="730" y="232" class="tick-label" style="text-anchor: start;">60%</text>
+               <text x="730" y="133" class="tick-label" style="text-anchor: start;">90%</text>
+               <text x="770" y="265" class="axis-label" transform="rotate(90 770 265)" style="text-anchor: middle;">Acceptance Rate</text>
+
+               <!-- DATA VISUALISATION -->
+               <!-- X spacing centers: 112, 176, 240, 304, 368, 432, 496, 560, 624, 688 -->
+               <!-- 2015 -->
+               <g>
+                  <rect x="97" y="416" width="14" height="14" fill="#2563eb" rx="1" />
+                  <rect x="113" y="426" width="14" height="4" fill="#60a5fa" rx="1" />
+                  <text x="112" y="450" class="tick-label">2015</text>
+                  <text x="105" y="408" class="value-label" style="font-size: 9px; fill: #94a3b8;">1.0k</text>
+               </g>
+
+               <!-- 2017 -->
+               <g>
+                  <rect x="161" y="408" width="14" height="22" fill="#2563eb" rx="1" />
+                  <rect x="177" y="424" width="14" height="6" fill="#60a5fa" rx="1" />
+                  <text x="176" y="450" class="tick-label">2017</text>
+                  <text x="169" y="400" class="value-label" style="font-size: 9px; fill: #94a3b8;">1.7k</text>
+               </g>
+
+               <!-- 2019 -->
+               <g>
+                  <rect x="225" y="385" width="14" height="45" fill="#2563eb" rx="1" />
+                  <rect x="241" y="420" width="14" height="10" fill="#60a5fa" rx="1" />
+                  <text x="240" y="450" class="tick-label">2019</text>
+                  <text x="233" y="377" class="value-label" style="font-size: 9px; fill: #94a3b8;">3.4k</text>
+               </g>
+
+               <!-- 2020 -->
+               <g>
+                  <rect x="289" y="364" width="14" height="66" fill="#2563eb" rx="1" />
+                  <rect x="305" y="416" width="14" height="14" fill="#60a5fa" rx="1" />
+                  <text x="304" y="450" class="tick-label">2020</text>
+                  <text x="297" y="356" class="value-label" style="font-size: 9px; fill: #94a3b8;">5.0k</text>
+               </g>
+
+               <!-- 2021 -->
+               <g>
+                  <rect x="353" y="357" width="14" height="73" fill="#2563eb" rx="1" />
+                  <rect x="369" y="414" width="14" height="16" fill="#60a5fa" rx="1" />
+                  <text x="368" y="450" class="tick-label">2021</text>
+                  <text x="361" y="349" class="value-label" style="font-size: 9px; fill: #94a3b8;">5.5k</text>
+               </g>
+
+               <!-- 2022 -->
+               <g>
+                  <rect x="417" y="356" width="14" height="74" fill="#2563eb" rx="1" />
+                  <rect x="433" y="414" width="14" height="16" fill="#60a5fa" rx="1" />
+                  <text x="432" y="450" class="tick-label">2022</text>
+                  <text x="425" y="348" class="value-label" style="font-size: 9px; fill: #94a3b8;">5.6k</text>
+               </g>
+
+               <!-- 2023 -->
+               <g>
+                  <rect x="481" y="344" width="14" height="86" fill="#2563eb" rx="1" />
+                  <rect x="497" y="406" width="14" height="24" fill="#60a5fa" rx="1" />
+                  <text x="496" y="450" class="tick-label">2023</text>
+                  <text x="489" y="336" class="value-label" style="font-size: 9px; fill: #94a3b8;">6.5k</text>
+               </g>
+
+               <!-- 2024 -->
+               <g>
+                  <rect x="545" y="305" width="14" height="125" fill="#2563eb" rx="1" />
+                  <rect x="561" y="396" width="14" height="34" fill="#60a5fa" rx="1" />
+                  <text x="560" y="450" class="tick-label">2024</text>
+                  <text x="553" y="297" class="value-label" style="font-size: 9px; fill: #94a3b8;">9.5k</text>
+               </g>
+
+               <!-- 2025 -->
+               <g>
+                  <rect x="609" y="270" width="14" height="160" fill="#2563eb" rx="1" />
+                  <rect x="625" y="387" width="14" height="43" fill="#60a5fa" rx="1" />
+                  <text x="624" y="450" class="tick-label">2025</text>
+                  <text x="617" y="262" class="value-label" style="font-size: 9px; fill: #94a3b8;">12.1k</text>
+               </g>
+
+               <!-- 2026 -->
+               <g>
+                  <rect x="673" y="114" width="14" height="316" fill="#3b82f6" rx="1" />
+                  <rect x="689" y="346" width="14" height="84" fill="#60a5fa" rx="1" />
+                  <text x="688" y="450" class="tick-label" style="font-weight: bold; fill: #f8fafc;">2026</text>
+                  <text x="681" y="104" class="value-label" style="fill: #60a5fa;">23.9k</text>
+                  <text x="698" y="338" class="value-label" style="fill: #93c5fd; font-size: 10px;">6.3k</text>
+               </g>
+
+               <!-- Line Chart for Acceptance Rate -->
+               <path d="M 112 344.2 L 176 344.5 L 240 355.4 L 304 358.1 L 368 359.1 L 432 357.7 L 496 337.9 L 560 339.3 L 624 341.2 L 688 342.2"
+                     fill="none" stroke="#34d399" stroke-width="3" stroke-dasharray="2,2" />
+
+               <!-- Line Nodes & Text Data Labels -->
+               <circle cx="112" cy="344" r="4" fill="#34d399" />
+               <text x="112" y="332" class="rate-label">26.0%</text>
+
+               <circle cx="176" cy="345" r="4" fill="#34d399" />
+
+               <circle cx="240" cy="355" r="4" fill="#34d399" />
+               <text x="240" y="374" class="rate-label">22.6%</text>
+
+               <circle cx="304" cy="358" r="4" fill="#34d399" />
+
+               <circle cx="368" cy="359" r="4" fill="#34d399" />
+               <text x="368" y="378" class="rate-label">21.5%</text>
+
+               <circle cx="432" cy="358" r="4" fill="#34d399" />
+
+               <circle cx="496" cy="338" r="4" fill="#34d399" />
+               <text x="496" y="324" class="rate-label">27.9%</text>
+
+               <circle cx="560" cy="339" r="4" fill="#34d399" />
+
+               <circle cx="624" cy="341" r="4" fill="#34d399" />
+
+               <circle cx="688" cy="342" r="4" fill="#34d399" />
+               <text x="688" y="326" class="rate-label" style="fill: #34d399;">26.6%</text>
+
+            </svg>
+         </div>
+
+      </section>
+
+
+      <section class="slide">
+         <div class="eyebrow">What happens when we actually try?</div>
+
+         <div class="flow">
+            <div class="box">1,221 people</div>
+            <div class="arrow">→</div>
+            <div class="box">2,226 papers</div>
+            <div class="arrow">→</div>
+            <div class="box">35,908 claims</div>
+         </div>
+
+         <div class="big-number" style="font-size:clamp(6rem,14vw,12rem);">23%</div>
+
+         <div class="label">
+            of examined papers had at least one claim that was
+            falsified or contested in the ICML reproduction exercise.
+         </div>
+
+         <p style="margin-top:3vh;">
+            And some flagged falsifications turned out to be wrong.
+            Verification itself requires verification.
+         </p>
+
+         <p class="small" style="margin-top:3vh;">
+            Source: <a href="https://huggingface.co/blog/icml-2026-open-reproductions">https://huggingface.co/blog/icml-2026-open-reproductions</a>
+         </p>
+
+      </section>
+
+
+      <section class="slide center dark">
+         <div class="eyebrow">The bigger question</div>
+
+         <div class="final-question">
+            Can we genuinely<br>
+            verify <span class="accent">every claim?</span>
+         </div>
+
+      </section>
+
+
+      <section class="slide center">
+         <div class="eyebrow">Discussion</div>
+
+         <div class="final-question">
+            If we cannot verify<br>
+            everything…
+         </div>
+
+         <div class="question" style="margin-top:5vh;font-size:clamp(2.4rem,5vw,5rem);">
+            What should we verify?
+         </div>
+
+         <div style="margin-top:5vh;max-width:1000px;">
+            <span class="tag">claims</span>
+            <span class="tag">references</span>
+            <span class="tag">data</span>
+            <span class="tag">images</span>
+            <span class="tag">methods</span>
+            <span class="tag">objects</span>
+            <span class="tag">authors</span>
+            <span class="tag">institutions</span>
+         </div>
+
+         <p style="margin-top:5vh;font-size:2.0rem;color:#666;">
+            And who should be responsible for doing it?
+         </p>
+         <div style="margin-top:5vh;max-width:1000px;">
+            <span class="tag">authors</span>
+            <span class="tag">reviewers</span>
+            <span class="tag">publishers</span>
+            <span class="tag">machines</span>
+         </div>
+
+      </section>
+
+
    </div>
-
-
-   <!-- ============================================================= -->
-   <!-- CONTROLS -->
-   <!-- ============================================================= -->
 
    <div class="controls">
-
-      <button onclick="previousSlide()" title="Previous slide">
-         &#8592;
-      </button>
-
-      <button onclick="toggleFullscreen()" title="Fullscreen">
-         &#x26F6;
-      </button>
-
-      <button onclick="nextSlide()" title="Next slide">
-         &#8594;
-      </button>
-
+      <button onclick="prevSlide()">←</button>
+      <button onclick="nextSlide()">→</button>
+      <button onclick="toggleFullscreen()">⛶</button>
    </div>
 
+   <div class="progress" id="progress"></div>
 
 </body>
 </html>
