@@ -444,6 +444,17 @@ h3 {
    font-weight: 600;
 }
 
+.tag-emphasis {
+   display: inline-block;
+   background: #d6d3f6;
+   color: #246bd3;
+   padding: .35rem .7rem;
+   border-radius: 20px;
+   margin: .25rem;
+   font-size: .9rem;
+   font-weight: 600;
+}
+
 /* ---------- MEDIA / UTILITY ---------- */
 
 .centered {
