@@ -214,8 +214,8 @@ h3 {
 
    .big-list li {
       font-size: clamp(1.25rem, 2vw, 1.75rem);
-      line-height: 1.35;
-      margin: 1rem 0;
+      line-height: 1.15;
+      margin: 0.5rem 0;
       padding-left: 2rem;
       position: relative;
    }
@@ -225,8 +225,8 @@ h3 {
          position: absolute;
          left: 0;
          top: .55em;
-         width: .65rem;
-         height: .65rem;
+         width: .45rem;
+         height: .45rem;
          border-radius: 50%;
          background: #2c91a8;
       }
@@ -485,10 +485,10 @@ h3 {
 }
 
 .omr-image-container {
-   margin-top: 1.2rem;
+   margin-top: 0.2rem;
    text-align: center;
    background: white;
-   padding: 1rem;
+   padding: 0.2rem;
    border-radius: 8px;
 }
 
@@ -607,23 +607,25 @@ h3 {
 }
 
 .workflow-step {
-   text-align: center;
-   background: white;
+   text-align: left;              
    border: 1px solid #dce3ec;
    border-radius: 15px;
-   padding: 1.5rem 1rem;
-   min-height: 150px;
+   padding: 0.5rem 0.2rem;
+   min-height: 50px;
    display: flex;
-   flex-direction: column;
-   justify-content: center;
+   flex-direction: row;
+   align-items: center;
+   justify-content: flex-start;
+   gap: 1rem;
 }
 
-   .workflow-step .number {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #2c91a8;
-      margin-bottom: .6rem;
-   }
+.workflow-step .number {
+   font-size: 1.8rem;
+   font-weight: 700;
+   color: #2c91a8;
+   margin-bottom: 0;
+   flex-shrink: 0;
+}
 
 .arrow {
    font-size: 2rem;
