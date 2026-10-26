@@ -37,7 +37,7 @@ html, body {
 /* ---------- SLIDE NUMBERS ---------- */
 
 .slide-number {
-   position: absolute;
+   position: fixed;
    right: 3vw;
    bottom: 3vh;
    font-size: .75rem;
