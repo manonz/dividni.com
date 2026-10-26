@@ -12,11 +12,11 @@
 
 <body>
    <script>
-      if ('serviceWorker' in navigator) {
-         window.addEventListener('load', () => {
-            navigator.serviceWorker.register('sw.js');
-         });
-      }
+            if ('serviceWorker' in navigator) {
+               window.addEventListener('load', () => {
+                  navigator.serviceWorker.register('sw.js');
+               });
+            }
    </script>
 
    <div class="presentation">
@@ -58,7 +58,7 @@
 
          <div class="author">
             <!--Mano Manoharan<br>
-         Mano.Manoharan@Auckland.ac.NZ-->
+            Mano.Manoharan@Auckland.ac.NZ-->
          </div>
 
       </section>
@@ -804,25 +804,25 @@
 
             <div class="workflow">
 
-               <div class="workflow-step">
+               <div class="workflow-step-v">
                   <div class="number">1</div>
                   <strong>Design</strong>
                   <span>Learning outcome<br>and question template</span>
                </div>
 
-               <div class="workflow-step">
+               <div class="workflow-step-v">
                   <div class="number">2</div>
                   <strong>Generate</strong>
                   <span>Randomised<br>parameters</span>
                </div>
 
-               <div class="workflow-step">
+               <div class="workflow-step-v">
                   <div class="number">3</div>
                   <strong>Validate</strong>
                   <span>Correct answer<br>and distractors</span>
                </div>
 
-               <div class="workflow-step">
+               <div class="workflow-step-v">
                   <div class="number">4</div>
                   <strong>Assemble</strong>
                   <span>Exam versions<br>and answer sheets</span>
@@ -1085,7 +1085,7 @@
 
             <div class="workflow">
 
-               <div class="workflow-step">
+               <div class="workflow-step-v">
                   <div class="number">1</div>
                   <strong>Scenario</strong>
                   <span>
@@ -1094,7 +1094,7 @@
                   </span>
                </div>
 
-               <div class="workflow-step">
+               <div class="workflow-step-v">
                   <div class="number">2</div>
                   <strong>Reflective Question</strong>
                   <span>
@@ -1103,7 +1103,7 @@
                   </span>
                </div>
 
-               <div class="workflow-step">
+               <div class="workflow-step-v">
                   <div class="number">3</div>
                   <strong>Implications</strong>
                   <span>
@@ -1112,7 +1112,7 @@
                   </span>
                </div>
 
-               <div class="workflow-step">
+               <div class="workflow-step-v">
                   <div class="number">4</div>
                   <strong>MCQ</strong>
                   <span>
@@ -1298,11 +1298,11 @@
                   <p style="font-size: small;">
                      Students bubble in their answers on an OMR sheet.
                      The version number is <strong>pre-bubbled</strong>.
-                 </p>
+                  </p>
 
-                 <div class="grading-workflow">
+                  <div class="grading-workflow">
 
-                     <div class="workflow-step">
+                     <div class="workflow-step-h">
                         <div class="number">1</div>
                         <strong>Scan the OMR sheets</strong>
                         <span>
@@ -1312,7 +1312,7 @@
 
                      <div class="arrow">↓</div>
 
-                     <div class="workflow-step">
+                     <div class="workflow-step-h">
                         <div class="number">2</div>
                         <strong>OMR Processor</strong>
                         <span>
@@ -1323,7 +1323,7 @@
 
                      <div class="arrow">↓</div>
 
-                     <div class="workflow-step">
+                     <div class="workflow-step-h">
                         <div class="number">3</div>
                         <strong>MCQ Grader</strong>
                         <span>

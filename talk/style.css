@@ -606,8 +606,8 @@ h3 {
    margin-top: 1.5rem;
 }
 
-.workflow-step {
-   text-align: left;              
+.workflow-step-h {
+   text-align: left;
    border: 1px solid #dce3ec;
    border-radius: 15px;
    padding: 0.5rem 0.2rem;
@@ -619,13 +619,32 @@ h3 {
    gap: 1rem;
 }
 
-.workflow-step .number {
-   font-size: 1.8rem;
-   font-weight: 700;
-   color: #2c91a8;
-   margin-bottom: 0;
-   flex-shrink: 0;
+   .workflow-step-h .number {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2c91a8;
+      margin-bottom: 0;
+      flex-shrink: 0;
+   }
+
+.workflow-step-v {
+   text-align: center;
+   background: white;
+   border: 1px solid #dce3ec;
+   border-radius: 15px;
+   padding: 1.5rem 1rem;
+   min-height: 150px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
 }
+
+   .workflow-step-v .number {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2c91a8;
+      margin-bottom: .6rem;
+   }
 
 .arrow {
    font-size: 2rem;
