@@ -261,12 +261,12 @@ h3 {
 /* ---------- EMPHASIS ---------- */
 
 .statement {
-   margin-top: 2rem;
-   padding: 2rem 2.5rem;
+   margin-top: 1rem;
+   padding: 0.5rem 0.5rem;
    background: #e8f5f7;
    border-left: 7px solid #2c91a8;
    border-radius: 10px;
-   font-size: clamp(1.35rem, 2.3vw, 2rem);
+   font-size: clamp(1.0rem, 1.3vw, 1.2rem);
    line-height: 1.35;
    color: #17394a;
 }
