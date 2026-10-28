@@ -1,6 +1,6 @@
 {
-  "name": "Dividni",
-  "short_name": "Dividni",
+  "name": "Dividni Talk",
+  "short_name": "Dividni Talk",
   "start_url": "index.html",
   "scope": "/talk/",
   "display": "standalone",
